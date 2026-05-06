@@ -36,7 +36,7 @@ func proxima_fala():
 	if fala_atual < falas.size():
 		exibir_fala()
 	else:
-		queue_free() # Fecha o diálogo ao acabar
+		get_tree().change_scene_to_file("res://scenes/Main.tscn") # Fecha o diálogo ao acabar
 
 func _on_letter_timer_timeout():
 	if texto_label.visible_ratio < 1:

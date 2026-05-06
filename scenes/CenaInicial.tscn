@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ekns5nv833c7"]
 
 [ext_resource type="Texture2D" uid="uid://dsmhhf2uiw5ly" path="res://sprites/stardew-valley-bus-thumb-728x410.jpg" id="1_l6nae"]
-[ext_resource type="Script" uid="uid://cqpc5n6l5xqb" path="res://scenes/CenaInicial.gd" id="1_x4jvx"]
+[ext_resource type="Script" uid="uid://dj35v2balfsja" path="res://scripts/CenaInicial.gd" id="1_x4jvx"]
 [ext_resource type="Texture2D" uid="uid://u3t8y83wtd5u" path="res://sprites/city/Sky_pale2.png" id="3_sxhgq"]
 [ext_resource type="Texture2D" uid="uid://botn303abs7yo" path="res://sprites/city/road&lamps_pale.png" id="4_1n5w2"]
 [ext_resource type="Texture2D" uid="uid://cn7bbfmq0hx03" path="res://sprites/city/houses33_pale.png" id="5_1vt1a"]
 [ext_resource type="Texture2D" uid="uid://dure08w6uqa8f" path="res://sprites/city/houded2_pale.png" id="6_r3eru"]
 [ext_resource type="Texture2D" uid="uid://bgxpq4q8dt7rw" path="res://sprites/city/minishop&callbox_pale.png" id="7_3oshh"]
-[ext_resource type="Script" uid="uid://e7se4yrx5nc2" path="res://scenes/cars.gd" id="8_1n5w2"]
+[ext_resource type="Script" uid="uid://b3lyw3f4nwpey" path="res://scripts/cars.gd" id="8_1n5w2"]
 [ext_resource type="Texture2D" uid="uid://8kc752vm27b1" path="res://sprites/things/car.png" id="8_h7xyq"]
 [ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="10_1vt1a"]
 
