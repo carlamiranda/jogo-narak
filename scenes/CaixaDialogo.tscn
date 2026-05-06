@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://surnoqokqfb0"]
 
-[ext_resource type="Script" uid="uid://bk1uchx0kl11n" path="res://scenes/caixa_dialogo.gd" id="1_4sg81"]
+[ext_resource type="Script" uid="uid://c28bmoch0or14" path="res://scripts/caixa_dialogo.gd" id="1_4sg81"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j70v"]
 bg_color = Color(0.19043362, 0.09674131, 0, 1)
