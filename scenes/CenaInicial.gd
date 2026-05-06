@@ -1,13 +1,12 @@
 extends Node2D
 
-var dialogo_scene = preload("res://scenes/Dialogo.tscn")
+# Aqui pegamos as referências do que está na cena
+@onready var caixa_dialogo = $CanvasLayer/CaixaDialogo
+@onready var carro = $cars
 
 func _ready():
-	var d = dialogo_scene.instantiate()
-	add_child(d)
-
 	var historia = [
-		{
+{
 			"nome": "Mãe",
 			"texto": "Vou ter que esticar o turno hoje.",
 			"sprite": preload("res://sprites/mother.jpg")
@@ -31,7 +30,17 @@ func _ready():
 			"nome": "Protagonista",
 			"texto": "Ok...",
 			"sprite": preload("res://sprites/personagemprincipal.jpg")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "Tudo bem, eu dou um jeito.",
+			"sprite": preload("res://sprites/personagemprincipal.jpg")
 		}
 	]
-
-	d.iniciar_dialogo(historia)
+	
+	# Se esses nós existirem com esses nomes, vai funcionar:
+	if caixa_dialogo:
+		caixa_dialogo.iniciar_dialogo(historia)
+	
+	if carro:
+		carro.movendo = true

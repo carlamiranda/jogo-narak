@@ -2,11 +2,154 @@
 
 [ext_resource type="Texture2D" uid="uid://dsmhhf2uiw5ly" path="res://sprites/stardew-valley-bus-thumb-728x410.jpg" id="1_l6nae"]
 [ext_resource type="Script" uid="uid://cqpc5n6l5xqb" path="res://scenes/CenaInicial.gd" id="1_x4jvx"]
+[ext_resource type="Texture2D" uid="uid://u3t8y83wtd5u" path="res://sprites/city/Sky_pale2.png" id="3_sxhgq"]
+[ext_resource type="Texture2D" uid="uid://botn303abs7yo" path="res://sprites/city/road&lamps_pale.png" id="4_1n5w2"]
+[ext_resource type="Texture2D" uid="uid://cn7bbfmq0hx03" path="res://sprites/city/houses33_pale.png" id="5_1vt1a"]
+[ext_resource type="Texture2D" uid="uid://dure08w6uqa8f" path="res://sprites/city/houded2_pale.png" id="6_r3eru"]
+[ext_resource type="Texture2D" uid="uid://bgxpq4q8dt7rw" path="res://sprites/city/minishop&callbox_pale.png" id="7_3oshh"]
+[ext_resource type="Script" uid="uid://e7se4yrx5nc2" path="res://scenes/cars.gd" id="8_1n5w2"]
+[ext_resource type="Texture2D" uid="uid://8kc752vm27b1" path="res://sprites/things/car.png" id="8_h7xyq"]
+[ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="10_1vt1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vt1a"]
+size = Vector2(186, 63)
 
 [node name="Node2D" type="Node2D" unique_id=1005623734]
 script = ExtResource("1_x4jvx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200524841]
-position = Vector2(577.5, 327)
+position = Vector2(-612, 1029)
 scale = Vector2(1.5700549, 1.5560977)
 texture = ExtResource("1_l6nae")
+
+[node name="Background" type="Node2D" parent="." unique_id=1116783841]
+
+[node name="sunrisesky" type="Sprite2D" parent="Background" unique_id=1650700003]
+scale = Vector2(0.5, 0.509)
+texture = ExtResource("3_sxhgq")
+
+[node name="road&lamps" type="Sprite2D" parent="Background" unique_id=2094917863]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1n5w2")
+
+[node name="hightBiuldings" type="Sprite2D" parent="Background" unique_id=1894588766]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1vt1a")
+
+[node name="cofeShop" type="Sprite2D" parent="Background" unique_id=1549831290]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r3eru")
+
+[node name="Minishop&callboxPale" type="Sprite2D" parent="Background" unique_id=185932355]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_3oshh")
+
+[node name="Background2" type="Node2D" parent="." unique_id=160083823]
+position = Vector2(960, 0)
+
+[node name="sunrisesky" type="Sprite2D" parent="Background2" unique_id=353676610]
+scale = Vector2(0.5, 0.509)
+texture = ExtResource("3_sxhgq")
+
+[node name="road&lamps" type="Sprite2D" parent="Background2" unique_id=200056550]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1n5w2")
+
+[node name="hightBiuldings" type="Sprite2D" parent="Background2" unique_id=66180576]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1vt1a")
+
+[node name="cofeShop" type="Sprite2D" parent="Background2" unique_id=1738347803]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r3eru")
+
+[node name="Background3" type="Node2D" parent="." unique_id=1405417556]
+position = Vector2(1920, 0)
+
+[node name="sunrisesky" type="Sprite2D" parent="Background3" unique_id=1339547022]
+scale = Vector2(0.5, 0.509)
+texture = ExtResource("3_sxhgq")
+
+[node name="road&lamps" type="Sprite2D" parent="Background3" unique_id=1490420605]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1n5w2")
+
+[node name="hightBiuldings" type="Sprite2D" parent="Background3" unique_id=816939411]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1vt1a")
+
+[node name="cofeShop" type="Sprite2D" parent="Background3" unique_id=716459259]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r3eru")
+
+[node name="Minishop&callboxPale2" type="Sprite2D" parent="Background3" unique_id=476841260]
+z_index = 1
+position = Vector2(442.00012, -4.75)
+scale = Vector2(0.5, 0.49583334)
+texture = ExtResource("7_3oshh")
+
+[node name="Background4" type="Node2D" parent="." unique_id=1150493791]
+position = Vector2(2880, 0)
+
+[node name="sunrisesky" type="Sprite2D" parent="Background4" unique_id=20237996]
+scale = Vector2(0.5, 0.509)
+texture = ExtResource("3_sxhgq")
+
+[node name="road&lamps" type="Sprite2D" parent="Background4" unique_id=2080935694]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1n5w2")
+
+[node name="hightBiuldings" type="Sprite2D" parent="Background4" unique_id=408821796]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1vt1a")
+
+[node name="cofeShop" type="Sprite2D" parent="Background4" unique_id=2025321408]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r3eru")
+
+[node name="Background5" type="Node2D" parent="." unique_id=63018455]
+position = Vector2(3840, 0)
+
+[node name="sunrisesky" type="Sprite2D" parent="Background5" unique_id=1695503988]
+scale = Vector2(0.5, 0.509)
+texture = ExtResource("3_sxhgq")
+
+[node name="road&lamps" type="Sprite2D" parent="Background5" unique_id=386970332]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1n5w2")
+
+[node name="hightBiuldings" type="Sprite2D" parent="Background5" unique_id=289394977]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1vt1a")
+
+[node name="cofeShop" type="Sprite2D" parent="Background5" unique_id=1899590822]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r3eru")
+
+[node name="cars" type="CharacterBody2D" parent="." unique_id=227302504]
+script = ExtResource("8_1n5w2")
+
+[node name="car" type="Sprite2D" parent="cars" unique_id=1152346288]
+z_index = 5
+position = Vector2(-150, 130)
+texture = ExtResource("8_h7xyq")
+hframes = 8
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cars" unique_id=1792713844]
+
+[node name="Camera2D" type="Camera2D" parent="cars" unique_id=782199492]
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cars" unique_id=1565289168]
+position = Vector2(-163, 216.5)
+shape = SubResource("RectangleShape2D_1vt1a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1419498484]
+
+[node name="CaixaDialogo" parent="CanvasLayer" unique_id=156308223 instance=ExtResource("10_1vt1a")]
