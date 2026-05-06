@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://surnoqokqfb0"]
+
+[ext_resource type="Script" uid="uid://bk1uchx0kl11n" path="res://scenes/caixa_dialogo.gd" id="1_4sg81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j70v"]
+bg_color = Color(0.19043362, 0.09674131, 0, 1)
+
+[node name="CaixaDialogo" type="Control" unique_id=156308223]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4sg81")
+
+[node name="Panel" type="Panel" parent="." unique_id=1197392337]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = -125.0
+offset_right = -677.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2j70v")
+
+[node name="retrato" type="TextureRect" parent="Panel" unique_id=858781736]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 9.0
+offset_right = 384.0
+offset_bottom = 99.0
+expand_mode = 1
+
+[node name="nome" type="Label" parent="Panel" unique_id=904075779]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 228.0
+offset_bottom = 33.0
+
+[node name="texto" type="RichTextLabel" parent="Panel" unique_id=799028117]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 36.0
+offset_right = 293.0
+offset_bottom = 98.0
+
+[node name="LetterTimer" type="Timer" parent="Panel" unique_id=1696360272]
+wait_time = 0.05
+
+[connection signal="timeout" from="Panel/LetterTimer" to="." method="_on_letter_timer_timeout"]
