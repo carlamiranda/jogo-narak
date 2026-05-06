@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://qlg2oi6hhok7"]
+
+[ext_resource type="PackedScene" uid="uid://ekns5nv833c7" path="res://scenes/CenaInicial.tscn" id="2_67w0c"]
+[ext_resource type="Script" uid="uid://0iuuyrwo63ro" path="res://scenes/Dialogo.gd" id="3_els38"]
+[ext_resource type="Texture2D" uid="uid://cmf17uqrgn8ll" path="res://sprites/mother.jpg" id="3_vyewl"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=333622715]
+script = ExtResource("3_els38")
+
+[node name="Node2D" parent="." unique_id=1005623734 instance=ExtResource("2_67w0c")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=74813850]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=756718248]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="." unique_id=1222909685]
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1591277569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer" unique_id=362647995]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+text = "Vou ter que esticar o turno hoje."
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1191211175]
+layout_direction = 3
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1592468002]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("3_vyewl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=39084764]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mãe"
+horizontal_alignment = 1
+vertical_alignment = 1
