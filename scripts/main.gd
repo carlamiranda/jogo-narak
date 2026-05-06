@@ -140,4 +140,4 @@ func mostrar_final() -> void:
 #reinicia o jogo
 func reiniciar() -> void:
 	GameState.resetar_jogo()
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/CenaInicial.tscn")
