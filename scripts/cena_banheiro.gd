@@ -27,27 +27,27 @@ func iniciar_dialogo():
 		{
 			"nome":"Protagonista",
 			"texto":"Respira.",
-			"sprite": preload("res://sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 		},
 		{
 			"nome":"Protagonista",
 			"texto":"É só uma sala.",
-			"sprite": preload("res://sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 		},
 		{
 			"nome":"Protagonista",
 			"texto":"Então por que parece que eu vou morrer se entrar lá?",
-			"sprite": preload("res://sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 		},
 		{
 			"nome":"Protagonista",
 			"texto":"...",
-			"sprite": preload("res://sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 		},
 		{
 			"nome":"Protagonista",
 			"texto":"Eu só precisava de silêncio por um minuto.",
-			"sprite": preload("res://sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 		}
 	])
 

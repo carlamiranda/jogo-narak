@@ -61,7 +61,7 @@ text = "Aumentar confiança"
 layout_mode = 2
 text = "Resetar emoções"
 
-[node name="EmotionVisualController" type="Node" parent="." unique_id=478958936 node_paths=PackedStringArray("camera", "canvas_modulate", "color_rect_ansiedade")]
+[node name="EmotionVisualController" type="Node" parent="." unique_id=56324181 node_paths=PackedStringArray("camera", "canvas_modulate", "color_rect_ansiedade")]
 script = ExtResource("2_ctrvo")
 camera = NodePath("../Camera2D")
 canvas_modulate = NodePath("../CanvasModulate")

@@ -23,17 +23,17 @@ func _on_body_entered(body):
 			{
 				"nome":"Protagonista",
 				"texto":"!",
-				"sprite": preload("res://sprites/personagemprincipal.jpg")
+				"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 			},
 			{
 				"nome":"Menina",
 				"texto":"...",
-				"sprite": preload("res://sprites/meninabanheiro.webp")
+				"sprite": preload("res://assets/sprites/meninabanheiro.webp")
 			},
 			{
 				"nome":"Protagonista",
 				"texto":"...",
-				"sprite": preload("res://sprites/personagemprincipal.jpg")
+				"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 			}
 		], true)
 
@@ -69,17 +69,17 @@ func _on_body_entered(body):
 			{
 				"nome":"Protagonista",
 				"texto":"Ela tava se escondendo também.",
-				"sprite": preload("res://sprites/personagemprincipal.jpg")
+				"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 			},
 			{
 				"nome":"Protagonista",
 				"texto":"Achei que só eu fazia isso.",
-				"sprite": preload("res://sprites/personagemprincipal.jpg")
+				"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 			},
 			{
 				"nome":"Protagonista",
 				"texto":"Talvez eu consiga voltar amanhã.",
-				"sprite": preload("res://sprites/personagemprincipal.jpg")
+				"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
 			}
 		], true)
 

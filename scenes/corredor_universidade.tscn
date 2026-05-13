@@ -1,116 +1,26 @@
 [gd_scene format=3 uid="uid://clcjwuejnvv7q"]
 
-[ext_resource type="Script" uid="uid://by5u0lft2gdlg" path="res://scenes/porta_escolha.gd" id="1_xqtrm"]
+[ext_resource type="Script" uid="uid://cf7w0ekqdsk4m" path="res://scripts/corredor_universidade.gd" id="1_o6gcn"]
+[ext_resource type="Script" uid="uid://by5u0lft2gdlg" path="res://scripts/porta_escolha.gd" id="1_xqtrm"]
 [ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scripts/protagonista.gd" id="2_wfv76"]
-[ext_resource type="Texture2D" uid="uid://bkdon0fmh5btd" path="res://sprites/corredor escola.jpg" id="2_xqtrm"]
-[ext_resource type="Texture2D" uid="uid://deiueq1v6wg48" path="res://sprites/protagonista/Margery_Run Right_1.png" id="5_gk2fy"]
-[ext_resource type="Texture2D" uid="uid://d2yjoktgdj3ei" path="res://sprites/protagonista/Margery_Idle Right_1.png" id="5_o6gcn"]
-[ext_resource type="Texture2D" uid="uid://bkfglcbo0pama" path="res://sprites/protagonista/Margery_Run Right_0.png" id="5_xqtrm"]
-
-[sub_resource type="GDScript" id="GDScript_rlril"]
-script/source = "extends Node2D
-
-@onready var panel = $CanvasLayer/Panel
-@onready var label = $CanvasLayer/Panel/VBoxContainer/LabelSituacao
-@onready var botao_a = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoA
-@onready var botao_b = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoB
-
-@onready var fade = $CanvasLayer/Fade
-@onready var titulo = $CanvasLayer/TituloIntro
-
-@onready var protagonista = $Protagonista
-@onready var destino_banheiro = $PortaBanheiro/DestinoBanheiro
-
-var escolha_ativa := false
-
-func _ready():
-	fade.color.a = 1.0
-
-	await intro_titulo()
-	await fade_in()
-
-	panel.visible = false
-
-	botao_a.pressed.connect(_ir_sala)
-	botao_b.pressed.connect(_ir_banheiro)
-
-
-func intro_titulo():
-	titulo.visible = true
-	titulo.modulate.a = 0.0
-
-	var t := 0.0
-
-	while t < 1.0:
-		t += 0.02
-		titulo.modulate.a = t
-		await get_tree().process_frame
-
-	await get_tree().create_timer(1.2).timeout
-
-	while t > 0.0:
-		t -= 0.02
-		titulo.modulate.a = t
-		await get_tree().process_frame
-
-	titulo.visible = false
-
-
-func fade_in():
-	fade.visible = true
-	var t := 0.0
-
-	while t < 1.0:
-		t += 0.02
-		fade.color.a = 1.0 - t
-		await get_tree().process_frame
-
-	fade.visible = false
-
-
-func fade_out():
-	fade.visible = true
-	var t := 0.0
-
-	while t < 1.0:
-		t += 0.02
-		fade.color.a = t
-		await get_tree().process_frame
-
-
-func ativar_ui():
-	if escolha_ativa:
-		return
-
-	escolha_ativa = true
-
-	protagonista.pode_andar = false
-	protagonista.velocity = Vector2.ZERO
-
-	panel.visible = true
-
-	label.text = \"Você está no corredor. O que fazer?\"
-	botao_a.text = \"Entrar na sala\"
-	botao_b.text = \"Ir ao banheiro\"
-
-
-func _ir_sala():
-	panel.visible = false
-	escolha_ativa = false
-	protagonista.pode_andar = true
-
-
-func _ir_banheiro():
-	panel.visible = false
-	escolha_ativa = false
-
-	protagonista.pode_andar = false
-	protagonista.andando_automatico = true
-	protagonista.destino = destino_banheiro.global_position
-
-	protagonista.trocar_cena = true
-	protagonista.cena_destino = \"res://scenes/CenaBanheiro.tscn\"
-"
+[ext_resource type="Texture2D" uid="uid://bkdon0fmh5btd" path="res://assets/sprites/corredor escola.jpg" id="2_xqtrm"]
+[ext_resource type="Texture2D" uid="uid://deiueq1v6wg48" path="res://assets/characters/protagonista/Margery_Run Right_1.png" id="5_gk2fy"]
+[ext_resource type="Texture2D" uid="uid://d2yjoktgdj3ei" path="res://assets/characters/protagonista/Margery_Idle Right_1.png" id="5_o6gcn"]
+[ext_resource type="Texture2D" uid="uid://cgl2dtvve7qs2" path="res://assets/characters/protagonista/Margery_Idle Left_0.png" id="5_q0oht"]
+[ext_resource type="Texture2D" uid="uid://bkfglcbo0pama" path="res://assets/characters/protagonista/Margery_Run Right_0.png" id="5_xqtrm"]
+[ext_resource type="Texture2D" uid="uid://yg4g1u63v1sc" path="res://assets/characters/protagonista/Margery_Idle Left_1.png" id="6_ovilh"]
+[ext_resource type="Texture2D" uid="uid://ur88rub3oo20" path="res://assets/characters/protagonista/Margery_Idle Right_0.png" id="7_38ue3"]
+[ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="8_oihjv"]
+[ext_resource type="Texture2D" uid="uid://c66b28kjwdf1a" path="res://assets/characters/protagonista/Margery_Run Left_0.png" id="9_mq501"]
+[ext_resource type="Texture2D" uid="uid://b300kbnsv3lgo" path="res://assets/characters/protagonista/Margery_Run Left_1.png" id="10_mc7q7"]
+[ext_resource type="Texture2D" uid="uid://bitooaesj2wwc" path="res://assets/characters/protagonista/Margery_Run Left_2.png" id="11_hvyu8"]
+[ext_resource type="Texture2D" uid="uid://hox538uon0kv" path="res://assets/characters/protagonista/Margery_Run Left_3.png" id="12_tuwou"]
+[ext_resource type="Texture2D" uid="uid://c40tgeyekmoh8" path="res://assets/characters/protagonista/Margery_Run Left_4.png" id="13_thdlp"]
+[ext_resource type="Texture2D" uid="uid://baae1wr7t526u" path="res://assets/characters/protagonista/Margery_Run Left_5.png" id="14_8nlp8"]
+[ext_resource type="Texture2D" uid="uid://ubp6djm8vjig" path="res://assets/characters/protagonista/Margery_Run Right_2.png" id="17_pg7ve"]
+[ext_resource type="Texture2D" uid="uid://dcubxnmv5twfm" path="res://assets/characters/protagonista/Margery_Run Right_3.png" id="18_1s4jr"]
+[ext_resource type="Texture2D" uid="uid://bnjx372n6kw64" path="res://assets/characters/protagonista/Margery_Run Right_4.png" id="19_mx0l1"]
+[ext_resource type="Texture2D" uid="uid://5ygohou7omqo" path="res://assets/characters/protagonista/Margery_Run Right_5.png" id="20_lin5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqtrm"]
 size = Vector2(118, 628)
@@ -119,9 +29,49 @@ size = Vector2(118, 628)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xqtrm"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q0oht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ovilh")
+}],
 "loop": true,
-"name": &"default",
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_38ue3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o6gcn")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mq501")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mc7q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hvyu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tuwou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_thdlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8nlp8")
+}],
+"loop": true,
+"name": &"walk_left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -129,10 +79,19 @@ animations = [{
 "texture": ExtResource("5_xqtrm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_o6gcn")
+"texture": ExtResource("5_gk2fy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_gk2fy")
+"texture": ExtResource("17_pg7ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1s4jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mx0l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lin5t")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -148,7 +107,10 @@ size = Vector2(12.133362, 20)
 corner_detail = 10
 
 [node name="CorredorUniversidade" type="Node2D" unique_id=1260172513]
-script = SubResource("GDScript_rlril")
+script = ExtResource("1_o6gcn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=42084858]
+offset = Vector2(576, 324)
 
 [node name="PortaSala" type="Area2D" parent="." unique_id=2014318428]
 script = ExtResource("1_xqtrm")
@@ -171,26 +133,28 @@ scale = Vector2(1.1286571, 1.3291197)
 texture = ExtResource("2_xqtrm")
 
 [node name="Protagonista" type="CharacterBody2D" parent="." unique_id=2026188434]
-position = Vector2(175, 513.00006)
-scale = Vector2(3.75, 3.6538465)
+position = Vector2(207, 470)
+scale = Vector2(6, 5.846)
 script = ExtResource("2_wfv76")
 velocidade = 300.0
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1370025298]
-position = Vector2(-35.200005, 26.821033)
-scale = Vector2(0.656, 0.721)
+position = Vector2(-21.833332, 17.447815)
+scale = Vector2(1, 1.099)
 sprite_frames = SubResource("SpriteFrames_xqtrm")
-animation = &"walk_right"
+animation = &"idle_right"
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=520109825]
-position = Vector2(-36.266666, 24.905243)
+position = Vector2(-22.5, 16.934643)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_gk2fy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1860155265]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1658115494]
-custom_minimum_size = Vector2(600, 300)
+custom_minimum_size = Vector2(400, 300)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -225,6 +189,8 @@ layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -234,6 +200,10 @@ color = Color(0, 0, 0, 0.003921569)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 2.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "PRIMEIRO DIA"
@@ -251,6 +221,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="EmotionVisualController" type="Node" parent="." unique_id=362521828 node_paths=PackedStringArray("camera", "canvas_modulate", "color_rect_ansiedade")]
+script = ExtResource("8_oihjv")
+camera = NodePath("../Camera2D")
+canvas_modulate = NodePath("../CanvasModulate")
+color_rect_ansiedade = NodePath("../ColorRectAnsiedade")
 
 [connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
 [connection signal="body_entered" from="PortaSala" to="PortaSala" method="_on_body_entered"]

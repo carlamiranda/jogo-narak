@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkdon0fmh5btd"
-path="res://.godot/imported/corredor escola.jpg-409b16dba2cb55dc81cb0bac7c888c04.ctex"
+path="res://.godot/imported/corredor escola.jpg-c917ba950211e15331affaf594cde134.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/corredor escola.jpg"
-dest_files=["res://.godot/imported/corredor escola.jpg-409b16dba2cb55dc81cb0bac7c888c04.ctex"]
+source_file="res://assets/sprites/corredor escola.jpg"
+dest_files=["res://.godot/imported/corredor escola.jpg-c917ba950211e15331affaf594cde134.ctex"]
 
 [params]
 

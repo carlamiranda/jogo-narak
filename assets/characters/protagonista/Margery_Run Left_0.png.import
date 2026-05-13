@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgl2dtvve7qs2"
-path="res://.godot/imported/Margery_Idle Left_0.png-84426375f431822605a78ac4dfbeeae0.ctex"
+uid="uid://c66b28kjwdf1a"
+path="res://.godot/imported/Margery_Run Left_0.png-c1004b77c135497a060ecb034aa6f31d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/protagonista/Margery_Idle Left_0.png"
-dest_files=["res://.godot/imported/Margery_Idle Left_0.png-84426375f431822605a78ac4dfbeeae0.ctex"]
+source_file="res://assets/characters/protagonista/Margery_Run Left_0.png"
+dest_files=["res://.godot/imported/Margery_Run Left_0.png-c1004b77c135497a060ecb034aa6f31d.ctex"]
 
 [params]
 

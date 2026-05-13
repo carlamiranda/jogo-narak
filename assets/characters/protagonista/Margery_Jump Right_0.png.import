@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8l1pdumc77bg"
-path="res://.godot/imported/Margery_Jump Left_0.png-47762d0fe7dd07ed5d6ef3968aeb7737.ctex"
+uid="uid://df8vblb86ommn"
+path="res://.godot/imported/Margery_Jump Right_0.png-475f83133c0c5f8ca359ec05267b6b03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/protagonista/Margery_Jump Left_0.png"
-dest_files=["res://.godot/imported/Margery_Jump Left_0.png-47762d0fe7dd07ed5d6ef3968aeb7737.ctex"]
+source_file="res://assets/characters/protagonista/Margery_Jump Right_0.png"
+dest_files=["res://.godot/imported/Margery_Jump Right_0.png-475f83133c0c5f8ca359ec05267b6b03.ctex"]
 
 [params]
 
