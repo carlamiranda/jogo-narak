@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var velocidade = 400.0  # Velocidade de cruzeiro
-var aceleracao = 200.0  # O quão rápido ele chega na velocidade
-var movendo = false     # Variável para a gente controlar pelo "script" da história
+var velocidade = 400.0  
+var aceleracao = 200.0  
+var movendo = false     
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"): # Aperte Espaço para testar
 		movendo = true
 	
 	if movendo:

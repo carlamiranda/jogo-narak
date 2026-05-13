@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://clcjwuejnvv7q"]
+
+[ext_resource type="Script" uid="uid://by5u0lft2gdlg" path="res://scenes/porta_escolha.gd" id="1_xqtrm"]
+[ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scripts/protagonista.gd" id="2_wfv76"]
+[ext_resource type="Texture2D" uid="uid://bkdon0fmh5btd" path="res://sprites/corredor escola.jpg" id="2_xqtrm"]
+[ext_resource type="Texture2D" uid="uid://deiueq1v6wg48" path="res://sprites/protagonista/Margery_Run Right_1.png" id="5_gk2fy"]
+[ext_resource type="Texture2D" uid="uid://d2yjoktgdj3ei" path="res://sprites/protagonista/Margery_Idle Right_1.png" id="5_o6gcn"]
+[ext_resource type="Texture2D" uid="uid://bkfglcbo0pama" path="res://sprites/protagonista/Margery_Run Right_0.png" id="5_xqtrm"]
+
+[sub_resource type="GDScript" id="GDScript_rlril"]
+script/source = "extends Node2D
+
+@onready var panel = $CanvasLayer/Panel
+@onready var label = $CanvasLayer/Panel/VBoxContainer/LabelSituacao
+@onready var botao_a = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoA
+@onready var botao_b = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoB
+
+@onready var fade = $CanvasLayer/Fade
+@onready var titulo = $CanvasLayer/TituloIntro
+
+@onready var protagonista = $Protagonista
+@onready var destino_banheiro = $PortaBanheiro/DestinoBanheiro
+
+var escolha_ativa := false
+
+func _ready():
+	fade.color.a = 1.0
+
+	await intro_titulo()
+	await fade_in()
+
+	panel.visible = false
+
+	botao_a.pressed.connect(_ir_sala)
+	botao_b.pressed.connect(_ir_banheiro)
+
+
+func intro_titulo():
+	titulo.visible = true
+	titulo.modulate.a = 0.0
+
+	var t := 0.0
+
+	while t < 1.0:
+		t += 0.02
+		titulo.modulate.a = t
+		await get_tree().process_frame
+
+	await get_tree().create_timer(1.2).timeout
+
+	while t > 0.0:
+		t -= 0.02
+		titulo.modulate.a = t
+		await get_tree().process_frame
+
+	titulo.visible = false
+
+
+func fade_in():
+	fade.visible = true
+	var t := 0.0
+
+	while t < 1.0:
+		t += 0.02
+		fade.color.a = 1.0 - t
+		await get_tree().process_frame
+
+	fade.visible = false
+
+
+func fade_out():
+	fade.visible = true
+	var t := 0.0
+
+	while t < 1.0:
+		t += 0.02
+		fade.color.a = t
+		await get_tree().process_frame
+
+
+func ativar_ui():
+	if escolha_ativa:
+		return
+
+	escolha_ativa = true
+
+	protagonista.pode_andar = false
+	protagonista.velocity = Vector2.ZERO
+
+	panel.visible = true
+
+	label.text = \"Você está no corredor. O que fazer?\"
+	botao_a.text = \"Entrar na sala\"
+	botao_b.text = \"Ir ao banheiro\"
+
+
+func _ir_sala():
+	panel.visible = false
+	escolha_ativa = false
+	protagonista.pode_andar = true
+
+
+func _ir_banheiro():
+	panel.visible = false
+	escolha_ativa = false
+
+	protagonista.pode_andar = false
+	protagonista.andando_automatico = true
+	protagonista.destino = destino_banheiro.global_position
+
+	protagonista.trocar_cena = true
+	protagonista.cena_destino = \"res://scenes/CenaBanheiro.tscn\"
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqtrm"]
+size = Vector2(118, 628)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfdgj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqtrm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xqtrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o6gcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gk2fy")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk2fy"]
+size = Vector2(12.133362, 20)
+
+[sub_resource type="Theme" id="Theme_gk2fy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqtrm"]
+corner_detail = 10
+
+[node name="CorredorUniversidade" type="Node2D" unique_id=1260172513]
+script = SubResource("GDScript_rlril")
+
+[node name="PortaSala" type="Area2D" parent="." unique_id=2014318428]
+script = ExtResource("1_xqtrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaSala" unique_id=2032355456]
+position = Vector2(363, 353)
+shape = SubResource("RectangleShape2D_xqtrm")
+
+[node name="PortaBanheiro" type="Area2D" parent="." unique_id=2046055625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaBanheiro" unique_id=1572416101]
+shape = SubResource("RectangleShape2D_gfdgj")
+
+[node name="DestinoBanheiro" type="Marker2D" parent="PortaBanheiro" unique_id=148950037]
+position = Vector2(1100, 515)
+
+[node name="Corredor" type="Sprite2D" parent="." unique_id=793538981]
+position = Vector2(580, 339.40366)
+scale = Vector2(1.1286571, 1.3291197)
+texture = ExtResource("2_xqtrm")
+
+[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=2026188434]
+position = Vector2(175, 513.00006)
+scale = Vector2(3.75, 3.6538465)
+script = ExtResource("2_wfv76")
+velocidade = 300.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1370025298]
+position = Vector2(-35.200005, 26.821033)
+scale = Vector2(0.656, 0.721)
+sprite_frames = SubResource("SpriteFrames_xqtrm")
+animation = &"walk_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=520109825]
+position = Vector2(-36.266666, 24.905243)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_gk2fy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1860155265]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1658115494]
+custom_minimum_size = Vector2(600, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gk2fy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqtrm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=917705147]
+layout_direction = 4
+layout_mode = 0
+offset_top = 191.0
+offset_right = 600.0
+offset_bottom = 324.0
+
+[node name="LabelSituacao" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=545415855]
+layout_mode = 2
+
+[node name="ButtonOpcaoA" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1236756719]
+layout_mode = 2
+
+[node name="ButtonOpcaoB" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1252897719]
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=1041992555]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.003921569)
+
+[node name="TituloIntro" type="Label" parent="CanvasLayer" unique_id=1356803804]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRIMEIRO DIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=724769345]
+position = Vector2(0, 22)
+
+[node name="ColorRectAnsiedade" type="ColorRect" parent="." unique_id=819819378]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
+[connection signal="body_entered" from="PortaSala" to="PortaSala" method="_on_body_entered"]
+[connection signal="body_entered" from="PortaBanheiro" to="." method="_on_porta_banheiro_body_entered"]

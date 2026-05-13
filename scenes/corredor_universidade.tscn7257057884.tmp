@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://clcjwuejnvv7q"]
+
+[ext_resource type="Texture2D" uid="uid://c4r1ps1ci5my2" path="res://scenes/corredor escola.jpg" id="4_xqtrm"]
+[ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scenes/protagonista.gd" id="6_oihjv"]
+
+[sub_resource type="GDScript" id="GDScript_rlril"]
+script/source = "extends Node2D
+
+
+func _on_porta_sala_body_entered(body):
+
+	if body.name == \"Protagonista\":
+
+		$CanvasLayer/Panel.visible = true
+
+
+func _on_button_pressed():
+
+	print(\"Escolheu sala\")
+
+
+func _on_button_2_pressed():
+
+	print(\"Escolheu banheiro\")
+"
+
+[sub_resource type="GDScript" id="GDScript_bdlul"]
+script/source = "func _on_porta_sala_body_entered(body):
+
+	if body.name == \"Player\":
+
+		$ChoiceUI.visible = true
+"
+
+[sub_resource type="GDScript" id="GDScript_wfv76"]
+script/source = "func _on_porta_sala_body_entered(body):
+
+	if body.name == \"Player\":
+		mostrar_escolha_sala()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfdgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk2fy"]
+
+[node name="CorredorUniversidade" type="Node2D" unique_id=1260172513]
+script = SubResource("GDScript_rlril")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=307898596]
+
+[node name="PortaSala" type="Area2D" parent="." unique_id=2014318428]
+script = SubResource("GDScript_bdlul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaSala" unique_id=2032355456]
+
+[node name="PortaBanheiro" type="Area2D" parent="." unique_id=2046055625]
+script = SubResource("GDScript_wfv76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaBanheiro" unique_id=1572416101]
+shape = SubResource("RectangleShape2D_gfdgj")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1800020728]
+
+[node name="Panel" type="Panel" parent="CanvasLayer2" unique_id=1535257240]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer2/Panel" unique_id=926050297]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="CanvasLayer2/Panel" unique_id=1401459727]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="CanvasLayer2/Panel" unique_id=1170170135]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Corredor" type="Sprite2D" parent="." unique_id=793538981]
+position = Vector2(-0.4999771, 0.50001144)
+scale = Vector2(1.1716037, 1.3567134)
+texture = ExtResource("4_xqtrm")
+
+[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=2026188434]
+position = Vector2(-432, 95.00001)
+scale = Vector2(3.75, 3.6538465)
+script = ExtResource("6_oihjv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1370025298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=520109825]
+shape = SubResource("RectangleShape2D_gk2fy")
+
+[connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
+[connection signal="pressed" from="CanvasLayer2/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Panel/Button2" to="." method="_on_button_2_pressed"]
