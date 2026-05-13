@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://botn303abs7yo"
-path="res://.godot/imported/road&lamps_pale.png-6baa185ca45201ca1495b0076c26bf82.ctex"
+uid="uid://bodwsax8a1btk"
+path="res://.godot/imported/fountain&bush_pale.png-6c011ca2ff8f5e1af62cd408f329664a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/road&lamps_pale.png"
-dest_files=["res://.godot/imported/road&lamps_pale.png-6baa185ca45201ca1495b0076c26bf82.ctex"]
+source_file="res://assets/sprites/city/fountain&bush_pale.png"
+dest_files=["res://.godot/imported/fountain&bush_pale.png-6c011ca2ff8f5e1af62cd408f329664a.ctex"]
 
 [params]
 

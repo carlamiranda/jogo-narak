@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmf17uqrgn8ll"
-path="res://.godot/imported/mother.jpg-2e58178cb1f0b684edeaa7e40004cb1a.ctex"
+uid="uid://uxhgpowygmbm"
+path="res://.godot/imported/road_pale.png-88b075366e3206ca6351a368d2d33fd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mother.jpg"
-dest_files=["res://.godot/imported/mother.jpg-2e58178cb1f0b684edeaa7e40004cb1a.ctex"]
+source_file="res://assets/sprites/city/road_pale.png"
+dest_files=["res://.godot/imported/road_pale.png-88b075366e3206ca6351a368d2d33fd4.ctex"]
 
 [params]
 

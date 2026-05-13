@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvtihj2i8eox"
-path="res://.godot/imported/houses1_pale.png-dd6756236ffa9639e39ee95fdbf41279.ctex"
+uid="uid://cy8erugaw0vgw"
+path="res://.godot/imported/Walking.png-28125677c40177b1f6327dfc23db4bb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/houses1_pale.png"
-dest_files=["res://.godot/imported/houses1_pale.png-dd6756236ffa9639e39ee95fdbf41279.ctex"]
+source_file="res://assets/sprites/Walking.png"
+dest_files=["res://.godot/imported/Walking.png-28125677c40177b1f6327dfc23db4bb1.ctex"]
 
 [params]
 

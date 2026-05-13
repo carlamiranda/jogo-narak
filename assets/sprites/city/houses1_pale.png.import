@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be4q7pcg5qpm4"
-path="res://.godot/imported/houses_pale.png-d3664489c1da6c20fd069b3bccf29aa0.ctex"
+uid="uid://cvtihj2i8eox"
+path="res://.godot/imported/houses1_pale.png-a76f54cb5f1db470f894acc7c18c029a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/houses_pale.png"
-dest_files=["res://.godot/imported/houses_pale.png-d3664489c1da6c20fd069b3bccf29aa0.ctex"]
+source_file="res://assets/sprites/city/houses1_pale.png"
+dest_files=["res://.godot/imported/houses1_pale.png-a76f54cb5f1db470f894acc7c18c029a.ctex"]
 
 [params]
 

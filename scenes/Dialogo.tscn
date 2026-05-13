@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://qlg2oi6hhok7"]
 
 [ext_resource type="PackedScene" uid="uid://ekns5nv833c7" path="res://scenes/CenaInicial.tscn" id="2_67w0c"]
-[ext_resource type="Script" uid="uid://0iuuyrwo63ro" path="res://scenes/Dialogo.gd" id="3_els38"]
-[ext_resource type="Texture2D" uid="uid://cmf17uqrgn8ll" path="res://sprites/mother.jpg" id="3_vyewl"]
+[ext_resource type="Script" path="res://scenes/Dialogo.gd" id="3_els38"]
+[ext_resource type="Texture2D" uid="uid://cmf17uqrgn8ll" path="res://assets/sprites/mother.jpg" id="3_vyewl"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=333622715]
 script = ExtResource("3_els38")

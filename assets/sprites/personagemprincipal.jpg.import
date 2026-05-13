@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgxpq4q8dt7rw"
-path="res://.godot/imported/minishop&callbox_pale.png-485d402e79122564f53d24fdcca75261.ctex"
+uid="uid://3brok06haqd6"
+path="res://.godot/imported/personagemprincipal.jpg-ad0f92b4da9c4dd0278fac0b063a3153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/minishop&callbox_pale.png"
-dest_files=["res://.godot/imported/minishop&callbox_pale.png-485d402e79122564f53d24fdcca75261.ctex"]
+source_file="res://assets/sprites/personagemprincipal.jpg"
+dest_files=["res://.godot/imported/personagemprincipal.jpg-ad0f92b4da9c4dd0278fac0b063a3153.ctex"]
 
 [params]
 

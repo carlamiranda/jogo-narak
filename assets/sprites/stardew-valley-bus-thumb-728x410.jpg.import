@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doubvk2j1xfr"
-path="res://.godot/imported/crosswalk_pale.png-8af513e930374d961a99cd074f3c1f5c.ctex"
+uid="uid://dsmhhf2uiw5ly"
+path="res://.godot/imported/stardew-valley-bus-thumb-728x410.jpg-589a7dd51ea50bb543d40393c02477a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/crosswalk_pale.png"
-dest_files=["res://.godot/imported/crosswalk_pale.png-8af513e930374d961a99cd074f3c1f5c.ctex"]
+source_file="res://assets/sprites/stardew-valley-bus-thumb-728x410.jpg"
+dest_files=["res://.godot/imported/stardew-valley-bus-thumb-728x410.jpg-589a7dd51ea50bb543d40393c02477a3.ctex"]
 
 [params]
 

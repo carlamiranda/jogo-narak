@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u3t8y83wtd5u"
-path="res://.godot/imported/Sky_pale2.png-df51b8237c3312a6285c4324461badc7.ctex"
+uid="uid://cmf17uqrgn8ll"
+path="res://.godot/imported/mother.jpg-febfa8c23a3d4e449eb7e267cf46dc90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/Sky_pale2.png"
-dest_files=["res://.godot/imported/Sky_pale2.png-df51b8237c3312a6285c4324461badc7.ctex"]
+source_file="res://assets/sprites/mother.jpg"
+dest_files=["res://.godot/imported/mother.jpg-febfa8c23a3d4e449eb7e267cf46dc90.ctex"]
 
 [params]
 

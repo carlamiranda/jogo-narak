@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bodwsax8a1btk"
-path="res://.godot/imported/fountain&bush_pale.png-e797604209bd8591841dcb0040d35380.ctex"
+uid="uid://8kc752vm27b1"
+path="res://.godot/imported/car.png-b67c046548b9ef73621c3e8f8a43bb61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/fountain&bush_pale.png"
-dest_files=["res://.godot/imported/fountain&bush_pale.png-e797604209bd8591841dcb0040d35380.ctex"]
+source_file="res://assets/sprites/things/car.png"
+dest_files=["res://.godot/imported/car.png-b67c046548b9ef73621c3e8f8a43bb61.ctex"]
 
 [params]
 

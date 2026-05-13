@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uxhgpowygmbm"
-path="res://.godot/imported/road_pale.png-36ec3ae8ba7b3be9a3b8f98976cc7f21.ctex"
+uid="uid://bgxpq4q8dt7rw"
+path="res://.godot/imported/minishop&callbox_pale.png-955f4d9b786c10236f729acb96c5c039.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/city/road_pale.png"
-dest_files=["res://.godot/imported/road_pale.png-36ec3ae8ba7b3be9a3b8f98976cc7f21.ctex"]
+source_file="res://assets/sprites/city/minishop&callbox_pale.png"
+dest_files=["res://.godot/imported/minishop&callbox_pale.png-955f4d9b786c10236f729acb96c5c039.ctex"]
 
 [params]
 
