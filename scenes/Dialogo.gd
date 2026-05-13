@@ -22,7 +22,6 @@ func mostrar_fala():
 		texto.text = fala["texto"]
 		nome.text = fala["nome"]
 
-		# agora vem direto pronto (sem load)
 		personagem.texture = fala["sprite"]
 	else:
 		queue_free()

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cscojod04d50k"]
+
+[ext_resource type="Script" uid="uid://xfddo5noylcv" path="res://scenes/cena_banheiro.gd" id="1_j0pdu"]
+[ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scripts/protagonista.gd" id="2_dfo64"]
+[ext_resource type="Texture2D" uid="uid://pxmplmtoucj6" path="res://sprites/banheiro.jpg" id="2_j0pdu"]
+[ext_resource type="Texture2D" uid="uid://ur88rub3oo20" path="res://sprites/protagonista/Margery_Idle Right_0.png" id="4_d7d3n"]
+[ext_resource type="Texture2D" uid="uid://d2yjoktgdj3ei" path="res://sprites/protagonista/Margery_Idle Right_1.png" id="4_j0pdu"]
+[ext_resource type="Script" uid="uid://cdwq7rlmq5012" path="res://scenes/area_olhar.gd" id="6_dfo64"]
+[ext_resource type="Script" uid="uid://c24q8w553v0kv" path="res://scenes/menina_banheiro.gd" id="6_j0pdu"]
+[ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="7_fyktr"]
+[ext_resource type="Script" uid="uid://bp65w3us6ei1" path="res://scenes/caixa_dialogo_banheiro.gd" id="8_d7d3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugw0j"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j0pdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d7d3n")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfo64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugw0j"]
+size = Vector2(80.5, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyktr"]
+size = Vector2(116, 694)
+
+[node name="Node2D" type="Node2D" unique_id=89873758]
+script = ExtResource("1_j0pdu")
+
+[node name="Banheiro" type="Sprite2D" parent="." unique_id=2094154317]
+position = Vector2(572, 337)
+scale = Vector2(1.2008369, 1.2355075)
+texture = ExtResource("2_j0pdu")
+
+[node name="Protagonista" type="CharacterBody2D" parent="Banheiro" unique_id=413443715]
+position = Vector2(-432.19858, 65.5601)
+scale = Vector2(3.75, 3.6538465)
+script = ExtResource("2_dfo64")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Banheiro/Protagonista" unique_id=1807973911]
+position = Vector2(0.44413567, 36.993103)
+scale = Vector2(0.7333336, 0.7210525)
+sprite_frames = SubResource("SpriteFrames_ugw0j")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Protagonista" unique_id=509459287]
+position = Vector2(1.9986076, 36.993103)
+shape = SubResource("RectangleShape2D_dfo64")
+
+[node name="MeninaBanheiro" type="CharacterBody2D" parent="Banheiro" unique_id=990774580]
+position = Vector2(-432.19858, 65.5601)
+scale = Vector2(3.75, 3.6538465)
+script = ExtResource("6_j0pdu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Banheiro/MeninaBanheiro" unique_id=352282980]
+position = Vector2(139.45828, 17.0567)
+scale = Vector2(0.7333336, 0.7210525)
+sprite_frames = SubResource("SpriteFrames_ugw0j")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/MeninaBanheiro" unique_id=934548719]
+position = Vector2(139.68036, 15.506088)
+shape = SubResource("RectangleShape2D_dfo64")
+
+[node name="AreaOlhar" type="Area2D" parent="." unique_id=1564612628]
+position = Vector2(671, 498)
+script = ExtResource("6_dfo64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOlhar" unique_id=738358943]
+position = Vector2(54.25, -16.5)
+shape = SubResource("RectangleShape2D_ugw0j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=417580366]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=800851845]
+position = Vector2(1174, 337)
+shape = SubResource("RectangleShape2D_fyktr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D" unique_id=1800800512]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D" unique_id=1154368276]
+position = Vector2(-53, 330)
+shape = SubResource("RectangleShape2D_fyktr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004057517]
+
+[node name="CaixaDialogoBanheiro" parent="CanvasLayer" unique_id=156308223 instance=ExtResource("7_fyktr")]
+visible = false
+script = ExtResource("8_d7d3n")
+
+[node name="SaidaBanheiro" type="Marker2D" parent="." unique_id=770342479]
+position = Vector2(0, 599)
+
+[connection signal="body_entered" from="AreaOlhar" to="AreaOlhar" method="_on_body_entered"]
