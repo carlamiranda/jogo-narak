@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c3gxeb0awaxbn"
-path="res://.godot/imported/Super Beatpop.ttf-c95b4c8951d8281548fb79ce50203edd.fontdata"
+path="res://.godot/imported/Super Beatpop.ttf-b7470d5dcb640999bea95a371cae209e.fontdata"
 
 [deps]
 
-source_file="res://assets/sprites/Fonts/Super Beatpop.ttf"
-dest_files=["res://.godot/imported/Super Beatpop.ttf-c95b4c8951d8281548fb79ce50203edd.fontdata"]
+source_file="res://assets/sprites/fonts/Super Beatpop.ttf"
+dest_files=["res://.godot/imported/Super Beatpop.ttf-b7470d5dcb640999bea95a371cae209e.fontdata"]
 
 [params]
 

@@ -8,49 +8,49 @@ func _ready():
 		{
 			"nome": "Mãe",
 			"texto": "Sim, eu sei do prazo! Mas isso não estava no cronograma original!",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 		{
 			"nome": "Mãe",
 			"texto": "Não, não dá pra simplesmente empurrar isso pra semana que vem…",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 		{
 			"nome": "Mãe",
 			"texto": "Eu estou a caminho agora, depois a gente resolve isso no escritório.",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 
 		{
 			"nome": "Mãe",
 			"texto": "*suspiro*… Não era pra estar assim hoje.",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 		{
 			"nome": "Mãe",
 			"texto": "Vou ter que esticar o turno hoje.",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 		{
 			"nome": "Mãe",
 			"texto": "Você volta de ônibus.",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 		{
 			"nome": "Mãe",
 			"texto": "Consegue se virar, né?",
-			"sprite": preload("res://assets/sprites/mother.jpg")
+			"sprite": preload("res://assets/sprites/characters/mother/portrait/mother_portrait.png")
 		},
 
 		{
 			"nome": "Protagonista",
 			"texto": "...",
-			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
 		},
 		{
 			"nome": "Protagonista",
 			"texto": "Ok.",
-			"sprite": preload("res://assets/sprites/personagemprincipal.jpg")
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
 		}
 	]
 	

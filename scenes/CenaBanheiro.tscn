@@ -1,129 +1,191 @@
 [gd_scene format=3 uid="uid://cscojod04d50k"]
 
-[ext_resource type="Script" uid="uid://xfddo5noylcv" path="res://scripts/cena_banheiro.gd" id="1_j0pdu"]
-[ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scripts/protagonista.gd" id="2_dfo64"]
-[ext_resource type="Texture2D" uid="uid://pxmplmtoucj6" path="res://assets/sprites/banheiro.jpg" id="2_j0pdu"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Run Right_1.png" id="3_fyktr"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Idle Right_1.png" id="4_j0pdu"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Run Right_0.png" id="5_j0pdu"]
-[ext_resource type="Script" uid="uid://cdwq7rlmq5012" path="res://scripts/area_olhar.gd" id="6_dfo64"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Run Left_1.png" id="6_f3o0g"]
-[ext_resource type="Script" uid="uid://c24q8w553v0kv" path="res://scripts/menina_banheiro.gd" id="6_j0pdu"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Idle Left_1.png" id="7_677gl"]
+[ext_resource type="Texture2D" uid="uid://pxmplmtoucj6" path="res://assets/sprites/environments/college/bathroom/banheiro.jpg" id="2_j0pdu"]
 [ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="7_fyktr"]
-[ext_resource type="Script" uid="uid://bp65w3us6ei1" path="res://scripts/caixa_dialogo_banheiro.gd" id="8_d7d3n"]
-[ext_resource type="Texture2D" path="res://sprites/protagonista/Margery_Run Left_0.png" id="11_5p1ei"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ugw0j"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_5p1ei")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_677gl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_f3o0g")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_j0pdu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_j0pdu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_fyktr")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
+[sub_resource type="GDScript" id="GDScript_hdi10"]
+script/source = "extends Node2D
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfo64"]
+@onready var dialogo = $CanvasLayer/CaixaDialogoBanheiro
+@onready var protagonista = $Banheiro/Protagonista
+@onready var fade = $CanvasLayer/Fade
+@onready var titulo = $CanvasLayer/TituloRefugio
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cljkq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_5p1ei")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_677gl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_f3o0g")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 5.0
-}]
+func _ready():
+	fade.visible = true
+	fade.color.a = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugw0j"]
-size = Vector2(46, 243)
+	titulo.visible = true
+	titulo.modulate.a = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyktr"]
-size = Vector2(116, 694)
+	dialogo.visible = false
+	protagonista.pode_andar = false
+
+	await intro_titulo()
+	await fade_in()
+
+	iniciar_dialogo()
+
+func iniciar_dialogo():
+	dialogo.visible = true
+
+	dialogo.iniciar_dialogo([
+		{
+			\"nome\":\"Protagonista\",
+			\"texto\":\"Respira.\",
+			\"sprite\": preload(\"res://assets/sprites/personagemprincipal.jpg\")
+		},
+		{
+			\"nome\":\"Protagonista\",
+			\"texto\":\"É só uma sala.\",
+			\"sprite\": preload(\"res://assets/sprites/personagemprincipal.jpg\")
+		},
+		{
+			\"nome\":\"Protagonista\",
+			\"texto\":\"Então por que parece que eu vou morrer se entrar lá?\",
+			\"sprite\": preload(\"res://assets/sprites/personagemprincipal.jpg\")
+		},
+		{
+			\"nome\":\"Protagonista\",
+			\"texto\":\"...\",
+			\"sprite\": preload(\"res://assets/sprites/personagemprincipal.jpg\")
+		},
+		{
+			\"nome\":\"Protagonista\",
+			\"texto\":\"Eu só precisava de silêncio por um minuto.\",
+			\"sprite\": preload(\"res://assets/sprites/personagemprincipal.jpg\")
+		}
+	])
+
+	await dialogo.tree_exited
+	protagonista.pode_andar = true
+
+func intro_titulo():
+	titulo.text = \"O Refúgio no Banheiro\"
+	var t = 0.0
+
+	while t < 1.0:
+		t += 0.03
+		titulo.modulate.a = t
+		await get_tree().process_frame
+
+	await get_tree().create_timer(1.2).timeout
+
+	while t > 0.0:
+		t -= 0.03
+		titulo.modulate.a = t
+		await get_tree().process_frame
+
+	titulo.visible = false
+
+func fade_in():
+	var t = 0.0
+
+	while t < 1.0:
+		t += 0.03
+		fade.color.a = 1.0 - t
+		await get_tree().process_frame
+
+	fade.visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_sb14l"]
+script/source = "extends Control
+
+@onready var retrato = $Panel/retrato
+@onready var nome_label = $Panel/nome
+@onready var texto_label = $Panel/texto
+@onready var timer = $Panel/LetterTimer
+
+var falas = []
+var fala_atual = 0
+var automatico = false
+
+
+func iniciar_dialogo(lista_falas, auto = false):
+
+	falas = lista_falas
+	fala_atual = 0
+	automatico = auto
+
+	visible = true
+
+	exibir_fala()
+
+
+func exibir_fala():
+
+	var dados = falas[fala_atual]
+
+	nome_label.text = dados[\"nome\"]
+	texto_label.text = dados[\"texto\"]
+	retrato.texture = dados[\"sprite\"]
+
+	if automatico:
+
+		texto_label.visible_ratio = 1
+
+		await get_tree().create_timer(2.0).timeout
+
+		proxima_fala()
+
+	else:
+
+		texto_label.visible_ratio = 0
+
+		timer.start()
+
+
+func _process(delta):
+
+	if automatico:
+		return
+
+	if not visible:
+		return
+
+	if Input.is_action_just_pressed(\"ui_accept\"):
+
+		if texto_label.visible_ratio < 1:
+
+			texto_label.visible_ratio = 1
+
+		else:
+
+			proxima_fala()
+
+
+func proxima_fala():
+
+	fala_atual += 1
+
+	if fala_atual < falas.size():
+
+		exibir_fala()
+
+	else:
+
+		visible = false
+
+
+func _on_letter_timer_timeout():
+
+	if texto_label.visible_ratio < 1:
+
+		texto_label.visible_ratio += 0.08
+
+	else:
+
+		timer.stop()
+"
 
 [node name="Node2D" type="Node2D" unique_id=89873758]
-script = ExtResource("1_j0pdu")
+script = SubResource("GDScript_hdi10")
 
 [node name="Banheiro" type="Sprite2D" parent="." unique_id=2094154317]
 position = Vector2(572, 337)
 scale = Vector2(1.2008369, 1.2355075)
 texture = ExtResource("2_j0pdu")
-
-[node name="Protagonista" type="CharacterBody2D" parent="Banheiro" unique_id=413443715]
-position = Vector2(-432.19858, 65.5601)
-scale = Vector2(3.75, 3.6538465)
-script = ExtResource("2_dfo64")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Banheiro/Protagonista" unique_id=1807973911]
-position = Vector2(-0.66620183, 39.872807)
-scale = Vector2(0.7333336, 0.7210525)
-sprite_frames = SubResource("SpriteFrames_ugw0j")
-animation = &"walk_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Protagonista" unique_id=509459287]
-position = Vector2(0.8882694, 39.20826)
-shape = SubResource("RectangleShape2D_dfo64")
-
-[node name="MeninaBanheiro" type="CharacterBody2D" parent="Banheiro" unique_id=990774580]
-position = Vector2(-434.69684, 92.26977)
-scale = Vector2(3.75, 3.6538465)
-script = ExtResource("6_j0pdu")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Banheiro/MeninaBanheiro" unique_id=352282980]
-position = Vector2(138.34798, 9.746685)
-scale = Vector2(0.7333336, 0.7210525)
-sprite_frames = SubResource("SpriteFrames_cljkq")
-animation = &"walk_left"
-
-[node name="AreaOlhar" type="Area2D" parent="." unique_id=1564612628]
-position = Vector2(671, 498)
-script = ExtResource("6_dfo64")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOlhar" unique_id=738358943]
-position = Vector2(152, 5)
-shape = SubResource("RectangleShape2D_ugw0j")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=417580366]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=800851845]
-position = Vector2(1174, 337)
-shape = SubResource("RectangleShape2D_fyktr")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D" unique_id=1800800512]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004057517]
 
@@ -153,6 +215,4 @@ vertical_alignment = 1
 
 [node name="CaixaDialogoBanheiro" parent="CanvasLayer" unique_id=156308223 instance=ExtResource("7_fyktr")]
 visible = false
-script = ExtResource("8_d7d3n")
-
-[connection signal="body_entered" from="AreaOlhar" to="AreaOlhar" method="_on_body_entered"]
+script = SubResource("GDScript_sb14l")

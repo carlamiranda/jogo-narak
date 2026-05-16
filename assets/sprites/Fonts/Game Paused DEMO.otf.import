@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bsibbvxh4d2qw"
-path="res://.godot/imported/Game Paused DEMO.otf-8089bfc3cb01c58b5cfd15d6ea7924a1.fontdata"
+path="res://.godot/imported/Game Paused DEMO.otf-e759c8a6de0dc0eb56fb68f9f62b716c.fontdata"
 
 [deps]
 
-source_file="res://assets/sprites/Fonts/Game Paused DEMO.otf"
-dest_files=["res://.godot/imported/Game Paused DEMO.otf-8089bfc3cb01c58b5cfd15d6ea7924a1.fontdata"]
+source_file="res://assets/sprites/fonts/Game Paused DEMO.otf"
+dest_files=["res://.godot/imported/Game Paused DEMO.otf-e759c8a6de0dc0eb56fb68f9f62b716c.fontdata"]
 
 [params]
 

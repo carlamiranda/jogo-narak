@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv7by47les0c5"]
 
 [ext_resource type="Script" uid="uid://725fa0lixdbp" path="res://scripts/visual_test.gd" id="1_jerwb"]
-[ext_resource type="Texture2D" uid="uid://cy8erugaw0vgw" path="res://assets/sprites/Walking.png" id="2_aviaa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Walking.png" id="2_aviaa"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="2_ctrvo"]
 
 [node name="VisualTest" type="Node2D" unique_id=1713699571]

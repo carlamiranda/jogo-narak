@@ -1,105 +1,7 @@
-[gd_scene format=3 uid="uid://clcjwuejnvv7q"]
+[gd_scene format=3 uid="uid://bbe86j8j4vgj2"]
 
 [ext_resource type="Script" uid="uid://cf7w0ekqdsk4m" path="res://scripts/corredor_universidade.gd" id="1_o6gcn"]
-[ext_resource type="Script" uid="uid://by5u0lft2gdlg" path="res://scripts/porta_escolha.gd" id="1_xqtrm"]
-[ext_resource type="Script" uid="uid://ep24aajb641u" path="res://scripts/protagonista.gd" id="2_wfv76"]
-[ext_resource type="Texture2D" uid="uid://bkdon0fmh5btd" path="res://assets/sprites/corredor escola.jpg" id="2_xqtrm"]
-[ext_resource type="Texture2D" uid="uid://deiueq1v6wg48" path="res://assets/characters/protagonista/Margery_Run Right_1.png" id="5_gk2fy"]
-[ext_resource type="Texture2D" uid="uid://d2yjoktgdj3ei" path="res://assets/characters/protagonista/Margery_Idle Right_1.png" id="5_o6gcn"]
-[ext_resource type="Texture2D" uid="uid://cgl2dtvve7qs2" path="res://assets/characters/protagonista/Margery_Idle Left_0.png" id="5_q0oht"]
-[ext_resource type="Texture2D" uid="uid://bkfglcbo0pama" path="res://assets/characters/protagonista/Margery_Run Right_0.png" id="5_xqtrm"]
-[ext_resource type="Texture2D" uid="uid://yg4g1u63v1sc" path="res://assets/characters/protagonista/Margery_Idle Left_1.png" id="6_ovilh"]
-[ext_resource type="Texture2D" uid="uid://ur88rub3oo20" path="res://assets/characters/protagonista/Margery_Idle Right_0.png" id="7_38ue3"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="8_oihjv"]
-[ext_resource type="Texture2D" uid="uid://c66b28kjwdf1a" path="res://assets/characters/protagonista/Margery_Run Left_0.png" id="9_mq501"]
-[ext_resource type="Texture2D" uid="uid://b300kbnsv3lgo" path="res://assets/characters/protagonista/Margery_Run Left_1.png" id="10_mc7q7"]
-[ext_resource type="Texture2D" uid="uid://bitooaesj2wwc" path="res://assets/characters/protagonista/Margery_Run Left_2.png" id="11_hvyu8"]
-[ext_resource type="Texture2D" uid="uid://hox538uon0kv" path="res://assets/characters/protagonista/Margery_Run Left_3.png" id="12_tuwou"]
-[ext_resource type="Texture2D" uid="uid://c40tgeyekmoh8" path="res://assets/characters/protagonista/Margery_Run Left_4.png" id="13_thdlp"]
-[ext_resource type="Texture2D" uid="uid://baae1wr7t526u" path="res://assets/characters/protagonista/Margery_Run Left_5.png" id="14_8nlp8"]
-[ext_resource type="Texture2D" uid="uid://ubp6djm8vjig" path="res://assets/characters/protagonista/Margery_Run Right_2.png" id="17_pg7ve"]
-[ext_resource type="Texture2D" uid="uid://dcubxnmv5twfm" path="res://assets/characters/protagonista/Margery_Run Right_3.png" id="18_1s4jr"]
-[ext_resource type="Texture2D" uid="uid://bnjx372n6kw64" path="res://assets/characters/protagonista/Margery_Run Right_4.png" id="19_mx0l1"]
-[ext_resource type="Texture2D" uid="uid://5ygohou7omqo" path="res://assets/characters/protagonista/Margery_Run Right_5.png" id="20_lin5t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqtrm"]
-size = Vector2(118, 628)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfdgj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xqtrm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_q0oht")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ovilh")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_38ue3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_o6gcn")
-}],
-"loop": true,
-"name": &"idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_mq501")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_mc7q7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_hvyu8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_tuwou")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_thdlp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_8nlp8")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_xqtrm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_gk2fy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_pg7ve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_1s4jr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_mx0l1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_lin5t")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk2fy"]
-size = Vector2(12.133362, 20)
 
 [sub_resource type="Theme" id="Theme_gk2fy"]
 
@@ -108,48 +10,6 @@ corner_detail = 10
 
 [node name="CorredorUniversidade" type="Node2D" unique_id=1260172513]
 script = ExtResource("1_o6gcn")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=42084858]
-offset = Vector2(576, 324)
-
-[node name="PortaSala" type="Area2D" parent="." unique_id=2014318428]
-script = ExtResource("1_xqtrm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaSala" unique_id=2032355456]
-position = Vector2(363, 353)
-shape = SubResource("RectangleShape2D_xqtrm")
-
-[node name="PortaBanheiro" type="Area2D" parent="." unique_id=2046055625]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PortaBanheiro" unique_id=1572416101]
-shape = SubResource("RectangleShape2D_gfdgj")
-
-[node name="DestinoBanheiro" type="Marker2D" parent="PortaBanheiro" unique_id=148950037]
-position = Vector2(1100, 515)
-
-[node name="Corredor" type="Sprite2D" parent="." unique_id=793538981]
-position = Vector2(580, 339.40366)
-scale = Vector2(1.1286571, 1.3291197)
-texture = ExtResource("2_xqtrm")
-
-[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=2026188434]
-position = Vector2(207, 470)
-scale = Vector2(6, 5.846)
-script = ExtResource("2_wfv76")
-velocidade = 300.0
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1370025298]
-position = Vector2(-21.833332, 17.447815)
-scale = Vector2(1, 1.099)
-sprite_frames = SubResource("SpriteFrames_xqtrm")
-animation = &"idle_right"
-speed_scale = 3.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=520109825]
-position = Vector2(-22.5, 16.934643)
-scale = Vector2(1, 1.0000002)
-shape = SubResource("RectangleShape2D_gk2fy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1860155265]
 
@@ -222,12 +82,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="EmotionVisualController" type="Node" parent="." unique_id=362521828 node_paths=PackedStringArray("camera", "canvas_modulate", "color_rect_ansiedade")]
+[node name="EmotionVisualController" type="Node" parent="." unique_id=362521828 node_paths=PackedStringArray("canvas_modulate", "color_rect_ansiedade")]
 script = ExtResource("8_oihjv")
-camera = NodePath("../Camera2D")
 canvas_modulate = NodePath("../CanvasModulate")
 color_rect_ansiedade = NodePath("../ColorRectAnsiedade")
-
-[connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
-[connection signal="body_entered" from="PortaSala" to="PortaSala" method="_on_body_entered"]
-[connection signal="body_entered" from="PortaBanheiro" to="." method="_on_porta_banheiro_body_entered"]
