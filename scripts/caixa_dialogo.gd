@@ -41,7 +41,7 @@ func proxima_fala():
 		exibir_fala()
 	else:
 		visible = false
-		get_tree().change_scene_to_file("res://scenes/corredor_universidade.tscn")
+		get_tree().change_scene_to_file("res://scenes/universidade/corredor_universidade.tscn")
 
 func _on_timer_timeout():
 	if texto_label.visible_ratio < 1:
