@@ -118,6 +118,16 @@ func ativar_ui():
 
 # OPÇÃO SALA
 func _ir_sala():
+	GameState.definir_rota("colorida")
+	GameState.alterar_estado(20, -20, 25, 30, 0)
+
+	print("Escolheu sala")
+	print("Rota: ", GameState.rota_atual)
+	print("Ansiedade: ", GameState.ansiedade)
+	print("Isolamento: ", GameState.isolamento)
+	print("Confiança: ", GameState.confianca)
+	print("Vínculo Colorida: ", GameState.vinculo_colorida)
+	print("Vínculo Quebrada: ", GameState.vinculo_quebrada)
 
 	panel.visible = false
 	escolha_ativa = false
@@ -127,6 +137,16 @@ func _ir_sala():
 
 # OPÇÃO BANHEIRO
 func _ir_banheiro():
+	GameState.definir_rota("espelho")
+	GameState.alterar_estado(-10, 30, 0, 0, 30)
+
+	print("Escolheu banheiro")
+	print("Rota: ", GameState.rota_atual)
+	print("Ansiedade: ", GameState.ansiedade)
+	print("Isolamento: ", GameState.isolamento)
+	print("Confiança: ", GameState.confianca)
+	print("Vínculo Colorida: ", GameState.vinculo_colorida)
+	print("Vínculo Quebrada: ", GameState.vinculo_quebrada)
 
 	panel.visible = false
 	escolha_ativa = false

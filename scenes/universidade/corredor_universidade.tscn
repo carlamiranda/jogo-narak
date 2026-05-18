@@ -13,11 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="10_mwarc"]
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="11_l3vci"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="12_ynm0n"]
-[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/ui/buttons/btn escolha.png" id="13_pgqhb"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="14_1r1ew"]
+[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="13_pgqhb"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="14_1r1ew"]
 [ext_resource type="Texture2D" uid="uid://c77o44dxgxskq" path="res://assets/sprites/characters/npc/Generic Female NPCs.png" id="17_7ubpm"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="18_7ubpm"]
 [ext_resource type="Texture2D" uid="uid://baihms7em0yun" path="res://assets/sprites/characters/npc/Generic Male NPCs.png" id="18_y58f6"]
+[ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="19_y58f6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlril"]
 texture = ExtResource("1_x803j")
@@ -2229,7 +2230,7 @@ position = Vector2(51, 70)
 shape = SubResource("RectangleShape2D_qk0mn")
 
 [node name="Camera2D" type="Camera2D" parent="Protagonista" unique_id=366541325]
-position = Vector2(557, 143)
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 2960
@@ -2435,5 +2436,22 @@ position = Vector2(1622, 545)
 texture = ExtResource("18_y58f6")
 region_enabled = true
 region_rect = Rect2(576, 498, 50, 98)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=375215235]
+
+[node name="ColorRectAnsiedade" type="ColorRect" parent="." unique_id=1394437618]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EmotionVisualController" type="Node" parent="." unique_id=457172371 node_paths=PackedStringArray("camera", "canvas_modulate", "color_rect_ansiedade")]
+script = ExtResource("19_y58f6")
+camera = NodePath("../Protagonista/Camera2D")
+canvas_modulate = NodePath("../CanvasModulate")
+color_rect_ansiedade = NodePath("../ColorRectAnsiedade")
 
 [connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
