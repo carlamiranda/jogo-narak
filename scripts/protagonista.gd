@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var velocidade := 500.0
+@export var limite_y_min := 300.0
+@export var limite_y_max := 520.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -48,7 +50,6 @@ func mover_automaticamente() -> void:
 	tocar_animacao_movimento(dir)
 
 
-# Movimento pelo teclado
 func mover_com_input() -> void:
 	var input_dir = Vector2.ZERO
 
@@ -67,6 +68,10 @@ func mover_com_input() -> void:
 	if input_dir != Vector2.ZERO:
 		velocity = input_dir.normalized() * velocidade
 		move_and_slide()
+
+		# Impede a personagem de sair da área do chão
+		global_position.y = clamp(global_position.y, limite_y_min, limite_y_max)
+
 		tocar_animacao_movimento(input_dir)
 	else:
 		parar_personagem()

@@ -106,6 +106,9 @@ size = Vector2(12.133362, 20)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqtrm"]
 corner_detail = 10
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0oht"]
+size = Vector2(1153, 254.5)
+
 [node name="CorredorUniversidade" type="Node2D" unique_id=1260172513]
 script = ExtResource("1_o6gcn")
 
@@ -144,7 +147,6 @@ position = Vector2(-21.833332, 17.447815)
 scale = Vector2(1, 1.099)
 sprite_frames = SubResource("SpriteFrames_xqtrm")
 animation = &"idle_right"
-speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=520109825]
 position = Vector2(-22.5, 16.934643)
@@ -200,10 +202,10 @@ color = Color(0, 0, 0, 0.003921569)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 10.0
-offset_right = 2.0
-offset_bottom = 10.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "PRIMEIRO DIA"
@@ -227,6 +229,12 @@ script = ExtResource("8_oihjv")
 camera = NodePath("../Camera2D")
 canvas_modulate = NodePath("../CanvasModulate")
 color_rect_ansiedade = NodePath("../ColorRectAnsiedade")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=694044069]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=660714562]
+position = Vector2(580.5, 350.75)
+shape = SubResource("RectangleShape2D_q0oht")
 
 [connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
 [connection signal="body_entered" from="PortaSala" to="PortaSala" method="_on_body_entered"]
