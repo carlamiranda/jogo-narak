@@ -70,17 +70,22 @@ func atualizar_camada_ansiedade() -> void:
 	color_rect_ansiedade.color = Color(0, 0, 0, alpha)
 
 
-# Faz a câmera tremer quando ansiedade está alta
 func atualizar_tremor() -> void:
 	if camera == null:
 		return
 
-	if GameState.ansiedade < 60:
+	var ansiedade_normalizada: float = GameState.ansiedade / 100.0
+	var isolamento_normalizado: float = GameState.isolamento / 100.0
+
+	# Usa o maior valor entre ansiedade e isolamento
+	var tensao: float = max(ansiedade_normalizada, isolamento_normalizado)
+
+	if tensao < 0.6:
 		camera.position = camera_posicao_inicial
 		return
 
-	var ansiedade_normalizada: float = GameState.ansiedade / 100.0
-	var intensidade: float = (ansiedade_normalizada - 0.6) * 80.0
+	# Tremor mais fraco
+	var intensidade: float = (tensao - 0.6) * 10.0
 
 	var deslocamento_x: float = randf_range(-intensidade, intensidade)
 	var deslocamento_y: float = randf_range(-intensidade, intensidade)
