@@ -12,7 +12,7 @@ var camera_posicao_inicial: Vector2
 # Salva a posição inicial da câmera
 func _ready() -> void:
 	if camera != null:
-		camera_posicao_inicial = camera.position
+		camera.offset = Vector2.ZERO
 	else:
 		print("Camera não conectada no EmotionVisualController")
 
@@ -81,13 +81,17 @@ func atualizar_tremor() -> void:
 	var tensao: float = max(ansiedade_normalizada, isolamento_normalizado)
 
 	if tensao < 0.6:
-		camera.position = camera_posicao_inicial
+		camera.offset = Vector2.ZERO
 		return
 
-	# Tremor mais fraco
-	var intensidade: float = (tensao - 0.6) * 10.0
+	# Tremor bem mais fraco
+	var intensidade: int = int((tensao - 0.6) * 6.0)
 
-	var deslocamento_x: float = randf_range(-intensidade, intensidade)
-	var deslocamento_y: float = randf_range(-intensidade, intensidade)
+	if intensidade < 1:
+		intensidade = 1
 
-	camera.position = camera_posicao_inicial + Vector2(deslocamento_x, deslocamento_y)
+	var deslocamento_x: int = randi_range(-intensidade, intensidade)
+	var deslocamento_y: int = randi_range(-intensidade, intensidade)
+
+	# Usa offset em vez de position para não bagunçar a posição base da câmera
+	camera.offset = Vector2(deslocamento_x, deslocamento_y)

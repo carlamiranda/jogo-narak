@@ -4,11 +4,11 @@ extends Node2D
 @onready var panel = $CanvasLayer/Panel
 @onready var label = $CanvasLayer/Panel/VBoxContainer/LabelSituacao
 
-@onready var botao_a = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoA
-@onready var botao_b = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoB
+@onready var botao_a = $CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoA
+@onready var botao_b = $CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoB
 
-@onready var texto_botao_a = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoA/Label
-@onready var texto_botao_b = $CanvasLayer/Panel/VBoxContainer/ButtonOpcaoB/Label
+@onready var texto_botao_a = $CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoA/Label
+@onready var texto_botao_b = $CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoB/Label
 
 
 # HUD
@@ -44,7 +44,6 @@ func _ready():
 	await get_tree().process_frame
 	await get_tree().process_frame
 
-	# CUTSCENE ATIVA DE NOVO
 	await _cutscene_inicio()
 
 	await iniciar_hud()
@@ -129,22 +128,11 @@ func _ir_sala():
 	print("Isolamento: ", GameState.isolamento)
 	print("Confiança: ", GameState.confianca)
 	print("Vínculo Colorida: ", GameState.vinculo_colorida)
-	print("Vínculo Quebrada: ", GameState.vinculo_quebrada)
 
 	panel.visible = false
 	escolha_ativa = false
 
-	protagonista.pode_andar = false
-	protagonista.andando_automatico = true
-
-	if destino_sala == null:
-		print("ERRO: DestinoSala não encontrado")
-		return
-
-	protagonista.destino = destino_sala.global_position
-
-	protagonista.trocar_cena = true
-	protagonista.cena_destino = "res://scenes/universidade/sala_aula.tscn"
+	get_tree().change_scene_to_file("res://scenes/universidade/CenaSala.tscn")
 
 
 # OPÇÃO BANHEIRO

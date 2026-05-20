@@ -13,12 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="10_mwarc"]
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="11_l3vci"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="12_ynm0n"]
-[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/ui/buttons/btn escolha.png" id="13_pgqhb"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="14_1r1ew"]
+[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="13_pgqhb"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="14_1r1ew"]
 [ext_resource type="Texture2D" uid="uid://c77o44dxgxskq" path="res://assets/sprites/characters/npc/Generic Female NPCs.png" id="17_7ubpm"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="18_7ubpm"]
+[ext_resource type="Script" uid="uid://7xii5f87b8cg" path="res://scripts/npc_interativo.gd" id="18_l3vci"]
 [ext_resource type="Texture2D" uid="uid://baihms7em0yun" path="res://assets/sprites/characters/npc/Generic Male NPCs.png" id="18_y58f6"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="19_y58f6"]
+[ext_resource type="PackedScene" uid="uid://cud4axgjrd18k" path="res://scenes/NPC_Balao.tscn" id="19_ynm0n"]
 [ext_resource type="AudioStream" uid="uid://bv2dnl68640d8" path="res://assets/audio/music/what is happening.ogg" id="20_3yl2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlril"]
@@ -2153,24 +2155,22 @@ size = Vector2(36, 731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c87ws"]
 size = Vector2(293.5, 153.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5y14"]
-bg_color = Color(0.15230674, 0.17024693, 0.202541, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.16862746, 0.18431373, 0.21176471, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3vci"]
+bg_color = Color(0.105882354, 0.101960786, 0.13333334, 0.7882353)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8392157, 0.7176471, 0.47843137, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5y14"]
 size = Vector2(83, 86)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r1ew"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8k6o"]
+radius = 117.00427
 
 [node name="CorredorUniversidade" type="Node2D" unique_id=610335542]
 script = ExtResource("1_1r1ew")
@@ -2268,35 +2268,51 @@ shape = SubResource("RectangleShape2D_c87ws")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1105238650]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1255136546]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 254.0
-offset_top = -172.0
-offset_right = 830.0
-offset_bottom = 151.0
-grow_vertical = 2
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -145.0
+offset_right = -40.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_d5y14")
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3vci")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1560504667]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 76.5
-offset_right = 573.0
-offset_bottom = 404.5
-theme_override_constants/separation = 25
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1755041782]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
 
-[node name="LabelSituacao" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1138910723]
+[node name="LabelSituacao" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1595764756]
+custom_minimum_size = Vector2(300, 35)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9490196, 0.9019608, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("14_1r1ew")
+theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonOpcaoA" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1401633658]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1326381261]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ButtonOpcaoA" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=1016583798]
 texture_filter = 1
-custom_minimum_size = Vector2(220, 50)
+custom_minimum_size = Vector2(260, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -2304,36 +2320,36 @@ texture_normal = ExtResource("13_pgqhb")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/ButtonOpcaoA" unique_id=836698425]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoA" unique_id=2037503182]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_1r1ew")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonOpcaoB" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1818451276]
+[node name="ButtonOpcaoB" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=123684095]
 texture_filter = 1
-custom_minimum_size = Vector2(220, 50)
+custom_minimum_size = Vector2(260, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("13_pgqhb")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/ButtonOpcaoB" unique_id=1829626894]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoB" unique_id=817507802]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_1r1ew")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2424,24 +2440,67 @@ position = Vector2(2635, 299)
 texture = ExtResource("17_7ubpm")
 region_enabled = true
 region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC1" unique_id=1891560240 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC1" unique_id=1476984044]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC1/AreaInteracao" unique_id=78785720]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
 
 [node name="NPC2" type="Sprite2D" parent="NPCs" unique_id=401963876]
 position = Vector2(666, 485)
 texture = ExtResource("18_y58f6")
 region_enabled = true
 region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC2" unique_id=1220191620 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC2" unique_id=190627459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC2/AreaInteracao" unique_id=736076659]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
 
 [node name="NPC4" type="Sprite2D" parent="NPCs" unique_id=2057319759]
 position = Vector2(590, 153)
 texture = ExtResource("17_7ubpm")
 region_enabled = true
 region_rect = Rect2(576, 850, 50, 106)
+script = ExtResource("18_l3vci")
+fala_npc = "Será que ela é nova aqui?"
+
+[node name="NpcBalao" parent="NPCs/NPC4" unique_id=2088019907 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -70)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC4" unique_id=254002940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC4/AreaInteracao" unique_id=791463694]
+position = Vector2(-2, -2)
+shape = SubResource("CircleShape2D_a8k6o")
 
 [node name="NPC3" type="Sprite2D" parent="NPCs" unique_id=1131626340]
 position = Vector2(1622, 545)
 texture = ExtResource("18_y58f6")
 region_enabled = true
 region_rect = Rect2(576, 498, 50, 98)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está olhando pra cá?"
+
+[node name="NpcBalao" parent="NPCs/NPC3" unique_id=1218526984 instance=ExtResource("19_ynm0n")]
+position = Vector2(3.120303e-05, -57.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC3" unique_id=1819849049]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC3/AreaInteracao" unique_id=808466892]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_a8k6o")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=375215235]
 position = Vector2(-20, 0)
