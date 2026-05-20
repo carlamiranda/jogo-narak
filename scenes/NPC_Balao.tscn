@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cud4axgjrd18k"]
+
+[ext_resource type="Script" uid="uid://d2eeo7v3h5kwg" path="res://scripts/npc_balao.gd" id="1_m5cue"]
+[ext_resource type="Texture2D" uid="uid://b3ettndpmw621" path="res://assets/sprites/UI/balao_fala_npc-removebg-preview.png" id="2_cf5ok"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="3_cf5ok"]
+
+[node name="NpcBalao" type="Node2D" unique_id=1891560240]
+script = ExtResource("1_m5cue")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1961368765]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_cf5ok")
+
+[node name="Label" type="Label" parent="." unique_id=1468375327]
+texture_filter = 1
+offset_left = -41.0
+offset_top = -27.0
+offset_right = 40.0
+offset_bottom = 16.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cf5ok")
+theme_override_font_sizes/font_size = 12
+text = "Ela parece perdida..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
