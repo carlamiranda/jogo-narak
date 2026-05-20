@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="18_7ubpm"]
 [ext_resource type="Texture2D" uid="uid://baihms7em0yun" path="res://assets/sprites/characters/npc/Generic Male NPCs.png" id="18_y58f6"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="19_y58f6"]
+[ext_resource type="AudioStream" uid="uid://bv2dnl68640d8" path="res://assets/audio/music/what is happening.ogg" id="20_3yl2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlril"]
 texture = ExtResource("1_x803j")
@@ -2365,7 +2366,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DestinoBanheiro" type="Marker2D" parent="." unique_id=1490308642]
-position = Vector2(861, 38)
+position = Vector2(800, -29)
 
 [node name="PlacaMasculino2" type="Node2D" parent="." unique_id=37287151]
 position = Vector2(70, -28)
@@ -2462,5 +2463,13 @@ script = ExtResource("19_y58f6")
 camera = NodePath("../Protagonista/Camera2D")
 canvas_modulate = NodePath("../CanvasModulate")
 color_rect_ansiedade = NodePath("../ColorRectAnsiedade")
+
+[node name="WhatIsHappening" type="AudioStreamPlayer2D" parent="." unique_id=1153434381]
+position = Vector2(-7, -13)
+stream = ExtResource("20_3yl2p")
+autoplay = true
+
+[node name="DestinoSala" type="Marker2D" parent="." unique_id=1073605638]
+position = Vector2(1627, -27)
 
 [connection signal="body_entered" from="PortaSala" to="." method="_on_porta_sala_body_entered"]
