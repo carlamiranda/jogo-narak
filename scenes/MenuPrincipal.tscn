@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://6h268ah183w4"]
 
 [ext_resource type="Script" uid="uid://cctnelw2d48b6" path="res://scripts/menu_principal.gd" id="1_0xxel"]
-[ext_resource type="Texture2D" uid="uid://ugdjq1k3oa3y" path="res://assets/sprites/environments/city/Sky_pale2.png" id="2_ki8m3"]
-[ext_resource type="FontFile" uid="uid://c3gxeb0awaxbn" path="res://assets/sprites/Fonts/Super Beatpop.ttf" id="3_uv5vn"]
-[ext_resource type="Texture2D" uid="uid://btpnrmue3h7vu" path="res://assets/sprites/UI/banner_hanging.png" id="4_bvv32"]
+[ext_resource type="Texture2D" uid="uid://u3t8y83wtd5u" path="res://assets/sprites/environments/city/Sky_pale2.png" id="2_ki8m3"]
+[ext_resource type="FontFile" uid="uid://c3gxeb0awaxbn" path="res://assets/sprites/fonts/Super Beatpop.ttf" id="3_uv5vn"]
+[ext_resource type="Texture2D" uid="uid://btpnrmue3h7vu" path="res://assets/sprites/ui/banner_hanging.png" id="4_bvv32"]
+[ext_resource type="AudioStream" uid="uid://bv2dnl68640d8" path="res://assets/audio/music/what is happening.ogg" id="5_f5jwn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjknc"]
 texture = ExtResource("4_bvv32")
@@ -98,6 +99,11 @@ theme_override_fonts/font = ExtResource("3_uv5vn")
 theme_override_font_sizes/font_size = 115
 text = "Entre Emoções"
 label_settings = SubResource("LabelSettings_cjknc")
+
+[node name="WhatIsHappening" type="AudioStreamPlayer2D" parent="." unique_id=9808615]
+position = Vector2(-72, 154)
+stream = ExtResource("5_f5jwn")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/BtnNovoJogo" to="." method="_on_btn_novo_jogo_pressed"]
 [connection signal="pressed" from="VBoxContainer/BtnSair" to="." method="_on_btn_sair_pressed"]

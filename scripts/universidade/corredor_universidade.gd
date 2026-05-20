@@ -19,8 +19,9 @@ extends Node2D
 @onready var protagonista = $Protagonista
 
 
-# Destino
+# Destinos
 @onready var destino_banheiro = get_node_or_null("DestinoBanheiro")
+@onready var destino_sala = get_node_or_null("DestinoSala")
 
 
 # Estado
@@ -118,6 +119,7 @@ func ativar_ui():
 
 # OPÇÃO SALA
 func _ir_sala():
+
 	GameState.definir_rota("colorida")
 	GameState.alterar_estado(20, -20, 25, 30, 0)
 
@@ -132,11 +134,22 @@ func _ir_sala():
 	panel.visible = false
 	escolha_ativa = false
 
-	protagonista.pode_andar = true
+	protagonista.pode_andar = false
+	protagonista.andando_automatico = true
+
+	if destino_sala == null:
+		print("ERRO: DestinoSala não encontrado")
+		return
+
+	protagonista.destino = destino_sala.global_position
+
+	protagonista.trocar_cena = true
+	protagonista.cena_destino = "res://scenes/universidade/sala_aula.tscn"
 
 
 # OPÇÃO BANHEIRO
 func _ir_banheiro():
+
 	GameState.definir_rota("espelho")
 	GameState.alterar_estado(-10, 30, 0, 0, 30)
 

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b3lyw3f4nwpey" path="res://scripts/cars.gd" id="8_1n5w2"]
 [ext_resource type="Texture2D" uid="uid://d3ikrwvv2wt8g" path="res://assets/sprites/environments/city/car.png" id="8_h7xyq"]
 [ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="10_1vt1a"]
+[ext_resource type="AudioStream" uid="uid://dfobh5gcj3d18" path="res://assets/audio/sfx/ambience/transito.ogg" id="10_r3eru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vt1a"]
 size = Vector2(186, 63)
@@ -29,11 +30,20 @@ frame = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cars" unique_id=1792713844]
 
 [node name="Camera2D" type="Camera2D" parent="cars" unique_id=782199492]
+limit_left = -477
+limit_top = -220
+limit_right = 9097
+limit_bottom = 358
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cars" unique_id=1565289168]
 position = Vector2(-163, 216.5)
 shape = SubResource("RectangleShape2D_1vt1a")
+
+[node name="Transito" type="AudioStreamPlayer2D" parent="cars" unique_id=1135714255]
+position = Vector2(-1658, -265)
+stream = ExtResource("10_r3eru")
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1419498484]
 
