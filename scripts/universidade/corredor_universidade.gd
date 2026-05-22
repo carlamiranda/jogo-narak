@@ -54,21 +54,14 @@ func _ready():
 
 # CUTSCENE INICIAL
 func _cutscene_inicio():
-
 	cutscene_rodando = true
-
 	panel.visible = false
 
 	await Cutscene.play_fade_out(0.0)
-
-	await Cutscene.show_text("PRIMEIRO DIA", 1.5)
-	await Cutscene.show_text("O carro ficou para trás.", 2.0)
-	await Cutscene.show_text("Ela está na faculdade agora.", 2.5)
-	await Cutscene.show_text("Mas algo no peito aperta.", 2.5)
-	await Cutscene.show_text("Não é medo… é ansiedade.", 3.0)
+	
+	await Cutscene.show_text("PRIMEIRO DIA", 2.0) 
 
 	await Cutscene.play_fade_in(1.0)
-
 	cutscene_rodando = false
 
 
@@ -79,12 +72,22 @@ func iniciar_hud():
 		print("HUD não encontrado")
 		return
 
-	await hud.show_message("Hoje não é um dia comum.", 2.5)
-	await hud.show_message("Algo precisa ser decidido agora.", 3.0)
-	await hud.show_message("A sala de aula está logo à frente.", 2.5)
-	await hud.show_message("A porta da sala marca o início das suas escolhas.", 4.0)
-	await hud.show_message("Quando estiver pronta, aproxime-se dela.", 3.5)
-
+	var falas = [
+		"Tem muita gente aqui.",
+		"Onde eu ponho as mãos?? Será que eu tô andando esquisito??",
+		"Meu Deus a sala é do outro lado do campus.",
+		"... como que eu vou atravessar esse lugar desviando de todo mundo??",
+		"Talvez eu devesse ir no banheiro primeiro. Só pra enrolar um pouco.",
+		"Não, se eu fizer isso vou me atrasar. Vai, anda.",
+		"Queria achar um daqueles gatinhos do campus...",
+		"Fazer carinho neles é a única coisa que abaixa meu batimento cardíaco.",
+		"Por que eu tenho que ser tão estranha?.."
+	]
+	for fala in falas:
+		hud.show_message(fala)
+		await hud.avancar_dialogo
+		
+	await hud.hide_message()
 
 # PORTA
 func _on_porta_sala_body_entered(body):
