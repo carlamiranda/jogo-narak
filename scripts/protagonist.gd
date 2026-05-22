@@ -58,38 +58,25 @@ func _physics_process(delta):
 		anim.stop()
 		return
 
-	# Movimento normal usando Input Map
-	var input_dir = Vector2.ZERO
-
-	if Input.is_action_pressed("move_right"):
-		input_dir.x += 1
-	if Input.is_action_pressed("move_left"):
-		input_dir.x -= 1
-	if Input.is_action_pressed("move_down"):
-		input_dir.y += 1
-	if Input.is_action_pressed("move_up"):
-		input_dir.y -= 1
-
-
-	var direction = Vector2.ZERO
-
-	if abs(input_dir.x) > abs(input_dir.y):
-		direction = Vector2(input_dir.x, 0)
-	elif abs(input_dir.y) > 0:
-		direction = Vector2(0, input_dir.y)
+	# Movimento normal com suporte a diagonal e velocidade normalizada
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	velocity = direction * speed
 	move_and_slide()
 
+	# Se estiver parada, para a animação
 	if direction == Vector2.ZERO:
 		anim.stop()
 		return
 
-	if direction.x > 0:
-		anim.play("walk_right")
-	elif direction.x < 0:
-		anim.play("walk_left")
-	elif direction.y > 0:
-		anim.play("walk_down")
+	# Escolhe a animação com base no eixo em que ela está se movendo mais
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			anim.play("walk_right")
+		else:
+			anim.play("walk_left")
 	else:
-		anim.play("walk_up")
+		if direction.y > 0:
+			anim.play("walk_down")
+		else:
+			anim.play("walk_up")
