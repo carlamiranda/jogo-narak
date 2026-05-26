@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="19_y58f6"]
 [ext_resource type="PackedScene" uid="uid://cud4axgjrd18k" path="res://scenes/NPC_Balao.tscn" id="19_ynm0n"]
 [ext_resource type="AudioStream" uid="uid://bv2dnl68640d8" path="res://assets/audio/music/what is happening.ogg" id="20_3yl2p"]
+[ext_resource type="PackedScene" uid="uid://iybjo5bhqv20" path="res://scenes/universidade/NpcMovel.tscn" id="29_ink52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlril"]
 texture = ExtResource("1_x803j")
@@ -4121,7 +4122,7 @@ z_index = 1
 texture_filter = 3
 position = Vector2(-8, -28.999998)
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAnAAgACAAQAAsAAAAcAA0ACAAQAAsAAAAdAAsACAAIAAwAAAAQAA4ACAAIAAwAAAAqAAgACAAIAAwAAAAoAAkACAAJAAwAAAAZAAsACAAFAAwAAAAoAAcACAACAAwAAAAkABIACAACAAwAAAAlABEACAADAAwAAAAtABYACAADAAwAAAAJABcACAADAAwAAAAIABgACAACAA0AAAAiABMACAACAA0AAAAZAA0ACAACAA0AAAAPABEACAACAA0AAAAqAAoACAAMAAwAAAAaABQACAACAA0AAAAcABMACAACAAwAAAAdABIACAADAAwAAAAjAAsACAAFAAwAAAAjAA0ACAACAA0AAAAmAA0ACAAQAAsAAAAnAAsACAAIAAwAAAAeAA8ACAAFAAwAAAAeABEACAACAA0AAAAhABEACAAQAAsAAAAiAA8ACAAIAAwAAAAbACQACAAMAAwAAAAXACIACAAMAAwAAAAtACgACAAMAAwAAAAdACIACAANAAsAAAAZACMACAAKAAsAAAASACIACAAKAAsAAAALACIACAAKAAsAAAAIACYACAAKAAsAAAAOACYACAAKAAsAAAAPACYACAAKAAsAAAAPACIACAAMAAwAAAAEACIACAAMAAwAAAAJACQACAACAAwAAAAQACQACAACAAwAAAAWACIACAACAAwAAAAfACYACAACAAwAAAAcACUACAAJAAwAAAAeACkACAAJAAwAAAAUACIACAAJAAwAAAATACQACAAJAAwAAAANACIACAARAAwAAAAHACIACAARAAwAAAABACEACAARAAwAAAABACUACAARAAwAAAADACUACAARAAwAAAACACMACAAFAAwAAAAJACIACAAFAAwAAAAaACEACAAFAAwAAAAYACUACAAFAAwAAAAYACYACAAFAAwAAAAZACcACAAFAAwAAAAiACsACAAFAAwAAAAkACoACAAFAAwAAAArACcACAALAAsAAAArACgACAALAAsAAAArACkACAALAAsAAAAqACoACAALAAsAAAAeACEACAAMAAoAAAAdACcACAAMAAoAAAANACQACAAMAAoAAAAGACUACAAMAAoAAAAWACMACAAAAA0AAAAeACIACAAAAA0AAAAKACEACAAAAA0AAAA/AAoACAAAAA0AAABCAAwACAAAAA0AAAA/AA4ACAAAAA0AAABDAAoACAAAAA0AAABEAAwACAAAAA0AAAA/AAsACAAIAAwAAABEAAsACAAIAAwAAABBAAoACAATAAsAAABDAAsACAATAAsAAAAYACEACAATAAsAAABAAAsACAAFAAwAAAAcACEACAAFAAwAAAAhACoACAAFAAwAAAAiACoACAAHAA0AAAAjACsACAAHAA0AAAAfACgACAAHAA0AAAA=")
+tile_map_data = PackedByteArray("AAAnAAgACAAQAAsAAAAcAA0ACAAQAAsAAAAdAAsACAAIAAwAAAAQAA4ACAAIAAwAAAAqAAgACAAIAAwAAAAoAAkACAAJAAwAAAAZAAsACAAFAAwAAAAoAAcACAACAAwAAAAkABIACAACAAwAAAAlABEACAADAAwAAAAtABYACAADAAwAAAAJABcACAADAAwAAAAIABgACAACAA0AAAAiABMACAACAA0AAAAZAA0ACAACAA0AAAAPABEACAACAA0AAAAqAAoACAAMAAwAAAAaABQACAACAA0AAAAcABMACAACAAwAAAAdABIACAADAAwAAAAjAAsACAAFAAwAAAAjAA0ACAACAA0AAAAmAA0ACAAQAAsAAAAnAAsACAAIAAwAAAAeAA8ACAAFAAwAAAAeABEACAACAA0AAAAhABEACAAQAAsAAAAiAA8ACAAIAAwAAAAbACQACAAMAAwAAAAXACIACAAMAAwAAAAtACgACAAMAAwAAAAdACIACAANAAsAAAAZACMACAAKAAsAAAASACIACAAKAAsAAAALACIACAAKAAsAAAAIACYACAAKAAsAAAAOACYACAAKAAsAAAAPACYACAAKAAsAAAAPACIACAAMAAwAAAAEACIACAAMAAwAAAAJACQACAACAAwAAAAQACQACAACAAwAAAAWACIACAACAAwAAAAfACYACAACAAwAAAAcACUACAAJAAwAAAAeACkACAAJAAwAAAAUACIACAAJAAwAAAATACQACAAJAAwAAAANACIACAARAAwAAAAHACIACAARAAwAAAABACEACAARAAwAAAABACUACAARAAwAAAADACUACAARAAwAAAACACMACAAFAAwAAAAJACIACAAFAAwAAAAaACEACAAFAAwAAAAYACUACAAFAAwAAAAYACYACAAFAAwAAAAZACcACAAFAAwAAAAiACsACAAFAAwAAAAkACoACAAFAAwAAAArACcACAALAAsAAAArACgACAALAAsAAAArACkACAALAAsAAAAqACoACAALAAsAAAAeACEACAAMAAoAAAAdACcACAAMAAoAAAANACQACAAMAAoAAAAGACUACAAMAAoAAAAWACMACAAAAA0AAAAeACIACAAAAA0AAAAKACEACAAAAA0AAAA/AAoACAAAAA0AAABCAAwACAAAAA0AAAA/AA4ACAAAAA0AAABDAAoACAAAAA0AAABEAAwACAAAAA0AAAA/AAsACAAIAAwAAABEAAsACAAIAAwAAABBAAoACAATAAsAAABDAAsACAATAAsAAAAYACEACAATAAsAAABAAAsACAAFAAwAAAAcACEACAAFAAwAAAAhACoACAAFAAwAAAAiACoACAAHAA0AAAAjACsACAAHAA0AAAAfACgACAAHAA0AAAAsACkACAAFAAwAAAAuACoACAAFAAwAAAAwACcACAAFAAwAAAAuACgACAAHAA0AAAAsACcACAAHAA0AAAAvACgACAAWAAwAAAAvACcACAAWAAwAAAAtACcACAACAAwAAAAyACkACAACAAwAAAAwACkACAACAAwAAAA=")
 tile_set = SubResource("TileSet_bdlul")
 
 [node name="HudCorredor" type="CanvasLayer" parent="." unique_id=346136804]
@@ -4611,6 +4612,347 @@ position = Vector2(3.120303e-05, -57.999996)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC3/AreaInteracao" unique_id=808466892]
 position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC5" type="Sprite2D" parent="NPCs" unique_id=1578513255]
+z_index = 1
+position = Vector2(752, 1023)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC5" unique_id=287980760 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC5" unique_id=1640121156]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC5/AreaInteracao" unique_id=1588928697]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC6" type="Sprite2D" parent="NPCs" unique_id=1379297357]
+position = Vector2(419, 1256)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC6" unique_id=608100922 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC6" unique_id=1728747830]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC6/AreaInteracao" unique_id=1443661664]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC7" type="Sprite2D" parent="NPCs" unique_id=720012810]
+z_index = 1
+position = Vector2(1320, 1813)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC7" unique_id=818948587 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC7" unique_id=1455188731]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC7/AreaInteracao" unique_id=1641026198]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC8" type="Sprite2D" parent="NPCs" unique_id=2013847290]
+z_index = 1
+position = Vector2(522, 2468)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC8" unique_id=901332975 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC8" unique_id=611215942]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC8/AreaInteracao" unique_id=1435748095]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC9" type="Sprite2D" parent="NPCs" unique_id=762025054]
+z_index = 1
+position = Vector2(2126, 2293)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC9" unique_id=1209474735 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC9" unique_id=1099410034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC9/AreaInteracao" unique_id=937244200]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC10" type="Sprite2D" parent="NPCs" unique_id=731479594]
+z_index = 1
+position = Vector2(3150, 2059)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC10" unique_id=35396208 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC10" unique_id=1329841363]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC10/AreaInteracao" unique_id=2109192769]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC11" type="Sprite2D" parent="NPCs" unique_id=1592124976]
+z_index = 1
+position = Vector2(3714, 1027)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC11" unique_id=1788398863 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC11" unique_id=984404146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC11/AreaInteracao" unique_id=134410324]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC12" type="Sprite2D" parent="NPCs" unique_id=1455755619]
+z_index = 1
+position = Vector2(3785, 2305)
+texture = ExtResource("17_7ubpm")
+region_enabled = true
+region_rect = Rect2(814, 370, 54, 106)
+script = ExtResource("18_l3vci")
+
+[node name="NpcBalao" parent="NPCs/NPC12" unique_id=1727231012 instance=ExtResource("19_ynm0n")]
+position = Vector2(0, -68)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC12" unique_id=771073200]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC12/AreaInteracao" unique_id=109109998]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC13" type="Sprite2D" parent="NPCs" unique_id=1090604829]
+position = Vector2(1154, 1653)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC13" unique_id=1622976038 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC13" unique_id=2021707933]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC13/AreaInteracao" unique_id=1878806018]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC14" type="Sprite2D" parent="NPCs" unique_id=738118159]
+position = Vector2(352, 2296)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC14" unique_id=1933983961 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC14" unique_id=395023550]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC14/AreaInteracao" unique_id=322738008]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC15" type="Sprite2D" parent="NPCs" unique_id=1309814002]
+position = Vector2(1960, 2154)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC15" unique_id=694682893 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC15" unique_id=261738176]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC15/AreaInteracao" unique_id=223232707]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC16" type="Sprite2D" parent="NPCs" unique_id=1812087872]
+position = Vector2(2992, 1895)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC16" unique_id=1393280632 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC16" unique_id=1560983400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC16/AreaInteracao" unique_id=927506359]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC17" type="Sprite2D" parent="NPCs" unique_id=1938582507]
+position = Vector2(3715, 1348)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC17" unique_id=2015958944 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC17" unique_id=128214780]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC17/AreaInteracao" unique_id=240898559]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NPC18" type="Sprite2D" parent="NPCs" unique_id=282101139]
+position = Vector2(3552, 863)
+texture = ExtResource("18_y58f6")
+region_enabled = true
+region_rect = Rect2(96, 16, 50, 100)
+script = ExtResource("18_l3vci")
+fala_npc = "Ela está sozinha?"
+
+[node name="NpcBalao" parent="NPCs/NPC18" unique_id=1183846258 instance=ExtResource("19_ynm0n")]
+position = Vector2(-1.0000298, -58.999996)
+
+[node name="AreaInteracao" type="Area2D" parent="NPCs/NPC18" unique_id=595697839]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/NPC18/AreaInteracao" unique_id=40769243]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_a8k6o")
+
+[node name="NpcBase" parent="NPCs" unique_id=14801045 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(1355, 1958)
+pontos_rota = [NodePath("../PontoA"), NodePath("../PontoA2"), NodePath("../PontoA3")]
+
+[node name="PontoA" type="Marker2D" parent="NPCs" unique_id=1501792791]
+position = Vector2(1358, 1971)
+
+[node name="PontoA2" type="Marker2D" parent="NPCs" unique_id=1338854517]
+position = Vector2(1241, 2436)
+
+[node name="PontoA3" type="Marker2D" parent="NPCs" unique_id=492562251]
+position = Vector2(662, 2562)
+
+[node name="NpcBase2" parent="NPCs" unique_id=1522829302 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(5095, 255)
+pontos_rota = [NodePath("../PontoB"), NodePath("../PontoB1"), NodePath("../PontoB2"), NodePath("../PontoB1"), NodePath("../PontoB")]
+
+[node name="PontoB" type="Marker2D" parent="NPCs" unique_id=902585416]
+position = Vector2(4739, 268)
+
+[node name="PontoB1" type="Marker2D" parent="NPCs" unique_id=307805618]
+position = Vector2(4133, 374)
+
+[node name="PontoB2" type="Marker2D" parent="NPCs" unique_id=413810891]
+position = Vector2(3748, 813)
+
+[node name="NpcBase3" parent="NPCs" unique_id=1206174414 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(2805, 295)
+pontos_rota = [NodePath("../PontoC"), NodePath("../PontoC2"), NodePath("../PontoC3"), NodePath("../PontoC2"), NodePath("../PontoC")]
+
+[node name="PontoC" type="Marker2D" parent="NPCs" unique_id=1708887053]
+position = Vector2(3072, 181)
+
+[node name="PontoC2" type="Marker2D" parent="NPCs" unique_id=1890248564]
+position = Vector2(3982, 576)
+
+[node name="PontoC3" type="Marker2D" parent="NPCs" unique_id=1204565174]
+position = Vector2(3572, 1289)
+
+[node name="NpcBase4" parent="NPCs" unique_id=397152012 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(188, 1397)
+pontos_rota = [NodePath("../PontoD"), NodePath("../PontoD2"), NodePath("../PontoD3"), NodePath("../PontoD4")]
+
+[node name="PontoD" type="Marker2D" parent="NPCs" unique_id=1160700055]
+position = Vector2(216, 1466)
+
+[node name="PontoD2" type="Marker2D" parent="NPCs" unique_id=213071808]
+position = Vector2(666, 1814)
+
+[node name="PontoD3" type="Marker2D" parent="NPCs" unique_id=994867679]
+position = Vector2(514, 2279)
+
+[node name="PontoD4" type="Marker2D" parent="NPCs" unique_id=1225876384]
+position = Vector2(64, 1925)
+
+[node name="NpcBase5" parent="NPCs" unique_id=1263636745 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(3235, 1872)
+pontos_rota = [NodePath("../PontoE"), NodePath("../PontoE1"), NodePath("../PontoE2"), NodePath("../PontoE3")]
+
+[node name="PontoE" type="Marker2D" parent="NPCs" unique_id=278255151]
+position = Vector2(3253, 1976)
+
+[node name="PontoE1" type="Marker2D" parent="NPCs" unique_id=2015647403]
+position = Vector2(3547, 2507)
+
+[node name="PontoE2" type="Marker2D" parent="NPCs" unique_id=1399712177]
+position = Vector2(2682, 2598)
+
+[node name="PontoE3" type="Marker2D" parent="NPCs" unique_id=335986177]
+position = Vector2(2703, 2366)
+
+[node name="NpcBase6" parent="NPCs" unique_id=330268029 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(2265, 239)
+pontos_rota = [NodePath("../PontoF"), NodePath("../PontoF2"), NodePath("../PontoF3"), NodePath("../PontoF4")]
+
+[node name="PontoF" type="Marker2D" parent="NPCs" unique_id=664741125]
+position = Vector2(2265, 271)
+
+[node name="PontoF2" type="Marker2D" parent="NPCs" unique_id=98546989]
+position = Vector2(2063, 804)
+
+[node name="PontoF3" type="Marker2D" parent="NPCs" unique_id=1219127723]
+position = Vector2(1736, 712)
+
+[node name="PontoF4" type="Marker2D" parent="NPCs" unique_id=733572246]
+position = Vector2(1888, 363)
+
+[node name="NpcBase7" parent="NPCs" unique_id=942028917 node_paths=PackedStringArray("pontos_rota") instance=ExtResource("29_ink52")]
+position = Vector2(913, 1384)
+pontos_rota = [NodePath("../PontoG"), NodePath("../PontoG2"), NodePath("../PontoG3"), NodePath("../PontoG4"), NodePath("../PontoG3"), NodePath("../PontoG2")]
+
+[node name="PontoG" type="Marker2D" parent="NPCs" unique_id=1490797141]
+position = Vector2(978, 1406)
+
+[node name="PontoG2" type="Marker2D" parent="NPCs" unique_id=1807416707]
+position = Vector2(1663, 1383)
+
+[node name="PontoG3" type="Marker2D" parent="NPCs" unique_id=1762577963]
+position = Vector2(1360, 1034)
+
+[node name="PontoG4" type="Marker2D" parent="NPCs" unique_id=1440278622]
+position = Vector2(1626, 712)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=375215235]
 position = Vector2(-20, 0)
