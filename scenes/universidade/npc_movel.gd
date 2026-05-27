@@ -63,6 +63,9 @@ func _on_area_ansiedade_body_entered(body):
 		
 		if hud:
 			hud.show_message(fala_da_prota)
-			
-		# DICA: Se quiser que a ansiedade suba aqui no futuro, é só adicionar:
-		# GameState.alterar_estado(10, 0, 0, 0, 0)
+
+		# --- NOVA PARTE: Arranca um coração da HUD de vida! ---
+		var hud_vida = get_tree().current_scene.get_node_or_null("HudPrincipal")
+		if hud_vida:
+			hud_vida.tomar_dano()
+		# ------------------------------------------------------

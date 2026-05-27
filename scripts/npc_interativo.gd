@@ -35,6 +35,12 @@ func _on_body_entered(body: Node) -> void:
 	if body.name != "Protagonista":
 		return
 
+	# --- NOVA PARTE: Tirar um coração da HUD ---
+	var hud_vida = get_tree().current_scene.get_node_or_null("HudPrincipal")
+	if hud_vida:
+		hud_vida.tomar_dano()
+	# -------------------------------------------
+
 	if ja_falou and not repetir_fala:
 		return
 
