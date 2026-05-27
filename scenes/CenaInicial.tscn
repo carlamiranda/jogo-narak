@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b3lyw3f4nwpey" path="res://scripts/cars.gd" id="8_1n5w2"]
 [ext_resource type="Texture2D" uid="uid://d3ikrwvv2wt8g" path="res://assets/sprites/environments/city/car.png" id="8_h7xyq"]
 [ext_resource type="PackedScene" uid="uid://surnoqokqfb0" path="res://scenes/CaixaDialogo.tscn" id="10_1vt1a"]
-[ext_resource type="AudioStream" uid="uid://dfobh5gcj3d18" path="res://assets/audio/sfx/ambience/transito.ogg" id="10_r3eru"]
+[ext_resource type="AudioStream" uid="uid://6gj3pipkh8md" path="res://assets/audio/sfx/ambience/transito.ogg" id="10_r3eru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vt1a"]
 size = Vector2(186, 63)

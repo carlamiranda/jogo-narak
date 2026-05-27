@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ekns5nv833c7" path="res://scenes/CenaInicial.tscn" id="2_67w0c"]
 [ext_resource type="Script" uid="uid://cirodghs8hyti" path="res://scripts/Dialogo.gd" id="3_els38"]
-[ext_resource type="Texture2D" path="res://assets/sprites/mother.jpg" id="3_vyewl"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=333622715]
 script = ExtResource("3_els38")
@@ -58,7 +57,6 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1592468002]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
-texture = ExtResource("3_vyewl")
 expand_mode = 1
 stretch_mode = 5
 
