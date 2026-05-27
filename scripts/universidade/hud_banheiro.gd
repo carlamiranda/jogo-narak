@@ -14,8 +14,10 @@ func show_message(texto: String):
 	
 	if not panel.visible:
 		panel.visible = true
+		
 		var t = create_tween()
-		t.tween_property(panel, "modulate:a", 1.0, 0.25)
+		t.tween_property(panel, "modulate:a", 1.0, 0.3)
+		
 		await t.finished
 
 func hide_message():
