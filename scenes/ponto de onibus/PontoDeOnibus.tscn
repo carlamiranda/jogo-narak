@@ -2233,9 +2233,10 @@ shape = SubResource("CircleShape2D_bqq4r")
 [node name="cenadoonibus" parent="PontoDeOnibus" unique_id=1891560240 instance=ExtResource("3_xuaqe")]
 position = Vector2(-0.9998779, -69.000015)
 script = ExtResource("2_oxo2g")
-largura = 420.0
-altura = 150.0
-tamanho_fonte = 18
+largura_maxima = 380.0
+altura_minima = 120.0
+tamanho_fonte = 16
+caracteres_por_linha = 20
 
 [node name="npcs-onibus" type="Node2D" parent="." unique_id=1847798277]
 position = Vector2(274, 289)

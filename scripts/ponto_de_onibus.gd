@@ -48,9 +48,11 @@ func _bloquear_protagonista() -> void:
 	if protagonista == null:
 		return
 
-	protagonista.pode_andar = false
-	protagonista.andando_automatico = false
-	protagonista.velocity = Vector2.ZERO
+	if protagonista.has_method("travar"):
+		protagonista.travar()
+	else:
+		protagonista.set_physics_process(false)
+		protagonista.velocity = Vector2.ZERO
 
 
 func _calcular_posicao_final_onibus() -> Vector2:

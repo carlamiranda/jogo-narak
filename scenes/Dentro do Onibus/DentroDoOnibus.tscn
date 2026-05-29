@@ -1,0 +1,379 @@
+[gd_scene format=3 uid="uid://clox1olq1pr13"]
+
+[ext_resource type="Texture2D" uid="uid://c7n475mdgprp7" path="res://assets/tilesets/INSIDEBUS.png" id="1_yfqcr"]
+[ext_resource type="Texture2D" uid="uid://bbjikdlabqbwv" path="res://assets/sprites/sprites cena-onibus/ponto de onibus.png" id="2_14olx"]
+[ext_resource type="Script" uid="uid://bulgtul0himfn" path="res://scripts/protagonist.gd" id="2_e1owd"]
+[ext_resource type="Script" uid="uid://fex1ur4cds41" path="res://scripts/dentro_do_onibus.gd" id="2_intro"]
+[ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="3_0f76q"]
+[ext_resource type="Script" uid="uid://c32a1qwidrpa" path="res://InteracaoPontoDeOnibus.gd" id="3_l78u5"]
+[ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="4_doi3v"]
+[ext_resource type="PackedScene" uid="uid://cud4axgjrd18k" path="res://scenes/NPC_Balao.tscn" id="4_n72m7"]
+[ext_resource type="Script" uid="uid://cd5xs31sfmsfu" path="res://cenaonibus.gd" id="5_7mdp2"]
+[ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="5_xbiri"]
+[ext_resource type="Texture2D" uid="uid://cls4bdemcoh46" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_left.png" id="6_321rr"]
+[ext_resource type="Texture2D" uid="uid://6bbw83u8777c" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_right.png" id="7_g4po4"]
+[ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="8_14olx"]
+[ext_resource type="Script" uid="uid://7xii5f87b8cg" path="res://scripts/npc_interativo.gd" id="8_n72m7"]
+[ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="9_l78u5"]
+[ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="10_n72m7"]
+[ext_resource type="Texture2D" uid="uid://ds2rnxdce5asx" path="res://assets/sprites/sprites cena-onibus/BANCO.png" id="11_e1owd"]
+[ext_resource type="Texture2D" uid="uid://dqjef08oq73vl" path="res://assets/sprites/characters/npc/Bob_sit2_16x16.png" id="12_doi3v"]
+[ext_resource type="Texture2D" uid="uid://dhfqtp70t5ogp" path="res://assets/sprites/characters/npc/Amelia_sit3_16x16.png" id="13_xbiri"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0eihl"]
+radius = 57.18916
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mdp2"]
+radius = 25.884268
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mdp2"]
+size = Vector2(2560.625, 83.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eihl"]
+size = Vector2(36, 555.28125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0effl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0f76q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_doi3v")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xbiri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_321rr")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_g4po4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_14olx")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_l78u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n72m7")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba5ok"]
+size = Vector2(35, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_321rr"]
+size = Vector2(700, 154)
+
+[node name="DentroDoOnibus" type="Node2D" unique_id=2007513098]
+script = ExtResource("2_intro")
+
+[node name="FundoPreto" type="CanvasLayer" parent="." unique_id=599974254]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="FundoPreto" unique_id=634998240]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Insidebus" type="Sprite2D" parent="." unique_id=1445249494]
+position = Vector2(564, 356)
+texture = ExtResource("1_yfqcr")
+
+[node name="PontoDeOnibus" type="Sprite2D" parent="Insidebus" unique_id=1926440383]
+position = Vector2(-2017.0001, -88)
+rotation = -3.1415927
+scale = Vector2(1.3652312, -0.78994375)
+texture = ExtResource("2_14olx")
+script = ExtResource("3_l78u5")
+
+[node name="AreaInteracao" type="Area2D" parent="Insidebus/PontoDeOnibus" unique_id=763479737]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/PontoDeOnibus/AreaInteracao" unique_id=173744227]
+position = Vector2(-1131.5703, -97.005455)
+shape = SubResource("CircleShape2D_0eihl")
+
+[node name="cenadoonibus" parent="Insidebus/PontoDeOnibus" unique_id=1891560240 instance=ExtResource("4_n72m7")]
+position = Vector2(-1133.7677, -137.51468)
+script = ExtResource("5_7mdp2")
+largura_maxima = 380.0
+altura_minima = 120.0
+caracteres_por_linha = 20
+tamanho_fonte = 16
+
+[node name="NpcMulher4" type="Sprite2D" parent="Insidebus/PontoDeOnibus" unique_id=1982226058]
+texture_filter = 1
+position = Vector2(-1137.5364, 203.81215)
+scale = Vector2(-3, 3)
+texture = ExtResource("13_xbiri")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+script = ExtResource("8_n72m7")
+fala_npc = "sai pfv"
+repetir_fala = true
+
+[node name="AreaInteracao" type="Area2D" parent="Insidebus/PontoDeOnibus/NpcMulher4" unique_id=552672676]
+position = Vector2(-175.51959, -22.198408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/PontoDeOnibus/NpcMulher4/AreaInteracao" unique_id=1003454543]
+position = Vector2(176.49622, 25.996143)
+shape = SubResource("CircleShape2D_7mdp2")
+
+[node name="BalaoHolder" type="Node2D" parent="Insidebus/PontoDeOnibus/NpcMulher4" unique_id=553558252]
+position = Vector2(-199.73808, -56.290764)
+scale = Vector2(0.5, 0.5)
+
+[node name="NpcBalao" parent="Insidebus/PontoDeOnibus/NpcMulher4/BalaoHolder" unique_id=1469668588 instance=ExtResource("4_n72m7")]
+position = Vector2(400.94113, 96.546616)
+scale = Vector2(0.9999999, 1)
+
+[node name="NpcMulher3" type="Sprite2D" parent="Insidebus/PontoDeOnibus" unique_id=815119284]
+texture_filter = 1
+position = Vector2(-1573.3601, -22.786198)
+scale = Vector2(-3, 3)
+texture = ExtResource("13_xbiri")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+script = ExtResource("8_n72m7")
+fala_npc = "To guardando lugar hihi...senta lá trás"
+repetir_fala = true
+
+[node name="AreaInteracao" type="Area2D" parent="Insidebus/PontoDeOnibus/NpcMulher3" unique_id=2090012193]
+position = Vector2(-175.51959, -22.198408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/PontoDeOnibus/NpcMulher3/AreaInteracao" unique_id=1852542143]
+position = Vector2(174.78708, 26.840086)
+shape = SubResource("CircleShape2D_7mdp2")
+
+[node name="BalaoHolder" type="Node2D" parent="Insidebus/PontoDeOnibus/NpcMulher3" unique_id=1806909348]
+position = Vector2(-199.73808, -56.290764)
+scale = Vector2(0.5, 0.5)
+
+[node name="NpcBalao" parent="Insidebus/PontoDeOnibus/NpcMulher3/BalaoHolder" unique_id=1245292700 instance=ExtResource("4_n72m7")]
+position = Vector2(402.8898, 61.77247)
+scale = Vector2(0.9999999, 1)
+altura_por_linha = 40.0
+margem_x = 40.0
+
+[node name="NpcMulher2" type="Sprite2D" parent="Insidebus/PontoDeOnibus" unique_id=1561536150]
+texture_filter = 1
+position = Vector2(-1306.7384, -21.52032)
+scale = Vector2(-3, 3)
+texture = ExtResource("13_xbiri")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+script = ExtResource("8_n72m7")
+fala_npc = "nao"
+repetir_fala = true
+
+[node name="AreaInteracao" type="Area2D" parent="Insidebus/PontoDeOnibus/NpcMulher2" unique_id=1676188829]
+position = Vector2(-175.55022, -23.208431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/PontoDeOnibus/NpcMulher2/AreaInteracao" unique_id=971533633]
+position = Vector2(175.51962, 26.418114)
+shape = SubResource("CircleShape2D_7mdp2")
+
+[node name="BalaoHolder" type="Node2D" parent="Insidebus/PontoDeOnibus/NpcMulher2" unique_id=1539771602]
+position = Vector2(-199.73808, -56.290764)
+scale = Vector2(0.5, 0.5)
+
+[node name="NpcBalao" parent="Insidebus/PontoDeOnibus/NpcMulher2/BalaoHolder" unique_id=448513173 instance=ExtResource("4_n72m7")]
+position = Vector2(399.9645, 88.95115)
+scale = Vector2(0.9999999, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Insidebus" unique_id=29700385]
+position = Vector2(-173, 351)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=160258883]
+position = Vector2(-789, -121)
+shape = SubResource("RectangleShape2D_7mdp2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=844571895]
+position = Vector2(125, -6)
+shape = SubResource("RectangleShape2D_7mdp2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=543031305]
+position = Vector2(253, -631)
+shape = SubResource("RectangleShape2D_7mdp2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=1531281666]
+position = Vector2(-362, -263)
+scale = Vector2(2.051282, 2.0533884)
+shape = SubResource("RectangleShape2D_0eihl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=652341847]
+position = Vector2(698.9999, -107.04773)
+scale = Vector2(4.2077575, 4.216404)
+shape = SubResource("RectangleShape2D_0eihl")
+
+[node name="Protagonista" type="CharacterBody2D" parent="Insidebus/StaticBody2D" unique_id=1276409688]
+position = Vector2(462, -281)
+script = ExtResource("2_e1owd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Insidebus/StaticBody2D/Protagonista" unique_id=1382665771]
+texture_filter = 1
+position = Vector2(89, 149)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_0effl")
+animation = &"walk_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/StaticBody2D/Protagonista" unique_id=2033373253]
+position = Vector2(87, 151)
+shape = SubResource("RectangleShape2D_ba5ok")
+
+[node name="Camera2D" type="Camera2D" parent="Insidebus/StaticBody2D/Protagonista" unique_id=1666587114]
+position = Vector2(610, 118)
+limit_left = -1826
+limit_top = 62
+limit_right = 1134
+limit_bottom = 614
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Insidebus/StaticBody2D" unique_id=1475613253]
+position = Vector2(133, -213)
+shape = SubResource("RectangleShape2D_321rr")
+
+[node name="Banco" type="Sprite2D" parent="." unique_id=717746366]
+z_index = 6
+position = Vector2(800, 446)
+texture = ExtResource("11_e1owd")
+
+[node name="Banco2" type="Sprite2D" parent="." unique_id=997161678]
+z_index = 6
+position = Vector2(681, 446)
+texture = ExtResource("11_e1owd")
+
+[node name="Banco3" type="Sprite2D" parent="." unique_id=1202250747]
+z_index = 6
+position = Vector2(443, 441)
+texture = ExtResource("11_e1owd")
+
+[node name="Banco4" type="Sprite2D" parent="." unique_id=897538754]
+z_index = 6
+position = Vector2(330, 441)
+texture = ExtResource("11_e1owd")
+
+[node name="Banco5" type="Sprite2D" parent="." unique_id=390690679]
+z_index = 6
+position = Vector2(211, 448)
+texture = ExtResource("11_e1owd")
+
+[node name="Banco6" type="Sprite2D" parent="." unique_id=35545519]
+z_index = 6
+position = Vector2(564, 439)
+texture = ExtResource("11_e1owd")
+
+[node name="NpcHomem5" type="Sprite2D" parent="Banco6" unique_id=111984419]
+z_index = 1
+texture_filter = 1
+position = Vector2(125, 40)
+rotation = -3.1415927
+scale = Vector2(5.163331, -3.0737584)
+texture = ExtResource("12_doi3v")
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcMulher4" type="Sprite2D" parent="Banco6" unique_id=1564713372]
+texture_filter = 1
+position = Vector2(247.00012, -25.732117)
+rotation = 3.1415927
+scale = Vector2(4.4251194, -3.3154945)
+texture = ExtResource("13_xbiri")
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+
+[node name="NpcMulher2" type="Sprite2D" parent="Banco6" unique_id=1052723289]
+z_index = 1
+texture_filter = 1
+position = Vector2(-227.99994, 38.99997)
+rotation = 3.1415927
+scale = Vector2(4.5944304, -3.1984584)
+texture = ExtResource("13_xbiri")
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+
+[node name="NpcHomem4" type="Sprite2D" parent="Banco6" unique_id=816340081]
+texture_filter = 1
+position = Vector2(128.58418, -20.300926)
+rotation = 3.1415927
+scale = Vector2(5.0472374, -3.5884867)
+texture = ExtResource("12_doi3v")
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcHomem4" type="Sprite2D" parent="Banco6/NpcHomem4" unique_id=41592383]
+texture_filter = 1
+position = Vector2(-45.95533, -69.35707)
+rotation = 3.1415927
+scale = Vector2(-1.1951588, -1.0410596)
+texture = ExtResource("12_doi3v")
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcHomem3" type="Sprite2D" parent="Banco6" unique_id=1203126032]
+texture_filter = 1
+position = Vector2(-109, -26.999992)
+scale = Vector2(3.8220825, 3.2254646)
+texture = ExtResource("12_doi3v")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcMulher3" type="Sprite2D" parent="Banco6" unique_id=1617712746]
+texture_filter = 1
+position = Vector2(7.000002, -26)
+scale = Vector2(-4.381, 2.669)
+texture = ExtResource("13_xbiri")
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)
+
+[node name="NpcHomem" type="Sprite2D" parent="Banco6" unique_id=83820230]
+texture_filter = 1
+position = Vector2(-350, -22)
+scale = Vector2(4.696429, 3.0113628)
+texture = ExtResource("12_doi3v")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcHomem2" type="Sprite2D" parent="Banco6" unique_id=1721171869]
+texture_filter = 1
+position = Vector2(6.999977, 35.999985)
+scale = Vector2(-3.9147077, 2.9494674)
+texture = ExtResource("12_doi3v")
+region_enabled = true
+region_rect = Rect2(299.2, 3, 14.799988, 22)
+
+[node name="NpcMulher" type="Sprite2D" parent="Banco6" unique_id=1210839604]
+texture_filter = 1
+position = Vector2(-227, -21)
+scale = Vector2(-3.786, 2.955)
+texture = ExtResource("13_xbiri")
+region_enabled = true
+region_rect = Rect2(144, 9, 14, 22)

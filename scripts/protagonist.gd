@@ -2,9 +2,17 @@ extends CharacterBody2D
 
 @export var velocidade: float = 180.0
 
+var pode_andar: bool = true
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(_delta: float) -> void:
+
+	if not pode_andar:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		anim.stop()
+		return
 
 	var dir := Input.get_vector(
 		"move_left",
@@ -38,3 +46,13 @@ func _anim(dir: Vector2) -> void:
 			anim.play("walk_down")
 		else:
 			anim.play("walk_up")
+
+
+func travar() -> void:
+	pode_andar = false
+	velocity = Vector2.ZERO
+	anim.stop()
+
+
+func liberar() -> void:
+	pode_andar = true
