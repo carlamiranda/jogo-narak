@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="12_ynm0n"]
 [ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="13_pgqhb"]
 [ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="14_1r1ew"]
+[ext_resource type="PackedScene" uid="uid://cn25fijx2tax" path="res://scenes/HudPrincipal.tscn" id="15_jtiau"]
 [ext_resource type="Texture2D" uid="uid://c77o44dxgxskq" path="res://assets/sprites/characters/npc/Generic Female NPCs.png" id="17_7ubpm"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="18_7ubpm"]
 [ext_resource type="Script" uid="uid://7xii5f87b8cg" path="res://scripts/npc_interativo.gd" id="18_l3vci"]
@@ -4159,6 +4160,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="HudPrincipal" parent="." unique_id=256750134 instance=ExtResource("15_jtiau")]
+
 [node name="Protagonista" type="CharacterBody2D" parent="." unique_id=213354266]
 z_index = 2
 position = Vector2(-20, 221)
@@ -4179,7 +4182,7 @@ shape = SubResource("RectangleShape2D_qk0mn")
 position = Vector2(610, 118)
 limit_left = 0
 limit_top = 0
-limit_right = 5381
+limit_right = 5354
 limit_bottom = 3414
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1915756162]
