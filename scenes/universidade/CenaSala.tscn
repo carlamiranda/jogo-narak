@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="24_3cwse"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="27_l3yui"]
 [ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="28_02l3t"]
-[ext_resource type="Script" uid="uid://drv61mbgj17uy" path="res://scenes/universidade/cadeira.gd" id="29_02l3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kwbs"]
 texture = ExtResource("2_hvivs")
@@ -819,7 +818,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nu5ce"]
 radius = 25.0
-height = 144.0
+height = 62.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1o3y"]
 size = Vector2(1627, 51)
@@ -835,9 +834,6 @@ size = Vector2(81, 898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wq7o6"]
 size = Vector2(235, 28.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfgt4"]
-size = Vector2(39, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02l3t"]
 size = Vector2(138, 20)
@@ -1013,27 +1009,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Cadeira" type="Area2D" parent="." unique_id=517644703]
-position = Vector2(861, 712)
-script = ExtResource("29_02l3t")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cadeira" unique_id=1912998341]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cadeira" unique_id=608073754]
-position = Vector2(23.5, 12.5)
-shape = SubResource("RectangleShape2D_yfgt4")
-
-[node name="Label" type="Label" parent="Cadeira" unique_id=1668163314]
-offset_left = -10.0
-offset_top = -1.0
-offset_right = 65.0
-offset_bottom = 22.0
-theme_override_font_sizes/font_size = 14
-text = "[E] Sentar"
-
-[node name="Marker2D" type="Marker2D" parent="Cadeira" unique_id=1791409938]
-position = Vector2(16, 7)
-
 [node name="SaidaCorredor" type="Area2D" parent="." unique_id=412517992]
 
 [node name="Marker2D" type="Marker2D" parent="SaidaCorredor" unique_id=1847589221]
@@ -1042,6 +1017,3 @@ position = Vector2(756, 938)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaidaCorredor" unique_id=1757304695]
 position = Vector2(762, 945)
 shape = SubResource("RectangleShape2D_02l3t")
-
-[connection signal="body_entered" from="Cadeira" to="Cadeira" method="_on_body_entered"]
-[connection signal="body_exited" from="Cadeira" to="Cadeira" method="_on_body_exited"]
