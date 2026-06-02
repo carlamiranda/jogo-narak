@@ -1,0 +1,41 @@
+[33mcommit cd12613af5b4b955cbdacf7d33c653a926bfea07[m[33m ([m[1;31morigin/DentroDoOnibus[m[33m)[m
+Author: jadsul21 <jadsona607@gmail.com>
+Date:   Fri May 29 02:48:41 2026 -0300
+
+    dentro do onibus
+
+ assets/sprites/Fonts/Game Paused DEMO.otf.import   |     6 [32m+[m[31m-[m
+ assets/sprites/Fonts/Super Beatpop.ttf.import      |     6 [32m+[m[31m-[m
+ assets/sprites/UI/banner_hanging.png.import        |     6 [32m+[m[31m-[m
+ assets/sprites/UI/borderLayout.png.import          |     6 [32m+[m[31m-[m
+ assets/sprites/UI/button_brown.png.import          |     6 [32m+[m[31m-[m
+ .../UI/panel_border_brown_detail.png.import        |     6 [32m+[m[31m-[m
+ .../sprites/UI/panel_brown_damaged_dark.png.import |     6 [32m+[m[31m-[m
+ assets/sprites/UI/panel_brown_dark.png.import      |     6 [32m+[m[31m-[m
+ .../097b93c827ff033f1f9cf5715b67d939.png           |   Bin [31m0[m -> [32m211550[m bytes
+ .../46c30d1050b18b079f753da78912e86b.jpg           |   Bin [31m0[m -> [32m79192[m bytes
+ assets/sprites/sprites cena-onibus/AV2.rar         |   Bin [31m0[m -> [32m446236[m bytes
+ assets/sprites/sprites cena-onibus/BANCO.png       |   Bin [31m0[m -> [32m13606[m bytes
+ .../sprites cena-onibus/DentroDoOnibus_cenario.png |   Bin [31m0[m -> [32m430491[m bytes
+ .../sprites cena-onibus/Deuses-de-Arton-v1.0-1.pdf |   Bin [31m0[m -> [32m100084498[m bytes
+ assets/sprites/sprites cena-onibus/INSIDEBUS.png   |   Bin [31m0[m -> [32m511245[m bytes
+ .../sprites cena-onibus/Novo Documento RTF (2).rtf | 74114 [32m+++++++++++++++++++[m
+ .../T20 - Amea\303\247as de Arton.pdf"             |   Bin [31m0[m -> [32m88127410[m bytes
+ .../T20 - Atlas de Arton (1).pdf                   |   Bin [31m0[m -> [32m94423845[m bytes
+ .../sprites cena-onibus/T20 LIVRO DO ANO.pdf       |   Bin [31m0[m -> [32m82923003[m bytes
+ .../T20 Livro 3 - Herois de Arton.pdf              |   Bin [31m0[m -> [32m68445887[m bytes
+ .../T20-Herois-de-Arton-Miolo-1.0.pdf              |   Bin [31m0[m -> [32m48571697[m bytes
+ .../sprites cena-onibus/TrabalhoAnaMariaAV3.pkt    |   Bin [31m0[m -> [32m74187[m bytes
+ .../sprites cena-onibus/image-removebg-preview.png |   Bin [31m0[m -> [32m46502[m bytes
+ ...-retro-8-bit-style-illustration_660885-265.webp |   Bin [31m0[m -> [32m9806[m bytes
+ ...HpwAAAAZJREFUAwBqPnASEIq8LQAAAABJRU5ErkJggg.png |   Bin [31m0[m -> [32m35320[m bytes
+ assets/sprites/sprites cena-onibus/token_1.png     |   Bin [31m0[m -> [32m112312[m bytes
+ assets/tilesets/INSIDEBUS.png                      |   Bin [31m0[m -> [32m511245[m bytes
+ cenaonibus.gd                                      |    88 [32m+[m[31m-[m
+ scenes/Dentro do Onibus/DentroDoOnibus.tscn        |   379 [32m+[m
+ scenes/ponto de onibus/PontoDeOnibus.tscn          |     7 [32m+[m[31m-[m
+ scripts/dentro_do_onibus.gd                        |    24 [32m+[m
+ scripts/dentro_do_onibus.gd.uid                    |     1 [32m+[m
+ scripts/ponto_de_onibus.gd                         |     8 [32m+[m[31m-[m
+ scripts/protagonist.gd                             |    18 [32m+[m
+ 34 files changed, 74641 insertions(+), 46 deletions(-)

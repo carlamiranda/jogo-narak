@@ -3,112 +3,91 @@ extends Node2D
 @onready var protagonista = $Protagonista
 @onready var espelho = $EspelhoBanheiro
 @onready var hud = $HudBanheiro
-@onready var area_box = $AreaBox
-@onready var porta_fechada = $AreaBox/PortaFechada
+@onready var area_saida = $SaidaOnibus
 
-var chegou_espelho := false
-var cutscene_rodando := false
 var investigando := false
-var trancada_no_box := false
+var evento_finalizado := false
 
 
-func _ready():
-
-	# trava movimento no começo
+func _ready() -> void:
 	protagonista.set_physics_process(false)
 	protagonista.velocity = Vector2.ZERO
 
-	area_box.body_entered.connect(_on_area_box_body_entered)
+	area_saida.body_entered.connect(_on_saida_entered)
 
-	# movimento automático até o espelho
 	await mover_ate_espelho()
 
 
+# =========================
+# MOVIMENTO AUTOMÁTICO
+# =========================
 func mover_ate_espelho() -> void:
 
 	while protagonista.global_position.distance_to(espelho.global_position) > 20:
 
-		var dir = (
-			espelho.global_position - protagonista.global_position
-		).normalized()
+		var dir: Vector2 = (espelho.global_position - protagonista.global_position).normalized()
 
 		protagonista.velocity = dir * 120
-
 		protagonista.move_and_slide()
-
-		if abs(dir.x) > abs(dir.y):
-
-			if dir.x > 0:
-				protagonista.anim.play("walk_right")
-			else:
-				protagonista.anim.play("walk_left")
-
-		else:
-
-			if dir.y > 0:
-				protagonista.anim.play("walk_down")
-			else:
-				protagonista.anim.play("walk_up")
 
 		await get_tree().physics_frame
 
 	protagonista.velocity = Vector2.ZERO
-	protagonista.anim.stop()
+	protagonista.get_node("AnimatedSprite2D").stop()
 
-	await _cutscene_espelho()
+	await cutscene_espelho()
 
 
-func _cutscene_espelho():
+# =========================
+# CUTSCENE (HUD)
+# =========================
+func cutscene_espelho() -> void:
 
-	var falas = [
-		"Água fria. Eu só preciso de água fria no rosto.",
-		"Cinco coisas... Cinco coisas...",
-		"Preciso focar em cinco coisas.",
-		"O espelho, a pia, a luz...",
-		"O zumbido dessa lâmpada está me deixando pior...",
-		"CALMA!",
-		"Você está segura aqui.",
-		"Ninguém vai entrar."
-	]
+	await hud.show_message("Água fria... eu só preciso de água fria no rosto.")
+	await hud.avancar_dialogo
 
-	for fala in falas:
-		hud.show_message(fala)
-		await hud.avancar_dialogo
+	await hud.show_message("Cinco coisas... cinco coisas...")
+	await hud.avancar_dialogo
+
+	await hud.show_message("Preciso focar.")
+	await hud.avancar_dialogo
 
 	await hud.hide_message()
 
-	# libera movimento
+	# libera controle depois da cutscene
 	protagonista.set_physics_process(true)
-
 	investigando = true
-	cutscene_rodando = false
 
 
-func _on_area_box_body_entered(body):
+# =========================
+# SAÍDA PARA ÔNIBUS
+# =========================
+func _on_saida_entered(body: Node) -> void:
 
-	if body == protagonista and investigando and not trancada_no_box:
+	if body != protagonista:
+		return
 
-		trancada_no_box = true
+	if not investigando:
+		return
 
-		fechar_porta_do_box()
+	if evento_finalizado:
+		return
+
+	evento_finalizado = true
+	await ir_para_onibus()
 
 
-func fechar_porta_do_box():
-
-	porta_fechada.visible = true
-
-	protagonista.get_node("AnimatedSprite2D").visible = false
-
-	protagonista.velocity = Vector2.ZERO
+func ir_para_onibus() -> void:
 
 	protagonista.set_physics_process(false)
+	protagonista.velocity = Vector2.ZERO
 
-	await get_tree().create_timer(1.0).timeout
-
-	await hud.show_message("Pronto... ninguém vai me ver aqui.")
+	await hud.show_message("Você decide sair dali.")
 	await hud.avancar_dialogo
 
-	await hud.show_message("É só esperar passar.")
+	await hud.show_message("O ônibus parece ser o único caminho agora.")
 	await hud.avancar_dialogo
 
 	await hud.hide_message()
+
+	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")

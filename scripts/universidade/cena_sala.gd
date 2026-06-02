@@ -88,4 +88,4 @@ func _on_marker_corredor_body_entered(body):
 	if body != protagonista:
 		return
 
-	get_tree().change_scene_to_file("res://scenes/universidade/corredor_colorida.tscn")
+	get_tree().change_scene_to_file("res://scenes/universidade/corredor_colorida_dia1.tscn")
