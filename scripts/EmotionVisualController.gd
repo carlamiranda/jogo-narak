@@ -7,6 +7,7 @@ extends Node
 @export var color_rect_ansiedade: ColorRect
 
 var camera_posicao_inicial: Vector2
+var intensidade_da_crise: float = 1.0 # --- NOVA VARIÁVEL ---
 
 
 # Salva a posição inicial da câmera
@@ -27,7 +28,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	atualizar_cor_geral()
 	atualizar_camada_ansiedade()
-	atualizar_tremor()
+	atualizar_tremor(delta) # --- Passamos o tempo (delta) pra cá ---
 
 
 # Muda a cor geral da cena
@@ -70,28 +71,42 @@ func atualizar_camada_ansiedade() -> void:
 	color_rect_ansiedade.color = Color(0, 0, 0, alpha)
 
 
-func atualizar_tremor() -> void:
+# --- FUNÇÃO TOTALMENTE REESCRITA ---
+func atualizar_tremor(delta: float) -> void:
 	if camera == null:
 		return
 
 	var ansiedade_normalizada: float = GameState.ansiedade / 100.0
 	var isolamento_normalizado: float = GameState.isolamento / 100.0
 
-	# Usa o maior valor entre ansiedade e isolamento
 	var tensao: float = max(ansiedade_normalizada, isolamento_normalizado)
 
 	if tensao < 0.6:
 		camera.offset = Vector2.ZERO
+		intensidade_da_crise = 1.0 # Zera a crise se a ansiedade baixar
 		return
 
-	# Tremor bem mais fraco
-	var intensidade: int = int((tensao - 0.6) * 6.0)
+	var deslocamento_x: float = 0.0
+	var deslocamento_y: float = 0.0
 
-	if intensidade < 1:
-		intensidade = 1
+	if tensao >= 0.99:
+		# GAME OVER (CRISE DE ANSIEDADE): Crescimento agressivo e violento
+		intensidade_da_crise += delta * 15.0 
+		deslocamento_x = randf_range(-intensidade_da_crise, intensidade_da_crise)
+		deslocamento_y = randf_range(-intensidade_da_crise, intensidade_da_crise)
+	else:
+		# GAMEPLAY NORMAL: Efeito de "tontura" beeem fraco
+		intensidade_da_crise = 1.0 
+		
+		# Força de 0.3 (quase imperceptível) até 0.8 pixels
+		var forca: float = 0.3 if tensao < 0.8 else 0.8
+		
+		# O SEGREDO: Atualiza a posição apenas a cada 4 frames.
+		# Isso faz a tremedeira ficar lenta, parecendo o batimento cardíaco ou respiração ofegante.
+		if Engine.get_frames_drawn() % 4 == 0:
+			deslocamento_x = randf_range(-forca, forca)
+			deslocamento_y = randf_range(-forca, forca)
+		else:
+			return # Nos outros frames, não faz nada (mantém a câmera onde já está)
 
-	var deslocamento_x: int = randi_range(-intensidade, intensidade)
-	var deslocamento_y: int = randi_range(-intensidade, intensidade)
-
-	# Usa offset em vez de position para não bagunçar a posição base da câmera
 	camera.offset = Vector2(deslocamento_x, deslocamento_y)

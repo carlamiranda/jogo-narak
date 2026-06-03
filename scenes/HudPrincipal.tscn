@@ -2,8 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dhkmvrslm6qs5" path="res://scenes/hud_principal.gd" id="1_lr78r"]
 [ext_resource type="Texture2D" uid="uid://denydnplqasfg" path="res://assets/sprites/HUD/UI_Indicator_Heart.png" id="1_one32"]
+[ext_resource type="Texture2D" uid="uid://dpkwx54okoj63" path="res://assets/sprites/HUD/Icons_29.png" id="3_a7knt"]
+[ext_resource type="Texture2D" uid="uid://yvy0gm387gpl" path="res://assets/sprites/HUD/Gemini_Generated_Image_2n6na2n6na2n6na2 (2).png" id="4_6negv"]
+[ext_resource type="Texture2D" uid="uid://dspppkk5dww05" path="res://assets/sprites/HUD/5244834.png" id="5_4im7t"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="6_hdyun"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8alnc"]
+font = ExtResource("6_hdyun")
+font_size = 30
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [node name="HudPrincipal" type="CanvasLayer" unique_id=256750134]
+process_mode = 3
 script = ExtResource("1_lr78r")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2108790950]
@@ -51,3 +62,72 @@ layout_mode = 2
 texture = ExtResource("1_one32")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Coletaveis" type="HBoxContainer" parent="MarginContainer" unique_id=581382990]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="BotaoPapel" type="TextureButton" parent="MarginContainer/Coletaveis" unique_id=302984899]
+modulate = Color(1, 1, 1, 0.29411766)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_a7knt")
+
+[node name="PopupLeitura" type="TextureRect" parent="." unique_id=2145460447]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = -296.0
+offset_right = 445.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_6negv")
+
+[node name="BotaoFechar" type="Button" parent="PopupLeitura" unique_id=2127453928]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.94269663
+anchor_right = 1.0595505
+anchor_bottom = 0.17567568
+offset_right = 416.00003
+offset_bottom = 416.0
+grow_horizontal = 0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("5_4im7t")
+icon_alignment = 2
+vertical_icon_alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TelaEscura" type="ColorRect" parent="." unique_id=631771132]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextoMorte" type="Label" parent="." unique_id=942289478]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -18.5
+offset_right = 170.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eu preciso me acalmar..."
+label_settings = SubResource("LabelSettings_8alnc")
+
+[connection signal="pressed" from="MarginContainer/Coletaveis/BotaoPapel" to="." method="_on_botao_papel_pressed"]
+[connection signal="pressed" from="PopupLeitura/BotaoFechar" to="." method="_on_botao_fechar_pressed"]
