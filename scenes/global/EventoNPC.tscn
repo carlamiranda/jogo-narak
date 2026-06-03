@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://sp3figaiyc5l"]
+
+[ext_resource type="Script" uid="uid://dbj6x11nvyevu" path="res://scripts/evento_npc.gd" id="1_42uc6"]
+[ext_resource type="Texture2D" uid="uid://baihms7em0yun" path="res://assets/sprites/characters/npc/Generic Male NPCs.png" id="2_e82o4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1wdm"]
+size = Vector2(273, 318)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qn8q"]
+atlas = ExtResource("2_e82o4")
+region = Rect2(480, 480, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yyaa"]
+atlas = ExtResource("2_e82o4")
+region = Rect2(560, 480, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qomxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qn8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yyaa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NpcEntregador" type="Area2D" unique_id=1608546027]
+script = ExtResource("1_42uc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1995254136]
+position = Vector2(3.5, 93)
+shape = SubResource("RectangleShape2D_v1wdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1771943318]
+sprite_frames = SubResource("SpriteFrames_qomxb")

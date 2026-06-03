@@ -24,6 +24,7 @@ extends Node2D
 var escolha_ativa := false
 var cutscene_rodando := false
 var pode_jogar := false
+var avisando_panfleto := false 
 
 
 # ================= READY =================
@@ -44,7 +45,7 @@ func _ready():
 	await _cutscene_inicio()
 	await iniciar_hud()
 
-	# 🔥 LIBERA O PLAYER AQUI (isso é o que estava faltando)
+	# LIBERA O PLAYER AQUI
 	pode_jogar = true
 
 
@@ -58,6 +59,11 @@ func _cutscene_inicio():
 	await Cutscene.play_fade_in(1.0)
 
 	cutscene_rodando = false
+	
+	# --- NOVA PARTE: Mostra a HUD depois que a tela preta some ---
+	var hud_principal = get_node_or_null("HudPrincipal")
+	if hud_principal and hud_principal.has_method("mostrar_hud"):
+		hud_principal.mostrar_hud()
 
 
 # ================= HUD =================
@@ -67,17 +73,26 @@ func iniciar_hud():
 		print("HUD não encontrado")
 		return
 
-	var falas = [
-		"Tem muita gente aqui.",
-		"Onde eu ponho as mãos??",
-		"Meu Deus a sala é do outro lado do campus.",
-		"... como atravessar isso?",
-		"Talvez eu devesse ir no banheiro primeiro.",
-		"Não, vou me atrasar.",
-		"Queria achar um gatinho do campus...",
-		"Fazer carinho neles ajuda.",
-		"Por que eu sou tão estranha?.."
-	]
+	var falas = []
+
+	if GameState.ja_tentou_fase_1 == false:
+		falas = [
+			"Tem muita gente aqui.",
+			"Onde eu ponho as mãos??",
+			"... como vou atravessar isso?",
+			"Eu preciso ir pra aula, acho que é seguindo reto aqui.",
+			"Mas antes, tenho que pegar o panfleto com o número da minha sala.",
+			"Disseram que fica na biblioteca... lá embaixo, mais pro meio do campus.",
+			"Talvez eu devesse ir no banheiro primeiro pra me acalmar.",
+			"Não, vou me atrasar se fizer isso. Primeiro a biblioteca. Foco.",
+			"Por que tudo tem que ser tão difícil pra mim?.."
+		]
+	else:
+		falas = [
+			"É... vamos ver se agora eu consigo.",
+			"Respira fundo, não olha para os lados.",
+			"Eu preciso pegar o panfleto e chegar na sala."
+		]
 
 	for fala in falas:
 		hud.show_message(fala)
@@ -92,10 +107,24 @@ func _on_porta_sala_body_entered(body):
 	if body != protagonista:
 		return
 
-	if cutscene_rodando:
+	if cutscene_rodando or avisando_panfleto:
 		return
 
-	ativar_ui()
+	var hud_principal = get_node_or_null("HudPrincipal")
+	var tem_panfleto = false
+	
+	if hud_principal != null:
+		tem_panfleto = hud_principal.tem_papel
+		
+	if tem_panfleto:
+		ativar_ui()
+	else:
+		avisando_panfleto = true
+		if hud != null:
+			hud.show_message("Não posso entrar ainda. O panfleto com a minha sala deve estar lá embaixo, na biblioteca.")
+			await hud.avancar_dialogo
+			await hud.hide_message()
+		avisando_panfleto = false
 
 
 # ================= UI =================

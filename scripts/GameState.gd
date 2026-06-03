@@ -7,10 +7,11 @@ var confianca: int = 0
 var vinculo_colorida: int = 0
 var vinculo_quebrada: int = 0
 
-#guarda informações da rota e do final
+#guarda informações da rota, do final e se ela já tentou a fase
 var rota_atual: String = ""
 var final_atual: String = ""
 var atendeu_ligacao: bool = false
+var ja_tentou_fase_1: bool = false
 
 
 #altera os valores emocionais sem deixar passar de 0 a 100
@@ -52,7 +53,7 @@ func calcular_final() -> String:
 	return "indefinido"
 
 
-#volta todos os valores para o início
+#volta todos os valores para o início (mantendo a memória de que ela já jogou)
 func resetar_jogo() -> void:
 	ansiedade = 50
 	isolamento = 50
@@ -62,4 +63,3 @@ func resetar_jogo() -> void:
 	rota_atual = ""
 	final_atual = ""
 	atendeu_ligacao = false
-	
