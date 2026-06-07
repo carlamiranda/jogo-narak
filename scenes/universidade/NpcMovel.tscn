@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://iybjo5bhqv20"]
 
-[ext_resource type="Script" uid="uid://lpy54j8343b8" path="res://scenes/universidade/npc_movel.gd" id="1_pc7gq"]
+[ext_resource type="Script" uid="uid://lpy54j8343b8" path="res://scripts/npc_movel.gd" id="1_pc7gq"]
 [ext_resource type="Texture2D" uid="uid://c77o44dxgxskq" path="res://assets/sprites/characters/npc/Generic Female NPCs.png" id="1_solyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emtcl"]

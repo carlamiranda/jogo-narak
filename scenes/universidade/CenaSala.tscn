@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwaqhio6bqxtr" path="res://assets/tilesets/coolschool_B.png" id="4_8n0qa"]
 [ext_resource type="Script" uid="uid://bulgtul0himfn" path="res://scripts/protagonist.gd" id="5_l3yui"]
 [ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="6_02l3t"]
-[ext_resource type="Texture2D" uid="uid://cwu7qjiuqyn77" path="res://assets/sprites/characters/protagonist/seated/seated_up.png" id="6_yfgt4"]
+[ext_resource type="Texture2D" uid="uid://ne0cxbjpwyva" path="res://assets/sprites/characters/protagonist/seated/seated_up.png" id="6_yfgt4"]
 [ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="7_yfgt4"]
 [ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="8_wiutv"]
 [ext_resource type="Texture2D" uid="uid://cls4bdemcoh46" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_left.png" id="9_5fpqc"]
@@ -18,19 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://dhfqtp70t5ogp" path="res://assets/sprites/characters/npc/Amelia_sit3_16x16.png" id="15_3s63b"]
 [ext_resource type="PackedScene" uid="uid://cud4axgjrd18k" path="res://scenes/NPC_Balao.tscn" id="16_hvivs"]
 [ext_resource type="Script" uid="uid://7xii5f87b8cg" path="res://scripts/npc_interativo.gd" id="16_ml0xq"]
-[ext_resource type="Texture2D" uid="uid://d1mq614or4oym" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="16_wbs6l"]
-[ext_resource type="Texture2D" uid="uid://c71s6avqlhqsy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="17_v46iy"]
-[ext_resource type="Texture2D" uid="uid://v2j884752fyv" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="18_ngynx"]
-[ext_resource type="Script" uid="uid://cybwbdjjldkyx" path="res://scenes/universidade/menina_colorida_sala.gd" id="19_5fpqc"]
-[ext_resource type="Texture2D" uid="uid://dqeds73unbayg" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="19_18i6b"]
-[ext_resource type="Texture2D" uid="uid://dvjsgs3owaeew" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="20_4i5tx"]
-[ext_resource type="Texture2D" uid="uid://cqisoke0sofhy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="21_4ku28"]
-[ext_resource type="Texture2D" uid="uid://wldrymejt5a7" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="22_veq8o"]
-[ext_resource type="Texture2D" uid="uid://cafktc55jws64" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="23_nufu8"]
+[ext_resource type="Texture2D" uid="uid://bpq3wfr68sq1w" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="16_wbs6l"]
+[ext_resource type="Texture2D" uid="uid://dlaakc5k8dyt1" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="17_v46iy"]
+[ext_resource type="Texture2D" uid="uid://cbbkxxhd82d26" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="18_ngynx"]
+[ext_resource type="Script" uid="uid://cybwbdjjldkyx" path="res://scripts/menina_colorida_sala.gd" id="19_5fpqc"]
+[ext_resource type="Texture2D" uid="uid://dy5mhx4j2ldya" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="19_18i6b"]
+[ext_resource type="Texture2D" uid="uid://dl8ckpqq2mgg" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="20_4i5tx"]
+[ext_resource type="Texture2D" uid="uid://7sbwi3rpecy7" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="21_4ku28"]
+[ext_resource type="Texture2D" uid="uid://nsljon5u5s2l" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="22_veq8o"]
+[ext_resource type="Texture2D" uid="uid://b5bqmq425x05u" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="23_nufu8"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="24_3cwse"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="27_l3yui"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="28_02l3t"]
-[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scenes/universidade/control.gd" id="29_02l3t"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="28_02l3t"]
+[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scripts/control.gd" id="29_02l3t"]
 [ext_resource type="Texture2D" uid="uid://cb5k84lcdjbbs" path="res://assets/sprites/environments/college/classroom/cadeira.png" id="31_wiutv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kwbs"]
@@ -903,6 +903,15 @@ size = Vector2(138, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3yui"]
 size = Vector2(14.5, 124)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fpqc"]
+bg_color = Color(0.16862746, 0.101960786, 0.039215688, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6392157, 0.4509804, 1)
+anti_aliasing = false
+
 [node name="CenaSala" type="Node2D" unique_id=1550269511]
 script = ExtResource("1_fn3ds")
 
@@ -1139,11 +1148,18 @@ script = ExtResource("29_02l3t")
 
 [node name="PanelContainer" type="PanelContainer" parent="HudDialogo/Control" unique_id=492084680]
 layout_mode = 0
-offset_right = 241.0
-offset_bottom = 80.0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fpqc")
 
 [node name="MarginContainer" type="MarginContainer" parent="HudDialogo/Control/PanelContainer" unique_id=671321742]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer" unique_id=394329452]
 layout_mode = 2
