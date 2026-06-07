@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dedar40pxoa3v"]
 
 [ext_resource type="Texture2D" uid="uid://cxnlbc24cp4gp" path="res://assets/tilesets/faculdade.bmp" id="1_re18w"]
+[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scenes/universidade/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://bullhg1axsvba" path="res://assets/tilesets/Mahogany_Stage_5.png" id="2_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://pw2ntaf7qpmg" path="res://assets/tilesets/UpdatedDarkRoad.png" id="3_ywclq"]
 [ext_resource type="Texture2D" uid="uid://bkdq1q23a0j0w" path="res://assets/tilesets/idk.png" id="4_oci3u"]
@@ -11,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bw162gdx31lju" path="res://assets/tilesets/floorswalls_LRK.png" id="9_so353"]
 [ext_resource type="Texture2D" uid="uid://dfnwh5qdfgfnp" path="res://assets/tilesets/GRASS+.png" id="10_31pyj"]
 [ext_resource type="Texture2D" uid="uid://bpo8fcdk88f07" path="res://assets/tilesets/grass_3.png" id="11_xn4px"]
+[ext_resource type="Script" uid="uid://ca4u3efhcksdj" path="res://scenes/universidade/protagonista_gameplay_quebrada.gd" id="15_ywclq"]
 [ext_resource type="Script" uid="uid://wpa2nk47owxi" path="res://scripts/universidade/hud_gameplay_corredor.gd" id="21_epdjn"]
 [ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="22_3v6xi"]
 [ext_resource type="Texture2D" uid="uid://qhps5dn7p6pf" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_down.png" id="23_tj45h"]
-[ext_resource type="Script" uid="uid://b0tqcaof04dx3" path="res://scenes/universidade/protagonista_gameplay_corredor.gd" id="23_wcv5o"]
 [ext_resource type="Texture2D" uid="uid://boestqwsgmqym" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_down.png" id="24_re18w"]
 [ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="24_we8t7"]
+[ext_resource type="Script" uid="uid://cht6oepqboais" path="res://scenes/universidade/menina_quebrada.gd" id="24_ywclq"]
 [ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="25_gublm"]
 [ext_resource type="Texture2D" uid="uid://mrm12nqh6rd3" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_left.png" id="25_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="26_f6chy"]
@@ -30,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="30_himgd"]
 [ext_resource type="Texture2D" uid="uid://dx47x73f5puy6" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_up.png" id="30_vdbka"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="31_rcu87"]
+[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scenes/universidade/control.gd" id="32_s6pk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f17fk"]
 texture = ExtResource("1_re18w")
@@ -3942,7 +3945,7 @@ a = Vector2(11, 1604.5)
 b = Vector2(11, -1022.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q21jv"]
-size = Vector2(351.375, 188.875)
+size = Vector2(242, 188.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy20h"]
 size = Vector2(252, 133)
@@ -3984,7 +3987,7 @@ size = Vector2(317, 40.75)
 size = Vector2(145.5, 23.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6durb"]
-size = Vector2(5338, 86)
+size = Vector2(5351, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3e11"]
 size = Vector2(128.5, 692)
@@ -4038,9 +4041,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixx8m"]
 size = Vector2(35, 110)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8ga8"]
-size = Vector2(145, 173)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhxg3"]
 animations = [{
@@ -4100,7 +4100,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so353"]
 size = Vector2(45, 36.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywclq"]
+size = Vector2(40, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8ga8"]
+size = Vector2(145, 173)
+
 [node name="CorredorQuebradaDia2" type="Node2D" unique_id=132859864]
+script = ExtResource("1_s6pk2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=513311462]
 texture_filter = 3
@@ -4200,7 +4207,7 @@ position = Vector2(-2, 1036.5)
 shape = SubResource("SegmentShape2D_i6jqf")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2036802488]
-position = Vector2(528.6875, 493.5625)
+position = Vector2(522, 493.5625)
 shape = SubResource("RectangleShape2D_q21jv")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1283741780]
@@ -4369,7 +4376,7 @@ position = Vector2(3281, 3188)
 shape = SubResource("RectangleShape2D_unkms")
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="StaticBody2D2" unique_id=788304360]
-position = Vector2(2663, 618)
+position = Vector2(2656.5, 630.5)
 shape = SubResource("RectangleShape2D_6durb")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="StaticBody2D2" unique_id=511174708]
@@ -4413,22 +4420,22 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Protagonista" type="CharacterBody2D" parent="." unique_id=716054165]
-position = Vector2(286, 113)
+position = Vector2(112, 333)
 collision_mask = 2
-script = ExtResource("23_wcv5o")
+script = ExtResource("15_ywclq")
 
 [node name="FollowPoint" type="Marker2D" parent="Protagonista" unique_id=633829988]
-position = Vector2(708, -8)
+position = Vector2(-3, 41)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1960352795]
 texture_filter = 1
-position = Vector2(705, -2)
+position = Vector2(1, 59)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_o5oj7")
-animation = &"walk_down"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=1500494149]
-position = Vector2(703, 0)
+position = Vector2(-1, 61)
 shape = SubResource("RectangleShape2D_ixx8m")
 
 [node name="Camera2D" type="Camera2D" parent="Protagonista" unique_id=356385122]
@@ -4436,11 +4443,35 @@ position = Vector2(451, 41)
 limit_left = 26
 limit_top = 10
 limit_right = 5321
-limit_bottom = 643
+limit_bottom = 570
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="Protagonista/Camera2D" unique_id=99964229]
 position = Vector2(2659, 691)
 shape = SubResource("RectangleShape2D_6durb")
+
+[node name="MeninaQuebrada" type="CharacterBody2D" parent="." unique_id=74716365]
+z_index = 1
+position = Vector2(291, 164)
+collision_layer = 2
+script = ExtResource("24_ywclq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeninaQuebrada" unique_id=1910370165]
+texture_filter = 1
+position = Vector2(6.199768, 18.199982)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_hhxg3")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaQuebrada" unique_id=239638296]
+position = Vector2(5.699951, -2.0499878)
+shape = SubResource("RectangleShape2D_so353")
+
+[node name="EncontroArea" type="Area2D" parent="MeninaQuebrada" unique_id=27678528]
+position = Vector2(-10.800049, -13.799988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaQuebrada/EncontroArea" unique_id=503981895]
+position = Vector2(15, 18.5)
+shape = SubResource("RectangleShape2D_ywclq")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1951045914]
 visible = false
@@ -4455,16 +4486,50 @@ color = Color(0, 0, 0, 1)
 position = Vector2(-37, 366)
 shape = SubResource("RectangleShape2D_b8ga8")
 
-[node name="MeninaQuebrada" type="CharacterBody2D" parent="." unique_id=74716365]
-z_index = 1
+[node name="HudDialogo" type="CanvasLayer" parent="." unique_id=1554397686]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeninaQuebrada" unique_id=1910370165]
-texture_filter = 1
-position = Vector2(915.99994, 293)
-scale = Vector2(1.7, 1.7)
-sprite_frames = SubResource("SpriteFrames_hhxg3")
-animation = &"walk_down"
+[node name="Control" type="Control" parent="HudDialogo" unique_id=1472786369]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 17.0
+offset_top = 497.0
+offset_right = 57.0
+offset_bottom = 537.0
+script = ExtResource("32_s6pk2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaQuebrada" unique_id=239638296]
-position = Vector2(915.5, 272.75)
-shape = SubResource("RectangleShape2D_so353")
+[node name="PanelContainer" type="PanelContainer" parent="HudDialogo/Control" unique_id=943846167]
+layout_mode = 0
+offset_right = 241.0
+offset_bottom = 80.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HudDialogo/Control/PanelContainer" unique_id=1463345951]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer" unique_id=907392699]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="texto" type="RichTextLabel" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=328938123]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=393581025]
+layout_mode = 2
+alignment = 1
+
+[node name="retrato" type="TextureRect" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=465332486]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="nome" type="Label" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2095800404]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
