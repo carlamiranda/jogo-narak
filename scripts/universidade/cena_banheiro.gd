@@ -1,55 +1,93 @@
 extends Node2D
 
-# Referências
 @onready var protagonista = $Protagonista
 @onready var espelho = $EspelhoBanheiro
 @onready var hud = $HudBanheiro
+@onready var area_saida = $SaidaOnibus
 
-# Estado
-var chegou_espelho := false
-var cutscene_rodando := false
 var investigando := false
+var evento_finalizado := false
 
 
-func _ready():
-
-	protagonista.pode_andar = false
-	protagonista.andando_automatico = true
-	protagonista.destino = espelho.global_position
-
-
-func _physics_process(_delta):
-
-	if chegou_espelho or cutscene_rodando:
-		return
-
-	if protagonista.global_position.distance_to(espelho.global_position) <= 20:
-		chegou_espelho = true
-		cutscene_rodando = true
-
-		protagonista.andando_automatico = false
-		protagonista.velocity = Vector2.ZERO
-		protagonista.anim.play("walk_up")
-
-		call_deferred("_start_cutscene")
-
-
-func _start_cutscene():
-	await _cutscene_espelho()
-
-
-func _cutscene_espelho():
-
+func _ready() -> void:
+	protagonista.set_physics_process(false)
 	protagonista.velocity = Vector2.ZERO
 
-	await hud.show_message("O banheiro está silencioso demais.", 2.0)
-	await hud.show_message("Ela encara o espelho.", 2.5)
-	await hud.show_message("Seu reflexo parece estranho.", 2.5)
+	area_saida.body_entered.connect(_on_saida_entered)
 
-	await hud.show_message("Tem algo aqui...", 2.0)
-	await hud.show_message("Talvez seja melhor olhar ao redor.", 3.0)
-	await hud.show_message("Especialmente perto das divisórias.", 3.0)
+	await mover_ate_espelho()
 
-	protagonista.pode_andar = true
+
+# =========================
+# MOVIMENTO AUTOMÁTICO
+# =========================
+func mover_ate_espelho() -> void:
+
+	while protagonista.global_position.distance_to(espelho.global_position) > 20:
+
+		var dir: Vector2 = (espelho.global_position - protagonista.global_position).normalized()
+
+		protagonista.velocity = dir * 120
+		protagonista.move_and_slide()
+
+		await get_tree().physics_frame
+
+	protagonista.velocity = Vector2.ZERO
+	protagonista.get_node("AnimatedSprite2D").stop()
+
+	await cutscene_espelho()
+
+
+# =========================
+# CUTSCENE (HUD)
+# =========================
+func cutscene_espelho() -> void:
+
+	await hud.show_message("Água fria... eu só preciso de água fria no rosto.")
+	await hud.avancar_dialogo
+
+	await hud.show_message("Cinco coisas... cinco coisas...")
+	await hud.avancar_dialogo
+
+	await hud.show_message("Preciso focar.")
+	await hud.avancar_dialogo
+
+	await hud.hide_message()
+
+	# libera controle depois da cutscene
+	protagonista.set_physics_process(true)
 	investigando = true
-	cutscene_rodando = false
+
+
+# =========================
+# SAÍDA PARA ÔNIBUS
+# =========================
+func _on_saida_entered(body: Node) -> void:
+
+	if body != protagonista:
+		return
+
+	if not investigando:
+		return
+
+	if evento_finalizado:
+		return
+
+	evento_finalizado = true
+	await ir_para_onibus()
+
+
+func ir_para_onibus() -> void:
+
+	protagonista.set_physics_process(false)
+	protagonista.velocity = Vector2.ZERO
+
+	await hud.show_message("Você decide sair dali.")
+	await hud.avancar_dialogo
+
+	await hud.show_message("O ônibus parece ser o único caminho agora.")
+	await hud.avancar_dialogo
+
+	await hud.hide_message()
+
+	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")

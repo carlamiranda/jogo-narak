@@ -17,17 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://dhfqtp70t5ogp" path="res://assets/sprites/characters/npc/Amelia_sit3_16x16.png" id="15_3s63b"]
 [ext_resource type="PackedScene" uid="uid://cud4axgjrd18k" path="res://scenes/NPC_Balao.tscn" id="16_hvivs"]
 [ext_resource type="Script" uid="uid://7xii5f87b8cg" path="res://scripts/npc_interativo.gd" id="16_ml0xq"]
-[ext_resource type="Texture2D" uid="uid://bpq3wfr68sq1w" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="16_wbs6l"]
-[ext_resource type="Texture2D" uid="uid://dlaakc5k8dyt1" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="17_v46iy"]
-[ext_resource type="Texture2D" uid="uid://cbbkxxhd82d26" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="18_ngynx"]
-[ext_resource type="Texture2D" uid="uid://dy5mhx4j2ldya" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="19_18i6b"]
-[ext_resource type="Texture2D" uid="uid://dl8ckpqq2mgg" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="20_4i5tx"]
-[ext_resource type="Texture2D" uid="uid://7sbwi3rpecy7" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="21_4ku28"]
-[ext_resource type="Texture2D" uid="uid://nsljon5u5s2l" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="22_veq8o"]
-[ext_resource type="Texture2D" uid="uid://b5bqmq425x05u" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="23_nufu8"]
+[ext_resource type="Texture2D" uid="uid://d1mq614or4oym" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="16_wbs6l"]
+[ext_resource type="Texture2D" uid="uid://c71s6avqlhqsy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="17_v46iy"]
+[ext_resource type="Texture2D" uid="uid://v2j884752fyv" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="18_ngynx"]
+[ext_resource type="Texture2D" uid="uid://dqeds73unbayg" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="19_18i6b"]
+[ext_resource type="Texture2D" uid="uid://dvjsgs3owaeew" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="20_4i5tx"]
+[ext_resource type="Texture2D" uid="uid://cqisoke0sofhy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="21_4ku28"]
+[ext_resource type="Texture2D" uid="uid://wldrymejt5a7" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="22_veq8o"]
+[ext_resource type="Texture2D" uid="uid://cafktc55jws64" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="23_nufu8"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="24_3cwse"]
 [ext_resource type="Script" uid="uid://c73q02axmiq8p" path="res://scripts/universidade/hud_corredor.gd" id="27_l3yui"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="28_02l3t"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="28_02l3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kwbs"]
 texture = ExtResource("2_hvivs")
@@ -818,7 +818,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nu5ce"]
 radius = 25.0
-height = 144.0
+height = 62.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1o3y"]
 size = Vector2(1627, 51)
@@ -835,6 +835,9 @@ size = Vector2(81, 898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wq7o6"]
 size = Vector2(235, 28.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02l3t"]
+size = Vector2(138, 20)
+
 [node name="CenaSala" type="Node2D" unique_id=1550269511]
 script = ExtResource("1_fn3ds")
 
@@ -850,13 +853,13 @@ script = ExtResource("5_l3yui")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1388307848]
 texture_filter = 1
-position = Vector2(308, 416)
+position = Vector2(303, 373)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_s5s3v")
 animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=1445805087]
-position = Vector2(306, 418)
+position = Vector2(301, 375)
 shape = SubResource("RectangleShape2D_hqqu4")
 
 [node name="Camera2D" type="Camera2D" parent="Protagonista" unique_id=66303304]
@@ -1005,3 +1008,12 @@ text = "teste hud sala"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="SaidaCorredor" type="Area2D" parent="." unique_id=412517992]
+
+[node name="Marker2D" type="Marker2D" parent="SaidaCorredor" unique_id=1847589221]
+position = Vector2(756, 938)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaidaCorredor" unique_id=1757304695]
+position = Vector2(762, 945)
+shape = SubResource("RectangleShape2D_02l3t")

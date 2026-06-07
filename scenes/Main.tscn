@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dhuwwsh7atsis"]
 
 [ext_resource type="Script" uid="uid://cqlue0wbvmhpi" path="res://scripts/main.gd" id="1_elqb8"]
-[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/ui/buttons/btn escolha.png" id="2_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="2_0bbpv"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="2_rvslj"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="3_rarhs"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="3_rarhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvslj"]
 bg_color = Color(0.15230674, 0.17024693, 0.202541, 1)
