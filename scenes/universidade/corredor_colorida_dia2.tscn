@@ -12,18 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://bw162gdx31lju" path="res://assets/tilesets/floorswalls_LRK.png" id="10_vvyko"]
 [ext_resource type="Texture2D" uid="uid://dfnwh5qdfgfnp" path="res://assets/tilesets/GRASS+.png" id="11_hvmlw"]
 [ext_resource type="Texture2D" uid="uid://bpo8fcdk88f07" path="res://assets/tilesets/grass_3.png" id="12_ut6dd"]
-[ext_resource type="Script" uid="uid://chdbmbdog7lad" path="res://scenes/universidade/menina_colorida_dia2.gd" id="13_jwf2x"]
-[ext_resource type="Texture2D" uid="uid://d1mq614or4oym" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="14_h1vrb"]
-[ext_resource type="Texture2D" uid="uid://c71s6avqlhqsy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="15_v4o2h"]
-[ext_resource type="Texture2D" uid="uid://v2j884752fyv" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="16_icggs"]
-[ext_resource type="Texture2D" uid="uid://dqeds73unbayg" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="17_5dio3"]
-[ext_resource type="Texture2D" uid="uid://dvjsgs3owaeew" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="18_eaeh4"]
-[ext_resource type="Texture2D" uid="uid://cqisoke0sofhy" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="19_loum7"]
-[ext_resource type="Texture2D" uid="uid://wldrymejt5a7" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="20_1fcst"]
-[ext_resource type="Texture2D" uid="uid://cafktc55jws64" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="21_t3sok"]
+[ext_resource type="Script" uid="uid://chdbmbdog7lad" path="res://scripts/menina_colorida_dia2.gd" id="13_jwf2x"]
+[ext_resource type="Texture2D" uid="uid://bpq3wfr68sq1w" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_down.png" id="14_h1vrb"]
+[ext_resource type="Texture2D" uid="uid://dlaakc5k8dyt1" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_down.png" id="15_v4o2h"]
+[ext_resource type="Texture2D" uid="uid://cbbkxxhd82d26" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_left.png" id="16_icggs"]
+[ext_resource type="Texture2D" uid="uid://dy5mhx4j2ldya" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_left.png" id="17_5dio3"]
+[ext_resource type="Texture2D" uid="uid://dl8ckpqq2mgg" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_right.png" id="18_eaeh4"]
+[ext_resource type="Texture2D" uid="uid://7sbwi3rpecy7" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_right.png" id="19_loum7"]
+[ext_resource type="Texture2D" uid="uid://nsljon5u5s2l" path="res://assets/sprites/characters/colorful_girl/idle/colorful_girl_idle_up.png" id="20_1fcst"]
+[ext_resource type="Texture2D" uid="uid://b5bqmq425x05u" path="res://assets/sprites/characters/colorful_girl/walk/colorful_girl_walk_up.png" id="21_t3sok"]
 [ext_resource type="Script" uid="uid://wpa2nk47owxi" path="res://scripts/universidade/hud_gameplay_corredor.gd" id="22_psiec"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="23_0bk43"]
-[ext_resource type="Script" uid="uid://b0tqcaof04dx3" path="res://scenes/universidade/protagonista_gameplay_corredor.gd" id="24_t2pdm"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="23_0bk43"]
+[ext_resource type="Script" uid="uid://b0tqcaof04dx3" path="res://scripts/protagonista_gameplay_corredor.gd" id="24_t2pdm"]
 [ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="25_l5o4h"]
 [ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="26_ofre0"]
 [ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="27_qwona"]
@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="30_ewagh"]
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="31_lw17a"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="32_qttc3"]
-[ext_resource type="Script" uid="uid://cvls63q6j3kch" path="res://scenes/universidade/control_colorida_dia2.gd" id="33_x17lc"]
+[ext_resource type="Script" uid="uid://cvls63q6j3kch" path="res://scripts/control_colorida_dia2.gd" id="33_x17lc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_givou"]
 texture = ExtResource("2_jwf2x")
@@ -4437,6 +4437,7 @@ shape = SubResource("CapsuleShape2D_yatr3")
 [node name="PointLight2D" type="PointLight2D" parent="MeninaColorida" unique_id=1391601432]
 position = Vector2(1026.25, 36.5)
 scale = Vector2(33.695313, 4.203125)
+enabled = false
 color = Color(1, 1, 1, 0.78431374)
 texture = SubResource("GradientTexture2D_iw3n2")
 
