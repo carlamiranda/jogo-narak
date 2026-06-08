@@ -73,13 +73,96 @@ func iniciar_dialogo_discussao() -> void:
 	
 	# Primeira parte da conversa (A Irresponsabilidade)
 	var falas_iniciais = [
-		{"nome": "Menina Quebrada", "texto": "Ei. Que bom que te achei.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
-		{"nome": "Menina Quebrada", "texto": "Tô indo matar a prova de amanhã cedo pra ir numa festa hoje à noite. Vem comigo.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
-		{"nome": "Protagonista", "texto": "Festa? Mas... a gente tem uma prova decisiva. Eu não posso reprovar de novo.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")},
-		{"nome": "Menina Quebrada", "texto": "E daí? Ninguém liga de verdade pra isso. A gente reprova juntas, não tem problema.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
-		{"nome": "Menina Quebrada", "texto": "É muito melhor esquecer de tudo lá fora do que tentar e falhar. A gente não precisa disso.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
-		{"nome": "Protagonista", "texto": "Mas eu... eu acho que eu preciso tentar.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")},
-		{"nome": "Menina Quebrada", "texto": "Sério que você vai me deixar ir sozinha e jogar a noite fora por causa de uma prova inútil? Achei que a gente se entendia.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Ei... faz tempo que a gente não conversa direito.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "Acho que andamos evitando algumas coisas.",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Talvez. Ou talvez eu só esteja cansada de fingir que me importo com tudo isso.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Inclusive... amanhã tem aquela prova enorme.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Eu não vou.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "...como assim?",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Vai ter uma festa hoje. Quero esquecer que a faculdade existe por algumas horas.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Vem comigo.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "Mas a prova vale metade da nota...",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "E daí? Você fala disso como se fosse mudar alguma coisa.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "A gente passa os dias tentando sobreviver. Pra quê se matar por nota?",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "Porque eu não quero continuar parada.",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Parada? Você acha mesmo que estudar vai consertar tudo?",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "Não. Mas talvez seja um começo.",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Você mudou.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Protagonista",
+			"texto": "...talvez eu esteja tentando.",
+			"sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Então me responde uma coisa.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Por que você não vai comigo?",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		}
 	]
 	
 	dialogo.iniciar_dialogo(falas_iniciais)

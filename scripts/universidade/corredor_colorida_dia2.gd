@@ -174,7 +174,7 @@ func iniciar_time_skip() -> void:
 	# Frases de hesitação na tela preta (trazendo a ansiedade forte)
 	await cutscene.show_text("Será que eu devo mandar mensagem pra ela?", 2.5)
 	await cutscene.show_text("Eu tenho tanto medo de estragar tudo...", 2.5)
-	await cutscene.show_text("Mas ela q me passou o numero dela.", 2.5)
+	await cutscene.show_text("Mas ela que me passou o numero dela.", 2.5)
 	await cutscene.show_text("Acho que vou mandar...", 2.0)
 	await cutscene.show_text("Não... não sei ainda.", 2.5)
 	
@@ -188,7 +188,7 @@ func iniciar_time_skip() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	# Vai para a cena do ônibus (ou cena final)
-	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")
+	get_tree().change_scene_to_file("res://scenes/universidade/corredor_colorida_final.tscn")
 
 
 # ==========================================

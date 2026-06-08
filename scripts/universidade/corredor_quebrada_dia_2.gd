@@ -199,7 +199,7 @@ func iniciar_time_skip() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	# Vai para a cena final (lembre-se de atualizar o caminho abaixo!)
-	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")
+	get_tree().change_scene_to_file("res://scenes/universidade/corredor_quebrada_final.tscn")
 
 
 # ==========================================
