@@ -13,15 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="9_c3jkf"]
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="10_o57rf"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="11_pskd1"]
-[ext_resource type="Texture2D" uid="uid://qhps5dn7p6pf" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_down.png" id="12_pskd1"]
+[ext_resource type="Texture2D" uid="uid://bi64musmdjgs5" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_down.png" id="12_pskd1"]
 [ext_resource type="Texture2D" uid="uid://boestqwsgmqym" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_down.png" id="13_lvvd4"]
-[ext_resource type="Texture2D" uid="uid://mrm12nqh6rd3" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_left.png" id="14_rsxl6"]
+[ext_resource type="Texture2D" uid="uid://npf0n6g8qg2f" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_left.png" id="14_rsxl6"]
 [ext_resource type="Texture2D" uid="uid://ckwu2k3xvy6o3" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_left.png" id="15_x4o3s"]
-[ext_resource type="Texture2D" uid="uid://bm4iinoc7v5pb" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_right.png" id="16_ejfca"]
+[ext_resource type="Texture2D" uid="uid://wrdjalyqvagq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_right.png" id="16_ejfca"]
 [ext_resource type="Texture2D" uid="uid://d04e7c5deyk21" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_right.png" id="17_dbm44"]
-[ext_resource type="Texture2D" uid="uid://imbgqwqoek6m" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_up.png" id="18_juvo0"]
+[ext_resource type="Texture2D" uid="uid://dlrbc0cl236xq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_up.png" id="18_juvo0"]
 [ext_resource type="Texture2D" uid="uid://dx47x73f5puy6" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_up.png" id="19_ajh2c"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/fonts/PixelifySans-Regular.ttf" id="22_ejfca"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="22_ejfca"]
 [ext_resource type="Script" uid="uid://ka0u4camoh5" path="res://scripts/EmotionVisualController.gd" id="23_ejfca"]
 [ext_resource type="Texture2D" uid="uid://dalbeewwker30" path="res://assets/sprites/environments/college/hallway/porta.png" id="24_dbm44"]
 
@@ -654,6 +654,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbh5d"]
 size = Vector2(45, 36.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbm44"]
+radius = 100.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pskd1"]
 size = Vector2(1593, 242)
 
@@ -729,6 +732,12 @@ animation = &"walk_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaQuebrada" unique_id=1284501239]
 position = Vector2(915.5, 272.75)
 shape = SubResource("RectangleShape2D_cbh5d")
+
+[node name="EncontroArea" type="Area2D" parent="MeninaQuebrada" unique_id=1519081212]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaQuebrada/EncontroArea" unique_id=1370474046]
+position = Vector2(921, 297)
+shape = SubResource("CircleShape2D_dbm44")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2004292880]
 

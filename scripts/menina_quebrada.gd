@@ -9,49 +9,41 @@ extends CharacterBody2D
 var player: Node2D = null
 var pode_andar := false
 
-
 func set_player(p: Node2D) -> void:
 	player = p
 
-
 func iniciar() -> void:
 	pode_andar = true
-
 
 func parar() -> void:
 	pode_andar = false
 	velocity = Vector2.ZERO
 	anim.stop()
 
-
 func _physics_process(delta: float) -> void:
 	if not pode_andar or player == null:
 		return
 
-	# 🔥 PEGA DIREÇÃO DO PLAYER
-	var player_dir := Vector2.RIGHT
-
-	if player.has_method("get_last_direction"):
-		player_dir = player.get_last_direction()
+	# Lógica corrigida para seguir Marker2D ou Player
+	var target_pos := Vector2.ZERO
+	if player is Marker2D:
+		target_pos = player.global_position
 	else:
-		# fallback: direção baseada no movimento
-		player_dir = Vector2.RIGHT
+		var player_dir := Vector2.RIGHT
+		if player.has_method("get_last_direction"):
+			player_dir = player.get_last_direction()
+		target_pos = player.global_position - player_dir * offset_distance
 
-	# 🎯 POSIÇÃO ATRÁS DO PLAYER
-	var target_pos := player.global_position - player_dir * offset_distance
-
-	var dir := target_pos - global_position
-	var dist := dir.length()
+	var dir := (target_pos - global_position).normalized()
+	var dist := global_position.distance_to(target_pos)
 
 	if dist > distancia_minima:
-		var desired := dir.normalized() * speed
-		velocity = velocity.move_toward(desired, 300 * delta)
+		velocity = velocity.move_toward(dir * speed, 300 * delta)
 	else:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
 	_anim(velocity)
-
 
 func _anim(v: Vector2) -> void:
 	if v.length() < 5:

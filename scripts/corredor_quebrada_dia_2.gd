@@ -97,6 +97,11 @@ func iniciar_dialogo() -> void:
 			"nome": "Menina Quebrada",
 			"texto": "Achei que você ia querer de volta.",
 			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
+		},
+		{
+			"nome": "Menina Quebrada",
+			"texto": "Se quiser conversar... ou fugir do barulho... me encontra nas mesas perto da sala.",
+			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
 		}
 	]
 
@@ -114,3 +119,9 @@ func pos_dialogo() -> void:
 	await hud.esconder()
 
 	player.liberar()
+	
+	# Faz a menina ir para o PontoEspera
+	var marcador = get_node_or_null("PontoEspera")
+	if marcador:
+		menina.set_player(marcador)
+		menina.iniciar()

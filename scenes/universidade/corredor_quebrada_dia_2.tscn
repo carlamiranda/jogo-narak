@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dedar40pxoa3v"]
 
 [ext_resource type="Texture2D" uid="uid://cxnlbc24cp4gp" path="res://assets/tilesets/faculdade.bmp" id="1_re18w"]
-[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scripts/universidade/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
+[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scripts/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://bullhg1axsvba" path="res://assets/tilesets/Mahogany_Stage_5.png" id="2_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://pw2ntaf7qpmg" path="res://assets/tilesets/UpdatedDarkRoad.png" id="3_ywclq"]
 [ext_resource type="Texture2D" uid="uid://bkdq1q23a0j0w" path="res://assets/tilesets/idk.png" id="4_oci3u"]
@@ -4126,7 +4126,7 @@ border_color = Color(0.83137256, 0.6392157, 0.4509804, 1)
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbka"]
-size = Vector2(182, 148)
+size = Vector2(325, 205)
 
 [node name="CorredorQuebradaDia2" type="Node2D" unique_id=132859864]
 script = ExtResource("1_s6pk2")
@@ -4510,6 +4510,7 @@ position = Vector2(-37, 366)
 shape = SubResource("RectangleShape2D_b8ga8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1677833928]
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1640396533]
 anchors_preset = -1
@@ -4662,7 +4663,7 @@ vertical_alignment = 1
 [node name="AreaIsolada" type="Area2D" parent="." unique_id=106549359]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaIsolada" unique_id=1707558455]
-position = Vector2(4685, 439)
+position = Vector2(4708.5, 410.5)
 shape = SubResource("RectangleShape2D_vdbka")
 
 [node name="PontoEspera" type="Marker2D" parent="." unique_id=1877290977]
