@@ -8,6 +8,7 @@ signal escolha_feita(opcao)
 @onready var hud = $HudGameplayCorredor
 @onready var dialogo = $HudDialogo/Control
 @onready var overlay = $ColorRect
+@onready var cutscene = $CutsceneUI
 
 # REFERÊNCIAS DA SUA UI DE ESCOLHAS
 @onready var menu_escolhas = $CanvasLayer
@@ -19,7 +20,6 @@ signal escolha_feita(opcao)
 
 var encontro := false
 var evento_final_rodando := false
-var pode_sair := false # Controle para a saída do ônibus
 
 
 func _ready() -> void:
@@ -43,11 +43,6 @@ func _ready() -> void:
 	var area_almoco = get_node_or_null("AreaAlmoco")
 	if area_almoco:
 		area_almoco.body_entered.connect(_on_area_almoco_entered)
-		
-	# Conecta a área do ônibus
-	var saida_onibus = get_node_or_null("SaidaOnibus")
-	if saida_onibus:
-		saida_onibus.body_entered.connect(_on_saida_entered)
 
 	await intro()
 
@@ -59,11 +54,11 @@ func _ready() -> void:
 # INTRO E PRIMEIRO ENCONTRO
 # ==========================================
 func intro() -> void:
-	await hud.mostrar("A universidade parece estranhamente cinza hoje.")
-	await hud.mostrar("Mas tem algo queimando no fundo do corredor.")
-	await hud.mostrar("Uma luz forte demais atravessa o espaço.")
-	await hud.mostrar("Quanto mais ela se aproxima, mais difícil fica respirar.")
-	await hud.mostrar("Não olha diretamente.")
+	await hud.mostrar("As paredes daqui parecem me esmagar um pouco mais a cada dia.")
+	await hud.mostrar("Eu só queria passar invisível. Como sempre.")
+	await hud.mostrar("Mas tem alguém vindo na minha direção.")
+	await hud.mostrar("Meu peito aperta. Por favor, não fala comigo.")
+	await hud.mostrar("Olha pro chão.")
 	await hud.mostrar("Só continua andando.")
 	await hud.esconder()
 
@@ -79,9 +74,9 @@ func _iniciar_encontro() -> void:
 	await iniciar_dialogo()
 
 func hud_encontro() -> void:
-	await hud.mostrar("Ela bloqueia sua passagem.")
-	await hud.mostrar("A luz dela invade o corredor.")
-	await hud.mostrar("Você não consegue desviar o olhar.")
+	await hud.mostrar("Ela parou bem na minha frente.")
+	await hud.mostrar("Minha garganta secou de repente.")
+	await hud.mostrar("Eu não sei o que fazer com as minhas mãos.")
 	await hud.esconder()
 
 func iniciar_dialogo() -> void:
@@ -96,9 +91,9 @@ func iniciar_dialogo() -> void:
 	await pos_dialogo()
 
 func pos_dialogo() -> void:
-	await hud.mostrar("Ela não sai da sua frente.")
-	await hud.mostrar("Algo dentro de você começa a se mover.")
-	await hud.mostrar("O corredor parece menos pesado agora.")
+	await hud.mostrar("Ela continua ali. Perto demais.")
+	await hud.mostrar("Minhas mãos ainda estão tremendo um pouco.")
+	await hud.mostrar("Mas... ela não parece estar me julgando.")
 	await hud.esconder()
 	player.liberar()
 	menina.iniciar() 
@@ -140,7 +135,7 @@ func _iniciar_almoco() -> void:
 	if resposta_escolhida == 0:
 		# Opção A (Vulnerável)
 		var falas_opcao_a = [
-			{"nome": "Protagonista", "texto": "Às vezes... eu só não sei onde sentar.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, # Troque para a foto da prota
+			{"nome": "Protagonista", "texto": "Às vezes... eu só não sei onde sentar.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, 
 			{"nome": "Menina Colorida", "texto": "Bom, agora você sabe. Pode sentar aqui comigo sempre que quiser.", "sprite": preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")}
 		]
 		dialogo.iniciar_dialogo(falas_opcao_a)
@@ -150,7 +145,7 @@ func _iniciar_almoco() -> void:
 	elif resposta_escolhida == 1:
 		# Opção B (Fechada)
 		var falas_opcao_b = [
-			{"nome": "Protagonista", "texto": "Geralmente sim. Eu prefiro o silêncio.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, # Troque para a foto da prota
+			{"nome": "Protagonista", "texto": "Geralmente sim. Eu prefiro o silêncio.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, 
 			{"nome": "Menina Colorida", "texto": "Entendo. É bom ter um tempo pra respirar, né? Fica à vontade.", "sprite": preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")}
 		]
 		dialogo.iniciar_dialogo(falas_opcao_b)
@@ -160,28 +155,39 @@ func _iniciar_almoco() -> void:
 	await pos_almoco()
 
 func pos_almoco() -> void:
-	await hud.mostrar("O gosto da comida parece um pouco mais real hoje.")
-	await hud.mostrar("Aos poucos, o barulho volta a encher os corredores.")
-	await hud.mostrar("A aula acabou. É melhor ir para o ponto de ônibus.")
+	await hud.mostrar("Comer perto de alguém é assustador. Fiquei com medo de engasgar.")
+	await hud.mostrar("Mas eu consegui. Eu acho.")
+	await hud.mostrar("A bateria acabou. Preciso sumir daqui.")
 	await hud.esconder()
 	
-	pode_sair = true
-	player.liberar()
+	# Chama o Time Skip logo após os pensamentos terminarem, sem liberar o player
+	await iniciar_time_skip()
 
 
 # ==========================================
-# SAÍDA PARA O ÔNIBUS
+# TIME SKIP (TRANSIÇÃO FINAL)
 # ==========================================
-func _on_saida_entered(body: Node) -> void:
-	if not pode_sair or body != player:
-		return
-		
-	player.travar()
+func iniciar_time_skip() -> void:
+	# --- ESCURECE A TELA ---
+	await cutscene.play_fade_out(1.0) 
 	
-	await hud.mostrar("Você caminha até a saída da universidade.")
-	await hud.mostrar("O dia foi exaustivo, mas um pouco diferente.")
-	await hud.esconder()
+	# Frases de hesitação na tela preta (trazendo a ansiedade forte)
+	await cutscene.show_text("Será que eu devo mandar mensagem pra ela?", 2.5)
+	await cutscene.show_text("Eu tenho tanto medo de estragar tudo...", 2.5)
+	await cutscene.show_text("Mas ela q me passou o numero dela.", 2.5)
+	await cutscene.show_text("Acho que vou mandar...", 2.0)
+	await cutscene.show_text("Não... não sei ainda.", 2.5)
 	
+	# Pausa dramática no escuro
+	await get_tree().create_timer(1.0).timeout
+	
+	# O grande salto no tempo
+	await cutscene.show_text("4 MESES DEPOIS", 3.0)
+	
+	# Outra pausa curta antes de abrir a nova cena
+	await get_tree().create_timer(0.5).timeout
+	
+	# Vai para a cena do ônibus (ou cena final)
 	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")
 
 

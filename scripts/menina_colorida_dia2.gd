@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var velocidade := 120.0
-@export var aceleracao := 350.0
+# Velocidade e aceleração reduzidas para um caminhar mais lento
+@export var velocidade := 100.0
+@export var aceleracao := 150.0
 @export var distancia_minima := 10.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D

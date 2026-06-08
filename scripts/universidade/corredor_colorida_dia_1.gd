@@ -41,10 +41,8 @@ func _ready() -> void:
 # INTRO
 # =========================
 func intro() -> void:
-	await hud.mostrar("O corredor está mais vazio hoje.")
-	await hud.mostrar("Mas algo parece fora do lugar.")
-	await hud.mostrar("Ela sente que precisa sair daqui.")
-	await hud.mostrar("O ônibus é a única saída agora.")
+	await hud.mostrar("Finalmente casa....")
+	await hud.mostrar("preciso pegar o onibus.")
 	await hud.esconder()
 
 
@@ -111,8 +109,6 @@ func _on_saida_entered(body: Node) -> void:
 func _ir_para_onibus() -> void:
 	player.travar()
 
-	await hud.mostrar("Você para na saída do corredor.")
-	await hud.mostrar("O ônibus está logo ali fora.")
 	await hud.mostrar("Você respira fundo e segue.")
 	await hud.esconder()
 

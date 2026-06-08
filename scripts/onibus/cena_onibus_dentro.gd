@@ -37,11 +37,9 @@ func _ready() -> void:
 func hud_entrada() -> void:
 
 	var falas = [
-		"Você entra no ônibus.",
-		"O espaço é pequeno.",
-		"Desconhecidos ao redor.",
-		"O silêncio pesa mais do que o barulho.",
-		"Você precisa encontrar um lugar para sentar."
+		"Cheio...",
+		"Não consigo respirar direito aqui dentro.",
+		"Tanta gente. Tantos olhos."
 	]
 
 	for f in falas:
@@ -116,25 +114,21 @@ func hud_sentada() -> void:
 
 	if rota == "colorida":
 		falas = [
-			"Você se senta.",
-			"O ônibus continua em movimento.",
-			"O papel no bolso parece mais pesado.",
-			"Você pensa em mandar a primeira mensagem.",
-			"Mas hesita.",
-			"O medo não é da mensagem.",
-			"É de ser vista por alguém que transborda vida.",
-			"O ônibus está chegando na sua parada.",
-			"Você precisa descer."
+			"Sentei. Olho pro chão.",
+			"Meus dedos roçam no papel dentro do meu bolso.",
+			"O número dela...",
+			"E se eu mandar uma mensagem? O que eu falaria?",
+			"...Não. Eu só estragaria tudo.",
+			"Ela é tão brilhante. Eu ia acabar apagando isso.",
+			"Minha parada. Graças a Deus, minha parada."
 		]
 	else:
 		falas = [
-			"Você se senta.",
-			"O ônibus continua em movimento.",
-			"As vozes ao redor se misturam.",
-			"Você tenta focar em alguma coisa.",
-			"Mas o cansaço vence antes da ansiedade.",
-			"O ônibus está chegando na sua parada.",
-			"Você precisa descer."
+			"Sentei. Foco no chão.",
+			"As vozes deles entram na minha cabeça. Rindo, conversando...",
+			"Tão fácil pra eles. Tão natural.",
+			"Estou tão cansada. Minha cabeça dói.",
+			"Minha parada. Graças a Deus, minha parada."
 		]
 
 	for f in falas:
@@ -177,24 +171,19 @@ func finalizar_onibus():
 
 	# cutscene
 	
-	await cutscene.mostrar_fala("O ônibus finalmente para.", 1.5)
-	await cutscene.mostrar_fala("Você não percebe o momento em que desce.", 2.0)
-
-	await cutscene.mostrar_fala("As luzes da rua parecem distantes.", 2.0)
-	await cutscene.mostrar_fala("Como se o mundo estivesse atrás de um vidro.", 2.0)
-
-	await cutscene.mostrar_fala("A chave gira na porta sem pensamento.", 2.0)
-	await cutscene.mostrar_fala("O corpo apenas obedece.", 2.0)
+	await cutscene.mostrar_fala("Ar puro. Finalmente.", 1.5)
+	await cutscene.mostrar_fala("Meus pés andam no automático até em casa.", 2.0)
+	await cutscene.mostrar_fala("Giro a chave. A porta fecha. O mundo fica lá fora.", 2.0)
 
 	if rota == "colorida":
-		await cutscene.mostrar_fala("O papel no bolso pesa mais do que deveria.", 2.5)
-		await cutscene.mostrar_fala("Você pensa na mensagem... mas não consegue mais pensar em nada.", 3.0)
+		await cutscene.mostrar_fala("Tiro o papel do bolso. Fico olhando pra ele um bom tempo.", 2.5)
+		await cutscene.mostrar_fala("Queria ter coragem... mas hoje eu só quero sumir na minha cama.", 3.0)
 	else:
-		await cutscene.mostrar_fala("O silêncio dentro da cabeça é mais alto do que o ônibus inteiro.", 2.5)
-		await cutscene.mostrar_fala("Você não lembra exatamente do que sentiu. Só do cansaço.", 3.0)
+		await cutscene.mostrar_fala("O silêncio do meu quarto dói nos ouvidos.", 2.5)
+		await cutscene.mostrar_fala("Sobrevivi a mais um dia... mas a que custo?", 3.0)
 
-	await cutscene.mostrar_fala("O mundo continua lá fora.", 2.0)
-	await cutscene.mostrar_fala("Mas você não está mais nele por hoje.", 2.5)
+	await cutscene.mostrar_fala("Amanhã tem tudo de novo.", 2.0)
+	await cutscene.mostrar_fala("Não quero pensar nisso agora.", 2.5)
 
 	# SEGUNDO DIA
 	await cutscene.mostrar_fala("SEGUNDO DIA", 2.0)

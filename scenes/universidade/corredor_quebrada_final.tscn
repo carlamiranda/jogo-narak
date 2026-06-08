@@ -1,43 +1,42 @@
-[gd_scene format=4 uid="uid://dedar40pxoa3v"]
+[gd_scene format=4 uid="uid://c3ywv72w4cwsy"]
 
-[ext_resource type="Texture2D" uid="uid://cxnlbc24cp4gp" path="res://assets/tilesets/faculdade.bmp" id="1_re18w"]
-[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scripts/universidade/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
-[ext_resource type="Texture2D" uid="uid://bullhg1axsvba" path="res://assets/tilesets/Mahogany_Stage_5.png" id="2_s6pk2"]
-[ext_resource type="Texture2D" uid="uid://pw2ntaf7qpmg" path="res://assets/tilesets/UpdatedDarkRoad.png" id="3_ywclq"]
-[ext_resource type="Texture2D" uid="uid://bkdq1q23a0j0w" path="res://assets/tilesets/idk.png" id="4_oci3u"]
-[ext_resource type="Texture2D" uid="uid://brem8aq6vv4h6" path="res://assets/tilesets/Maple_Stage_5.png" id="5_sssvv"]
-[ext_resource type="Texture2D" uid="uid://btsdsk3h6hh7v" path="res://assets/tilesets/Simplified_GrassHills.png" id="6_avhrr"]
-[ext_resource type="Texture2D" uid="uid://cwaqhio6bqxtr" path="res://assets/tilesets/coolschool_B.png" id="7_vdbka"]
-[ext_resource type="Texture2D" uid="uid://crcawufxhe615" path="res://assets/sprites/environments/college/hallway/Interiors_free_16x16.png" id="8_hhxg3"]
-[ext_resource type="Texture2D" uid="uid://bw162gdx31lju" path="res://assets/tilesets/floorswalls_LRK.png" id="9_so353"]
-[ext_resource type="Texture2D" uid="uid://dfnwh5qdfgfnp" path="res://assets/tilesets/GRASS+.png" id="10_31pyj"]
-[ext_resource type="Texture2D" uid="uid://bpo8fcdk88f07" path="res://assets/tilesets/grass_3.png" id="11_xn4px"]
-[ext_resource type="Script" uid="uid://ca4u3efhcksdj" path="res://scripts/protagonista_gameplay_quebrada.gd" id="15_ywclq"]
-[ext_resource type="Script" uid="uid://wpa2nk47owxi" path="res://scripts/universidade/hud_gameplay_corredor.gd" id="21_epdjn"]
-[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="22_3v6xi"]
-[ext_resource type="Texture2D" uid="uid://bi64musmdjgs5" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_down.png" id="23_tj45h"]
-[ext_resource type="Texture2D" uid="uid://boestqwsgmqym" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_down.png" id="24_re18w"]
-[ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="24_we8t7"]
-[ext_resource type="Script" uid="uid://cht6oepqboais" path="res://scripts/menina_quebrada.gd" id="24_ywclq"]
-[ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="25_gublm"]
-[ext_resource type="Texture2D" uid="uid://npf0n6g8qg2f" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_left.png" id="25_s6pk2"]
-[ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="26_f6chy"]
-[ext_resource type="Texture2D" uid="uid://ckwu2k3xvy6o3" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_left.png" id="26_ywclq"]
-[ext_resource type="Texture2D" uid="uid://cls4bdemcoh46" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_left.png" id="27_js6bm"]
-[ext_resource type="Texture2D" uid="uid://wrdjalyqvagq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_right.png" id="27_oci3u"]
-[ext_resource type="Texture2D" uid="uid://6bbw83u8777c" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_right.png" id="28_6ud6o"]
-[ext_resource type="Texture2D" uid="uid://d04e7c5deyk21" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_right.png" id="28_sssvv"]
-[ext_resource type="Texture2D" uid="uid://dlrbc0cl236xq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_up.png" id="29_avhrr"]
-[ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="29_exjvk"]
-[ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="30_himgd"]
-[ext_resource type="Texture2D" uid="uid://dx47x73f5puy6" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_up.png" id="30_vdbka"]
-[ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="31_rcu87"]
-[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scripts/control.gd" id="32_s6pk2"]
-[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="33_oci3u"]
-[ext_resource type="PackedScene" uid="uid://biwh760cmrkms" path="res://scenes/global/CutsceneUI.tscn" id="35_sssvv"]
+[ext_resource type="Script" uid="uid://brw222cob1htp" path="res://scenes/universidade/corredor_quebrada_final.gd" id="1_w2in4"]
+[ext_resource type="Texture2D" uid="uid://cxnlbc24cp4gp" path="res://assets/tilesets/faculdade.bmp" id="2_yjqkk"]
+[ext_resource type="Texture2D" uid="uid://bullhg1axsvba" path="res://assets/tilesets/Mahogany_Stage_5.png" id="3_5fbk2"]
+[ext_resource type="Texture2D" uid="uid://pw2ntaf7qpmg" path="res://assets/tilesets/UpdatedDarkRoad.png" id="4_i04dm"]
+[ext_resource type="Texture2D" uid="uid://bkdq1q23a0j0w" path="res://assets/tilesets/idk.png" id="5_1jmht"]
+[ext_resource type="Texture2D" uid="uid://brem8aq6vv4h6" path="res://assets/tilesets/Maple_Stage_5.png" id="6_7g5ag"]
+[ext_resource type="Texture2D" uid="uid://btsdsk3h6hh7v" path="res://assets/tilesets/Simplified_GrassHills.png" id="7_hxwdl"]
+[ext_resource type="Texture2D" uid="uid://cwaqhio6bqxtr" path="res://assets/tilesets/coolschool_B.png" id="8_ar6nv"]
+[ext_resource type="Texture2D" uid="uid://crcawufxhe615" path="res://assets/sprites/environments/college/hallway/Interiors_free_16x16.png" id="9_f63k5"]
+[ext_resource type="Texture2D" uid="uid://bw162gdx31lju" path="res://assets/tilesets/floorswalls_LRK.png" id="10_dphqj"]
+[ext_resource type="Texture2D" uid="uid://dfnwh5qdfgfnp" path="res://assets/tilesets/GRASS+.png" id="11_1s2ie"]
+[ext_resource type="Texture2D" uid="uid://bpo8fcdk88f07" path="res://assets/tilesets/grass_3.png" id="12_8swdq"]
+[ext_resource type="Script" uid="uid://wpa2nk47owxi" path="res://scripts/universidade/hud_gameplay_corredor.gd" id="13_defbn"]
+[ext_resource type="FontFile" uid="uid://baehj3xfyp0lo" path="res://assets/sprites/Fonts/PixelifySans-Regular.ttf" id="14_1f4y4"]
+[ext_resource type="Script" uid="uid://ca4u3efhcksdj" path="res://scripts/protagonista_gameplay_quebrada.gd" id="15_jrd2e"]
+[ext_resource type="Texture2D" uid="uid://duspi1wjl3psd" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_down.png" id="16_8xuap"]
+[ext_resource type="Texture2D" uid="uid://dalsdew6gnk24" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_down.png" id="17_qv43a"]
+[ext_resource type="Texture2D" uid="uid://d1uxiio8byqqc" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_left.png" id="18_hdm3l"]
+[ext_resource type="Texture2D" uid="uid://cls4bdemcoh46" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_left.png" id="19_ye6qi"]
+[ext_resource type="Texture2D" uid="uid://6bbw83u8777c" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_right.png" id="20_vhknn"]
+[ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="21_oyqfs"]
+[ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="22_t4d0y"]
+[ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="23_xfs34"]
+[ext_resource type="Texture2D" uid="uid://bi64musmdjgs5" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_down.png" id="25_i3wy3"]
+[ext_resource type="Texture2D" uid="uid://boestqwsgmqym" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_down.png" id="26_dciy0"]
+[ext_resource type="Texture2D" uid="uid://npf0n6g8qg2f" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_left.png" id="27_7be06"]
+[ext_resource type="Texture2D" uid="uid://ckwu2k3xvy6o3" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_left.png" id="28_pi5j4"]
+[ext_resource type="Texture2D" uid="uid://wrdjalyqvagq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_right.png" id="29_wc52f"]
+[ext_resource type="Texture2D" uid="uid://d04e7c5deyk21" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_right.png" id="30_vwcpu"]
+[ext_resource type="Texture2D" uid="uid://dlrbc0cl236xq" path="res://assets/sprites/characters/broken_girl/idle/broken_girl_idle_up.png" id="31_oo2yc"]
+[ext_resource type="Texture2D" uid="uid://dx47x73f5puy6" path="res://assets/sprites/characters/broken_girl/walk/broken_girl_walk_up.png" id="32_l6o3r"]
+[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="33_6biyl"]
+[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scripts/control.gd" id="34_ghfm3"]
+[ext_resource type="PackedScene" uid="uid://biwh760cmrkms" path="res://scenes/global/CutsceneUI.tscn" id="35_1ga3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f17fk"]
-texture = ExtResource("1_re18w")
+texture = ExtResource("2_yjqkk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -552,7 +551,7 @@ texture = ExtResource("1_re18w")
 7:63/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfiod"]
-texture = ExtResource("2_s6pk2")
+texture = ExtResource("3_5fbk2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -765,7 +764,7 @@ texture = ExtResource("2_s6pk2")
 24:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53aje"]
-texture = ExtResource("3_ywclq")
+texture = ExtResource("4_i04dm")
 18:0/0 = 0
 19:0/0 = 0
 26:0/0 = 0
@@ -992,7 +991,7 @@ texture = ExtResource("3_ywclq")
 14:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy2aa"]
-texture = ExtResource("4_oci3u")
+texture = ExtResource("5_1jmht")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1418,7 +1417,7 @@ texture = ExtResource("4_oci3u")
 23:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugfu2"]
-texture = ExtResource("5_sssvv")
+texture = ExtResource("6_7g5ag")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1608,7 +1607,7 @@ texture = ExtResource("5_sssvv")
 21:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1kaf"]
-texture = ExtResource("6_avhrr")
+texture = ExtResource("7_hxwdl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1681,7 +1680,7 @@ texture = ExtResource("6_avhrr")
 15:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah1a2"]
-texture = ExtResource("7_vdbka")
+texture = ExtResource("8_ar6nv")
 18:0/0 = 0
 19:0/0 = 0
 20:0/0 = 0
@@ -2219,7 +2218,7 @@ texture = ExtResource("7_vdbka")
 27:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2n4l"]
-texture = ExtResource("8_hhxg3")
+texture = ExtResource("9_f63k5")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -3339,7 +3338,7 @@ texture = ExtResource("8_hhxg3")
 15:88/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwn0t"]
-texture = ExtResource("9_so353")
+texture = ExtResource("10_dphqj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3566,7 +3565,7 @@ texture = ExtResource("9_so353")
 13:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lwno"]
-texture = ExtResource("10_31pyj")
+texture = ExtResource("11_1s2ie")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3914,7 +3913,7 @@ texture = ExtResource("10_31pyj")
 24:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e58q2"]
-texture = ExtResource("11_xn4px")
+texture = ExtResource("12_8swdq")
 texture_region_size = Vector2i(25, 25)
 
 [sub_resource type="TileSet" id="TileSet_tgaq0"]
@@ -3931,36 +3930,14 @@ sources/8 = SubResource("TileSetAtlasSource_4lwno")
 sources/9 = SubResource("TileSetAtlasSource_e58q2")
 sources/10 = SubResource("TileSetAtlasSource_53aje")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_6ly35"]
-a = Vector2(1522, -14)
-b = Vector2(-1528, -24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmpwm"]
 size = Vector2(5366.25, 81.25)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_omo21"]
-a = Vector2(233, -245)
-b = Vector2(233, 719)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_i6jqf"]
-a = Vector2(11, 1604.5)
-b = Vector2(11, -1022.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q21jv"]
 size = Vector2(242, 188.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy20h"]
 size = Vector2(252, 133)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ykei2"]
-radius = 34.928497
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwiue"]
-size = Vector2(89.5, 42)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_odg0s"]
-a = Vector2(-406.60938, 4.625)
-b = Vector2(457.39063, 4.625)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vrgmq"]
 a = Vector2(-7, -293)
@@ -3974,34 +3951,20 @@ b = Vector2(539, -4)
 a = Vector2(-32, -912)
 b = Vector2(-32, 930)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_fh1dg"]
-a = Vector2(437, -6)
-b = Vector2(-444, -2)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2pu31"]
-a = Vector2(868, 440)
-b = Vector2(870, -268)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h8k0"]
-size = Vector2(317, 40.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_unkms"]
-size = Vector2(145.5, 23.25)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6durb"]
 size = Vector2(5351, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3e11"]
-size = Vector2(128.5, 692)
+size = Vector2(128.5, 751)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o5oj7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("24_we8t7")
+"texture": ExtResource("16_8xuap")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_gublm")
+"texture": ExtResource("17_qv43a")
 }],
 "loop": true,
 "name": &"walk_down",
@@ -4009,10 +3972,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("26_f6chy")
+"texture": ExtResource("18_hdm3l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_js6bm")
+"texture": ExtResource("19_ye6qi")
 }],
 "loop": true,
 "name": &"walk_left",
@@ -4020,10 +3983,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("28_6ud6o")
+"texture": ExtResource("20_vhknn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_exjvk")
+"texture": ExtResource("21_oyqfs")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -4031,10 +3994,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("30_himgd")
+"texture": ExtResource("22_t4d0y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_rcu87")
+"texture": ExtResource("23_xfs34")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -4048,7 +4011,7 @@ size = Vector2(35, 110)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_tj45h")
+"texture": ExtResource("25_i3wy3")
 }],
 "loop": true,
 "name": &"idle",
@@ -4056,10 +4019,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_tj45h")
+"texture": ExtResource("25_i3wy3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_re18w")
+"texture": ExtResource("26_dciy0")
 }],
 "loop": true,
 "name": &"walk_down",
@@ -4067,10 +4030,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("25_s6pk2")
+"texture": ExtResource("27_7be06")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_ywclq")
+"texture": ExtResource("28_pi5j4")
 }],
 "loop": true,
 "name": &"walk_left",
@@ -4078,10 +4041,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("27_oci3u")
+"texture": ExtResource("29_wc52f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_sssvv")
+"texture": ExtResource("30_vwcpu")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -4089,10 +4052,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_avhrr")
+"texture": ExtResource("31_oo2yc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_vdbka")
+"texture": ExtResource("32_l6o3r")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -4126,10 +4089,10 @@ border_color = Color(0.83137256, 0.6392157, 0.4509804, 1)
 anti_aliasing = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdbka"]
-size = Vector2(182, 148)
+size = Vector2(276, 200)
 
-[node name="CorredorQuebradaDia2" type="Node2D" unique_id=132859864]
-script = ExtResource("1_s6pk2")
+[node name="corredor_quebrada_final" type="Node2D" unique_id=132859864]
+script = ExtResource("1_w2in4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=513311462]
 texture_filter = 3
@@ -4212,138 +4175,27 @@ rotation = -2.0385592
 scale = Vector2(0.99999994, 0.99999994)
 polygon = PackedVector2Array(-338.45313, -782.68164, -333.9812, -782.6632, -607.30884, -213.5863, -533.73096, -161.8534, -643.6743, 38.047485, -572.22217, 62.938477, -607.8701, 140.16028, -545.0029, 186.48242, -571.6333, 245.8529, -506.94434, 284.1327, -541.2578, 363.1488, -469.38232, 393.85535, -393.52222, 434.4171, -425.55396, 502.26257, -354.60767, 541.4623, -388.9214, 620.4784, -378.00293, 677.32056, -360.75854, 725.24365, -221.9856, 800.94727, -155.47437, 831.1846, -184.77832, 895.01575, 27.177002, 1009.9286, 96.84424, 1033.9178, 57.557373, 1119.175, 129.47388, 1146.7506, 163.71411, 1085.6229, 233.7544, 1120.7947, 268.08154, 1045.3553, 211.4165, 1013.36975, 333.62622, 767.0089, 213.19751, 682.43677, 333.5946, 333.20825, 391.70825, 128.62134, 424.20508, 49.598145, 360.39966, 14.005371, 612.8799, -481.36694, 385.27222, -596.3441, 420.46423, -664.624, 262.47778, -744.4317, 181.33582, -588.2395, -279.65845, -826.7146, -322.82446, -770.09564, -332.20508, -779.5254)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1684741158]
-position = Vector2(1520, 2654)
-shape = SubResource("SegmentShape2D_6ly35")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=720204607]
 position = Vector2(2669.875, 44.375)
 shape = SubResource("RectangleShape2D_dmpwm")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2074145990]
-position = Vector2(3769, 1042)
-shape = SubResource("SegmentShape2D_omo21")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2" unique_id=423720126]
-position = Vector2(-2, 1036.5)
-shape = SubResource("SegmentShape2D_i6jqf")
-
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2036802488]
-position = Vector2(522, 493.5625)
+position = Vector2(1713, 411)
 shape = SubResource("RectangleShape2D_q21jv")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1283741780]
 position = Vector2(1507.625, 524)
 shape = SubResource("RectangleShape2D_q21jv")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1056099971]
-z_index = 2
-position = Vector2(841, 944)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D2" unique_id=95897230]
-z_index = 2
-position = Vector2(2046, 2223)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1716196253]
-z_index = 2
-position = Vector2(3718, 2223)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D2" unique_id=373132590]
-z_index = 2
-position = Vector2(1242, 1734)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1847148168]
-z_index = 2
-position = Vector2(357, 1343)
-shape = SubResource("RectangleShape2D_vy20h")
-
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D2" unique_id=876725520]
 z_index = 2
 position = Vector2(2757, 538)
 shape = SubResource("RectangleShape2D_vy20h")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1261974603]
-z_index = 2
-position = Vector2(436, 2381)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D2" unique_id=700508932]
-z_index = 2
-position = Vector2(3801, 1427)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1183125046]
-z_index = 2
-position = Vector2(3084, 1982)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1854144328]
-z_index = 2
-position = Vector2(3640, 940)
-shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1025417421]
-z_index = 2
-position = Vector2(2043, 1081)
-shape = SubResource("CircleShape2D_ykei2")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1987530068]
-z_index = 2
-position = Vector2(1238, 1398)
-shape = SubResource("CircleShape2D_ykei2")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D2" unique_id=13659357]
-z_index = 2
-position = Vector2(3401, 847)
-shape = SubResource("CircleShape2D_ykei2")
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1895245340]
-z_index = 2
-position = Vector2(683, 1962)
-shape = SubResource("CircleShape2D_ykei2")
-
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1754583609]
 z_index = 2
 position = Vector2(4446, 464)
 shape = SubResource("RectangleShape2D_vy20h")
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2081348043]
-z_index = 2
-position = Vector2(1820, 1726.8916)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2018345951]
-z_index = 2
-position = Vector2(1194, 1274)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1253028107]
-z_index = 2
-position = Vector2(1537, 2331)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D2" unique_id=987032186]
-z_index = 2
-position = Vector2(3551.75, 1792.375)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1059094328]
-z_index = 2
-position = Vector2(2590, 2378)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1666832736]
-z_index = 2
-position = Vector2(863, 1936.5781)
-shape = SubResource("RectangleShape2D_mwiue")
-
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D2" unique_id=850261107]
-position = Vector2(3613.6094, 2632.375)
-shape = SubResource("SegmentShape2D_odg0s")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D2" unique_id=444644517]
 z_index = 2
@@ -4365,57 +4217,27 @@ z_index = 2
 position = Vector2(4105, 1706)
 shape = SubResource("SegmentShape2D_2hnes")
 
-[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D2" unique_id=722557447]
-position = Vector2(3003, 3355)
-shape = SubResource("SegmentShape2D_fh1dg")
-
-[node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D2" unique_id=642968304]
-position = Vector2(2557, 2911)
-shape = SubResource("SegmentShape2D_2pu31")
-
-[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1828755431]
-position = Vector2(1701, 2911)
-shape = SubResource("SegmentShape2D_2pu31")
-
-[node name="CollisionShape2D36" type="CollisionShape2D" parent="StaticBody2D2" unique_id=623702184]
-position = Vector2(2801, 3062.375)
-shape = SubResource("RectangleShape2D_5h8k0")
-
-[node name="CollisionShape2D37" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1908209534]
-position = Vector2(2801, 2795)
-shape = SubResource("RectangleShape2D_5h8k0")
-
-[node name="CollisionShape2D38" type="CollisionShape2D" parent="StaticBody2D2" unique_id=746911675]
-position = Vector2(3280, 2710)
-shape = SubResource("RectangleShape2D_unkms")
-
-[node name="CollisionShape2D39" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1297831031]
-position = Vector2(3280, 2949.375)
-shape = SubResource("RectangleShape2D_unkms")
-
-[node name="CollisionShape2D40" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1339585117]
-position = Vector2(3281, 3188)
-shape = SubResource("RectangleShape2D_unkms")
-
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="StaticBody2D2" unique_id=788304360]
-position = Vector2(2662, 702)
+position = Vector2(2675, 743)
 shape = SubResource("RectangleShape2D_6durb")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="StaticBody2D2" unique_id=511174708]
-position = Vector2(-3.25, 329)
+position = Vector2(3551, 439.5)
 shape = SubResource("RectangleShape2D_o3e11")
 
 [node name="HudGameplayCorredor" type="CanvasLayer" parent="." unique_id=395660107]
-script = ExtResource("21_epdjn")
+script = ExtResource("13_defbn")
 
 [node name="Panel" type="Panel" parent="HudGameplayCorredor" unique_id=1828287679]
 anchors_preset = -1
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -110.0
-offset_right = 265.0
-offset_bottom = -20.0
+anchor_left = 3.1820002
+anchor_top = 0.869
+anchor_right = 3.1820002
+anchor_bottom = 0.869
+offset_left = -3626.664
+offset_top = -62.919983
+offset_right = -3381.664
+offset_bottom = 27.080017
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
@@ -4434,7 +4256,7 @@ theme_override_constants/margin_bottom = 15
 [node name="Label" type="Label" parent="HudGameplayCorredor/Panel/MarginContainer" unique_id=943032312]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("22_3v6xi")
+theme_override_fonts/font = ExtResource("14_1f4y4")
 theme_override_font_sizes/font_size = 18
 text = "teste hud sala"
 horizontal_alignment = 1
@@ -4442,9 +4264,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Protagonista" type="CharacterBody2D" parent="." unique_id=716054165]
-position = Vector2(112, 333)
+position = Vector2(3719, 216)
 collision_mask = 2
-script = ExtResource("15_ywclq")
+script = ExtResource("15_jrd2e")
 
 [node name="FollowPoint" type="Marker2D" parent="Protagonista" unique_id=633829988]
 position = Vector2(-3, 41)
@@ -4461,22 +4283,16 @@ position = Vector2(-1, 61)
 shape = SubResource("RectangleShape2D_ixx8m")
 
 [node name="Camera2D" type="Camera2D" parent="Protagonista" unique_id=356385122]
-position = Vector2(451, 41)
+position = Vector2(477, 60)
 limit_left = 26
-limit_top = 10
-limit_right = 5321
-limit_bottom = 570
-
-[node name="CollisionShape2D41" type="CollisionShape2D" parent="Protagonista/Camera2D" unique_id=99964229]
-position = Vector2(2659, 691)
-shape = SubResource("RectangleShape2D_6durb")
+limit_top = -18
+limit_right = 5349
+limit_bottom = 728
 
 [node name="MeninaQuebrada" type="CharacterBody2D" parent="." unique_id=74716365]
 z_index = 1
-position = Vector2(291, 164)
+position = Vector2(4677, 423)
 collision_layer = 2
-script = ExtResource("24_ywclq")
-speed = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeninaQuebrada" unique_id=1910370165]
 texture_filter = 1
@@ -4516,10 +4332,10 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -145.0
-offset_right = -40.0
-offset_bottom = -25.0
+offset_left = 47.0
+offset_top = -177.0
+offset_right = -33.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -4531,10 +4347,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 12.0
-offset_right = -20.0
-offset_bottom = -12.0
+offset_left = 27.0
+offset_top = 8.0
+offset_right = -13.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
@@ -4544,7 +4360,7 @@ alignment = 1
 custom_minimum_size = Vector2(300, 35)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9490196, 0.9019608, 0.7882353, 1)
-theme_override_fonts/font = ExtResource("22_3v6xi")
+theme_override_fonts/font = ExtResource("14_1f4y4")
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -4560,7 +4376,7 @@ custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("33_oci3u")
+texture_normal = ExtResource("33_6biyl")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -4574,7 +4390,7 @@ offset_right = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_3v6xi")
+theme_override_fonts/font = ExtResource("14_1f4y4")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -4586,7 +4402,7 @@ custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("33_oci3u")
+texture_normal = ExtResource("33_6biyl")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoB" unique_id=688400710]
@@ -4599,7 +4415,7 @@ offset_right = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_3v6xi")
+theme_override_fonts/font = ExtResource("14_1f4y4")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -4609,11 +4425,11 @@ autowrap_mode = 2
 [node name="Control" type="Control" parent="HudDialogo" unique_id=1325573027]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 17.0
-offset_top = 448.0
-offset_right = 57.0
-offset_bottom = 488.0
-script = ExtResource("32_s6pk2")
+offset_left = 36.0
+offset_top = 452.0
+offset_right = 76.0
+offset_bottom = 492.0
+script = ExtResource("34_ghfm3")
 
 [node name="PanelContainer" type="PanelContainer" parent="HudDialogo/Control" unique_id=1692148965]
 layout_mode = 0
@@ -4662,10 +4478,10 @@ vertical_alignment = 1
 [node name="AreaIsolada" type="Area2D" parent="." unique_id=106549359]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaIsolada" unique_id=1707558455]
-position = Vector2(4685, 439)
+position = Vector2(4711, 441)
 shape = SubResource("RectangleShape2D_vdbka")
 
 [node name="PontoEspera" type="Marker2D" parent="." unique_id=1877290977]
 position = Vector2(4721, 446)
 
-[node name="CutsceneUI" parent="." unique_id=1842133549 instance=ExtResource("35_sssvv")]
+[node name="CutsceneUI" parent="." unique_id=1842133549 instance=ExtResource("35_1ga3i")]

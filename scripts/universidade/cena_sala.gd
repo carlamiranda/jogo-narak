@@ -41,13 +41,7 @@ func _ready() -> void:
 # =========================
 func hud_exploracao() -> void:
 
-	await hud.show_message("OBJETIVO: encontre um lugar e tente não chamar atenção.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("SINAL: algo brilhante atravessa a sala com frequência.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("OBSERVAÇÃO: ela parece sempre saber onde você está.")
+	await hud.show_message("preciso encontrar um lugar pra sentar sem chamar atenção.")
 	await hud.avancar_dialogo
 
 	await hud.show_message("AÇÃO: sente-se quando surgir a opção [E].")
@@ -112,18 +106,7 @@ func sentar() -> void:
 
 	await esperar_chegada()
 
-	# 🔥 BILHETE (MOMENTO IMPORTANTE DO “CERCAMENTO”)
-	await hud.show_message("Ela não fala primeiro.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("Um papel aparece na sua mesa.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("“Você parece precisar de um zap novo. Me chama.”")
-	await hud.avancar_dialogo
-
-	await hud.hide_message()
-
+	# As falas do bilhete foram movidas direto para o diálogo forçado
 	iniciar_dialogo_forcado()
 
 
@@ -132,13 +115,7 @@ func sentar() -> void:
 # =========================
 func hud_cercamento() -> void:
 
-	await hud.show_message("O espaço entre vocês diminui.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("Ela não parece esperar permissão.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("Você percebe que fugir não mudou nada.")
+	await hud.show_message("...")
 	await hud.avancar_dialogo
 
 	await hud.hide_message()
@@ -161,13 +138,13 @@ func iniciar_dialogo_forcado() -> void:
 	dialogo.visible = true
 
 	var falas = [
+		# Falas movidas da função sentar()
 		{"nome":"Menina Colorida", "texto":"Oi… desculpa te parar assim.", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
 		{"nome":"Protagonista", "texto":"...", "sprite":preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")},
-
 		{"nome":"Menina Colorida", "texto":"Eu só… sempre te vejo tentando ficar longe.", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
-
-		{"nome":"Menina Colorida", "texto":"Não é nada ruim. Só achei que você parecia sozinha e precisava conversar.", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
-
+		{"nome":"Menina Colorida", "texto":"Não é nada ruim. Só achei que você parecia sozinha.. se quiser uma amiga estou aqui.", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
+		{"nome":"Menina Colorida", "texto":"Esse é o meu whatsapp.", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
+		{"nome":"Menina Colorida", "texto":"“8599993-5662” ... me manda um Oi quando tiver tempo", "sprite":preload("res://assets/sprites/characters/colorful_girl/portrait/colorful_girl_portrait.png")},
 	]
 
 	dialogo.iniciar_dialogo(falas)
@@ -188,13 +165,13 @@ func _on_dialogo_finalizado():
 
 func hud_final_aula() -> void:
 
-	await hud.show_message("A aula terminou.")
+	await hud.show_message("Estranho...")
+	await hud.avancar_dialogo
+	
+	await hud.show_message("Mas pelo menos a aula terminou.")
 	await hud.avancar_dialogo
 
-	await hud.show_message("Você precisa sair da sala.")
-	await hud.avancar_dialogo
-
-	await hud.show_message("O corredor está logo ali.")
+	await hud.show_message("Finalmente posso sair dessa sala.")
 	await hud.avancar_dialogo
 
 	await hud.hide_message()

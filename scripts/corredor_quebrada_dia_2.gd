@@ -36,10 +36,10 @@ func _ready() -> void:
 # INTRO
 # -------------------------
 func intro() -> void:
-	await hud.mostrar("O corredor está mais silencioso hoje.")
-	await hud.mostrar("Não parece vazio.")
-	await hud.mostrar("Parece confortável demais.")
-	await hud.mostrar("Como se nada precisasse ser dito.")
+	await hud.mostrar("O corredor está tão silencioso hoje.")
+	await hud.mostrar("Não tem ninguém gritando. Ninguém me empurrando.")
+	await hud.mostrar("É um vazio... surpreendentemente confortável.")
+	await hud.mostrar("Pelo menos aqui eu não preciso fingir que sei existir.")
 	await hud.esconder()
 
 
@@ -69,9 +69,9 @@ func _iniciar_encontro() -> void:
 # HUD
 # -------------------------
 func hud_encontro() -> void:
-	await hud.mostrar("Ela não bloqueia seu caminho.")
-	await hud.mostrar("Só está ali.")
-	await hud.mostrar("Como se já te conhecesse.")
+	await hud.mostrar("Alguém se aproximou. Minha respiração travou.")
+	await hud.mostrar("Mas... ela não entrou no meu caminho.")
+	await hud.mostrar("Ela só está ali. Quase invisível, igual a mim.")
 	await hud.esconder()
 
 
@@ -108,9 +108,9 @@ func iniciar_dialogo() -> void:
 
 
 func pos_dialogo() -> void:
-	await hud.mostrar("Ela não exige resposta.")
-	await hud.mostrar("O silêncio entre vocês não pesa.")
-	await hud.mostrar("Ele acolhe.")
+	await hud.mostrar("Ela não ficou me encarando, esperando uma resposta genial.")
+	await hud.mostrar("Ela não me forçou a sorrir ou agradecer rápido demais.")
+	await hud.mostrar("Esse silêncio... é a primeira vez que ele não me sufoca.")
 	await hud.esconder()
 
 	player.liberar()
