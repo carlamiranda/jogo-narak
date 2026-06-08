@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dedar40pxoa3v"]
 
 [ext_resource type="Texture2D" uid="uid://cxnlbc24cp4gp" path="res://assets/tilesets/faculdade.bmp" id="1_re18w"]
-[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scripts/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
+[ext_resource type="Script" uid="uid://b4dugobcmtq8g" path="res://scripts/universidade/corredor_quebrada_dia_2.gd" id="1_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://bullhg1axsvba" path="res://assets/tilesets/Mahogany_Stage_5.png" id="2_s6pk2"]
 [ext_resource type="Texture2D" uid="uid://pw2ntaf7qpmg" path="res://assets/tilesets/UpdatedDarkRoad.png" id="3_ywclq"]
 [ext_resource type="Texture2D" uid="uid://bkdq1q23a0j0w" path="res://assets/tilesets/idk.png" id="4_oci3u"]

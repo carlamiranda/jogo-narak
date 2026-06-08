@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidade := 140.0
+@export var velocidade := 310.0
 @export var aceleracao := 500.0
 @export var distancia_parada := 18.0
 
