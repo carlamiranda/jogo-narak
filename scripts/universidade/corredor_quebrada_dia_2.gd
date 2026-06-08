@@ -8,8 +8,9 @@ signal escolha_feita(opcao)
 @onready var hud = $HudGameplayCorredor
 @onready var dialogo = $HudDialogo/Control
 @onready var overlay = $ColorRect
+@onready var cutscene = $CutsceneUI
 
-# REFERÊNCIAS DA SUA UI DE ESCOLHAS (Certifique-se de colar o CanvasLayer nesta cena também)
+# REFERÊNCIAS DA SUA UI DE ESCOLHAS
 @onready var menu_escolhas = $CanvasLayer
 @onready var label_situacao = $CanvasLayer/Panel/VBoxContainer/LabelSituacao
 @onready var btn_opcao_a = $CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoA
@@ -19,7 +20,6 @@ signal escolha_feita(opcao)
 
 var encontro := false
 var evento_final_rodando := false
-var pode_sair := false # Controle para a saída do ônibus
 
 
 func _ready() -> void:
@@ -27,7 +27,8 @@ func _ready() -> void:
 	overlay.color = Color(0, 0, 0, 0.35)
 
 	dialogo.visible = false
-	menu_escolhas.visible = false
+	if menu_escolhas:
+		menu_escolhas.visible = false
 
 	# Conecta os botões
 	btn_opcao_a.pressed.connect(_on_botao_a_pressionado)
@@ -41,15 +42,10 @@ func _ready() -> void:
 	if area:
 		area.body_entered.connect(_on_encontro)
 
-	# Conecta a área do isolamento (canto escuro)
+	# Conecta a área do isolamento (canto escuro/mesas)
 	var area_isolada = get_node_or_null("AreaIsolada")
 	if area_isolada:
 		area_isolada.body_entered.connect(_on_area_isolada_entered)
-		
-	# Conecta a saída do ônibus
-	var saida_onibus = get_node_or_null("SaidaOnibus")
-	if saida_onibus:
-		saida_onibus.body_entered.connect(_on_saida_entered)
 
 	await intro()
 
@@ -61,16 +57,18 @@ func _ready() -> void:
 # INTRO E PRIMEIRO ENCONTRO
 # ==========================================
 func intro() -> void:
-	await hud.mostrar("O corredor está mais silencioso hoje.")
-	await hud.mostrar("Não parece vazio.")
-	await hud.mostrar("Parece confortável demais.")
-	await hud.mostrar("Como se nada precisasse ser dito.")
+	await hud.mostrar("O corredor está tão silencioso hoje.")
+	await hud.mostrar("Não tem ninguém gritando. Ninguém me empurrando.")
+	await hud.mostrar("É um vazio... surpreendentemente confortável.")
+	await hud.mostrar("Pelo menos aqui eu não preciso fingir que sei existir.")
 	await hud.esconder()
+
 
 func _on_encontro(body: Node) -> void:
 	if encontro or body != player: return
 	encontro = true
 	await _iniciar_encontro()
+
 
 func _iniciar_encontro() -> void:
 	player.travar()
@@ -78,54 +76,37 @@ func _iniciar_encontro() -> void:
 	await hud_encontro()
 	await iniciar_dialogo()
 
+
 func hud_encontro() -> void:
-	await hud.mostrar("Ela não bloqueia seu caminho.")
-	await hud.mostrar("Só está ali.")
-	await hud.mostrar("Como se já te conhecesse.")
+	await hud.mostrar("Alguém se aproximou. Minha respiração travou.")
+	await hud.mostrar("Mas... ela não entrou no meu caminho.")
+	await hud.mostrar("Ela só está ali. Quase invisível, igual a mim.")
 	await hud.esconder()
+
 
 func iniciar_dialogo() -> void:
 	dialogo.visible = true
 	var falas = [
-		{
-			"nome": "Menina Quebrada", 
-			"texto": "Ei...", 
-			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
-		},
-		{
-			"nome": "Menina Quebrada", 
-			"texto": "Você deixou isso cair ontem no banheiro.", 
-			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
-		},
-		{
-			"nome": "Menina Quebrada", 
-			"texto": "Achei que você ia querer de volta.", 
-			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
-		},
-		{
-			"nome": "Menina Quebrada", 
-			"texto": "Se quiser conversar... ou só fugir um pouco do barulho... me encontra nas mesas perto da sala.", 
-			"sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")
-		}
+		{"nome": "Menina Quebrada", "texto": "Ei...", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
+		{"nome": "Menina Quebrada", "texto": "Você deixou isso cair ontem no banheiro.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
+		{"nome": "Menina Quebrada", "texto": "Achei que você ia querer de volta.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
+		{"nome": "Menina Quebrada", "texto": "Se quiser conversar... ou só fugir um pouco do barulho... me encontra nas mesas perto da sala.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
 	]
 	dialogo.iniciar_dialogo(falas)
 	await dialogo.dialogo_finalizado
 	await pos_dialogo()
 
+
 func pos_dialogo() -> void:
-	await hud.mostrar("Ela não exige resposta.")
-	await hud.mostrar("O silêncio entre vocês não pesa.")
-	await hud.mostrar("Ele acolhe.")
+	await hud.mostrar("Ela falou e foi embora. Sem esperar eu gaguejar.")
+	await hud.mostrar("Esse silêncio... é a primeira vez que ele não me sufoca.")
 	await hud.esconder()
 	
 	player.liberar()
 	
-	# NOVO COMPORTAMENTO: A menina vai para as mesas em vez de te seguir
+	# A menina vai para as mesas esperar por você
 	var ponto_espera = get_node_or_null("PontoEspera")
-	
 	if ponto_espera:
-		# Nós passamos o marcador no lugar do 'player'. 
-		# Como o marcador tem uma posição igual o player, ela vai andar até ele!
 		menina.set_player(ponto_espera) 
 		menina.iniciar()
 
@@ -139,6 +120,7 @@ func _on_area_isolada_entered(body: Node) -> void:
 	evento_final_rodando = true
 	await _iniciar_isolamento()
 
+
 func _iniciar_isolamento() -> void:
 	player.travar()
 	menina.parar()
@@ -146,8 +128,8 @@ func _iniciar_isolamento() -> void:
 	dialogo.visible = true
 	
 	var falas_iniciais = [
-		{"nome": "Menina Quebrada", "texto": "Você não precisa voltar pra lá se não quiser. Ninguém liga de verdade.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
-		{"nome": "Menina Quebrada", "texto": "A gente pode ficar aqui. É mais seguro.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
+		{"nome": "Menina Quebrada", "texto": "Você não precisa ir pra aula se não quiser. Ninguém liga de verdade.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")},
+		{"nome": "Menina Quebrada", "texto": "A gente pode ficar aqui. é quieto", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
 	]
 	
 	dialogo.iniciar_dialogo(falas_iniciais)
@@ -164,52 +146,59 @@ func _iniciar_isolamento() -> void:
 	
 	dialogo.visible = true
 	if resposta_escolhida == 0:
-		# Opção A (Aceitando o Isolamento)
 		var falas_opcao_a = [
-			{"nome": "Protagonista", "texto": "Acho que vou ficar aqui. O barulho me cansa.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, # Troque para a foto da prota
+			{"nome": "Protagonista", "texto": "Acho que vou ficar aqui. O barulho me cansa.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")},
 			{"nome": "Menina Quebrada", "texto": "Eu sei. Aqui é silencioso. Pode sentar.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
 		]
 		dialogo.iniciar_dialogo(falas_opcao_a)
 		await dialogo.dialogo_finalizado
-		# Matemática: Cai Ansiedade, Sobe bastante Isolamento e Vínculo Quebrado
 		GameState.alterar_estado(-15, 20, 0, 0, 20)
 		
 	elif resposta_escolhida == 1:
-		# Opção B (Vulnerabilidade/Culpa)
 		var falas_opcao_b = [
-			{"nome": "Protagonista", "texto": "Eu devia voltar... mas não consigo. Dói muito.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")}, # Troque para a foto da prota
-			{"nome": "Menina Quebrada", "texto": "Tá tudo bem. Você não precisa forçar nada hoje.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
+			{"nome": "Protagonista", "texto": "Eu devia voltar... mas não consigo.", "sprite": preload("res://assets/sprites/characters/protagonist/portrait/protagonist_portrait.png")},
+			{"nome": "Menina Quebrada", "texto": "Tá tudo bem. Você não precisa ir pra aula hoje.", "sprite": preload("res://assets/sprites/characters/broken_girl/portrait/broken_girl_portrait.png")}
 		]
 		dialogo.iniciar_dialogo(falas_opcao_b)
 		await dialogo.dialogo_finalizado
-		# Matemática: Cai um pouco Ansiedade, Sobe Isolamento, Vínculo e um pouco de Confiança por desabafar
 		GameState.alterar_estado(-5, 10, 5, 0, 15)
 		
 	await pos_isolamento()
 
+
 func pos_isolamento() -> void:
-	await hud.mostrar("O barulho da aula fica abafado aqui fora.")
-	await hud.mostrar("É mais fácil simplesmente desaparecer.")
-	await hud.mostrar("O tempo passa. Você percebe que a aula já deve ter acabado.")
+	await hud.mostrar("As vozes da sala parecem muito distantes daqui de fora.")
+	await hud.mostrar("Sumir é tão mais fácil do que tentar existir lá dentro.")
+	await hud.mostrar("O tempo passa... O inferno acabou por hoje.")
 	await hud.esconder()
 	
-	pode_sair = true
-	player.liberar()
+	# Inicia o Time Skip diretamente daqui, sem voltar a andar
+	await iniciar_time_skip()
 
 
 # ==========================================
-# SAÍDA PARA O ÔNIBUS
+# TIME SKIP (TRANSIÇÃO FINAL)
 # ==========================================
-func _on_saida_entered(body: Node) -> void:
-	if not pode_sair or body != player:
-		return
-		
-	player.travar()
+func iniciar_time_skip() -> void:
+	# --- ESCURECE A TELA ---
+	await cutscene.play_fade_out(1.0) 
 	
-	await hud.mostrar("Você caminha de volta pelo corredor vazio.")
-	await hud.mostrar("Um dia inteiro se passou, mas você não sentiu o tempo correr.")
-	await hud.esconder()
+	# Frases de hesitação na tela preta
+	await cutscene.show_text("Pela primeira vez, não me senti um fardo.", 2.5)
+	await cutscene.show_text("Será que eu deveria procurar ela de novo amanhã?", 2.5)
+	await cutscene.show_text("E se a gente apenas ficasse em silêncio juntas?", 2.5)
+	await cutscene.show_text("Acho que... eu gostaria disso.", 2.5)
 	
+	# Pausa dramática no escuro
+	await get_tree().create_timer(1.0).timeout
+	
+	# O grande salto no tempo
+	await cutscene.show_text("4 MESES DEPOIS", 3.0)
+	
+	# Outra pausa curta antes de abrir a nova cena
+	await get_tree().create_timer(0.5).timeout
+	
+	# Vai para a cena final (lembre-se de atualizar o caminho abaixo!)
 	get_tree().change_scene_to_file("res://scenes/onibus/PontoDeOnibus.tscn")
 
 
