@@ -32,7 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://dsuikh1jgqb05" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_right.png" id="30_ewagh"]
 [ext_resource type="Texture2D" uid="uid://yecajtn3dneu" path="res://assets/sprites/characters/protagonist/idle/protagonist_idle_up.png" id="31_lw17a"]
 [ext_resource type="Texture2D" uid="uid://6avrvcsdhnp" path="res://assets/sprites/characters/protagonist/walk/protagonist_walk_up.png" id="32_qttc3"]
-[ext_resource type="Script" uid="uid://cvls63q6j3kch" path="res://scripts/control_colorida_dia2.gd" id="33_x17lc"]
+[ext_resource type="Script" uid="uid://btacx0wls1byt" path="res://scripts/control.gd" id="33_jwf2x"]
+[ext_resource type="Texture2D" uid="uid://bi7dovuukvvvq" path="res://assets/sprites/UI/buttons/btn escolha.png" id="34_x17lc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_givou"]
 texture = ExtResource("2_jwf2x")
@@ -3967,7 +3968,7 @@ a = Vector2(11, 1604.5)
 b = Vector2(11, -1022.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttfte"]
-size = Vector2(351.375, 188.875)
+size = Vector2(199, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lji36"]
 size = Vector2(252, 133)
@@ -4081,6 +4082,8 @@ height = 118.0
 gradient = SubResource("Gradient_4g83l")
 fill = 1
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwf2x"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa2wv"]
 animations = [{
 "frames": [{
@@ -4130,6 +4133,26 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjf8j"]
 size = Vector2(35, 110)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x17lc"]
+bg_color = Color(0.16862746, 0.101960786, 0.039215688, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6392157, 0.4509804, 1)
+anti_aliasing = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x17lc"]
+radius = 170.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll36g"]
+bg_color = Color(0.105882354, 0.101960786, 0.13333334, 0.7882353)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8392157, 0.7176471, 0.47843137, 1)
 
 [node name="CorredorColoridaDia2" type="Node2D" unique_id=613250820]
 script = ExtResource("1_us2qa")
@@ -4239,7 +4262,7 @@ position = Vector2(-2, 1036.5)
 shape = SubResource("SegmentShape2D_07vvs")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2" unique_id=613120342]
-position = Vector2(1507.625, 524)
+position = Vector2(1475.5, 525.5)
 shape = SubResource("RectangleShape2D_ttfte")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2" unique_id=239978080]
@@ -4419,6 +4442,7 @@ shape = SubResource("RectangleShape2D_us2qa")
 position = Vector2(581, 271)
 collision_layer = 2
 script = ExtResource("13_jwf2x")
+velocidade = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeninaColorida" unique_id=1823937772]
 texture_filter = 1
@@ -4440,6 +4464,9 @@ scale = Vector2(33.695313, 4.203125)
 enabled = false
 color = Color(1, 1, 1, 0.78431374)
 texture = SubResource("GradientTexture2D_iw3n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeninaColorida" unique_id=231726566]
+shape = SubResource("CircleShape2D_jwf2x")
 
 [node name="HudGameplayCorredor" type="CanvasLayer" parent="." unique_id=1894888065]
 script = ExtResource("22_psiec")
@@ -4507,30 +4534,37 @@ limit_bottom = 654
 position = Vector2(2638, 555)
 shape = SubResource("RectangleShape2D_fkjdj")
 
-[node name="HudDialogo" type="CanvasLayer" parent="." unique_id=876501571]
+[node name="HudDialogo" type="CanvasLayer" parent="." unique_id=767960971]
 
-[node name="Control" type="Control" parent="HudDialogo" unique_id=1635384006]
+[node name="Control" type="Control" parent="HudDialogo" unique_id=1358000933]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 21.0
-offset_top = 514.0
-offset_right = 61.0
-offset_bottom = 554.0
-script = ExtResource("33_x17lc")
+offset_left = 17.0
+offset_top = 448.0
+offset_right = 57.0
+offset_bottom = 488.0
+script = ExtResource("33_jwf2x")
 
-[node name="PanelContainer" type="PanelContainer" parent="HudDialogo/Control" unique_id=1494860725]
+[node name="PanelContainer" type="PanelContainer" parent="HudDialogo/Control" unique_id=1631661105]
 layout_mode = 0
-offset_right = 241.0
-offset_bottom = 80.0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x17lc")
 
-[node name="MarginContainer" type="MarginContainer" parent="HudDialogo/Control/PanelContainer" unique_id=273543088]
+[node name="MarginContainer" type="MarginContainer" parent="HudDialogo/Control/PanelContainer" unique_id=1402575707]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer" unique_id=188225653]
+[node name="HBoxContainer" type="HBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer" unique_id=685077756]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="texto" type="RichTextLabel" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1271293398]
+[node name="texto" type="RichTextLabel" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=1357704621]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
@@ -4539,18 +4573,116 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=308354198]
+[node name="VBoxContainer" type="VBoxContainer" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer" unique_id=461275692]
 layout_mode = 2
 alignment = 1
 
-[node name="retrato" type="TextureRect" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=815530863]
+[node name="retrato" type="TextureRect" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1600437409]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="nome" type="Label" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1832145374]
+[node name="nome" type="Label" parent="HudDialogo/Control/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2094374150]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AreaAlmoco" type="Area2D" parent="." unique_id=795526057]
+position = Vector2(372, 194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAlmoco" unique_id=580397105]
+position = Vector2(1094, 306)
+shape = SubResource("CircleShape2D_x17lc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=738224368]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=455314949]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -145.0
+offset_right = -40.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ll36g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=458692301]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LabelSituacao" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=270456089]
+custom_minimum_size = Vector2(300, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.9019608, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("23_0bk43")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1145172175]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ButtonOpcaoA" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=1162707218]
+texture_filter = 1
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("34_x17lc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoA" unique_id=441007133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("23_0bk43")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonOpcaoB" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=1102521343]
+texture_filter = 1
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("34_x17lc")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer/ButtonOpcaoB" unique_id=1812350876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("23_0bk43")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
